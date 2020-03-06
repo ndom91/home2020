@@ -1,39 +1,14 @@
-## Gatsby 2 Power blog starter with Typescript
-More features are coming, stay tuned! 
+## Homepage 2020
 
-## Success Stories:
-- I am using this template for my website https://www.majidhajian.com
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1d9c322e-4f72-4721-aa0a-79a3df0782f4/deploy-status)](https://app.netlify.com/sites/optimistic-swirles-1010d5/deploys)
+
+More features are coming, stay tuned!
 
 ### Description
+
 This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
 
-#### Desktop
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
-
-#### Mobile
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
-
-### new project
 ```
-gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
-```
-
-### Keywords
-  - PWA
-  - Blog
-  - Personal website
-  - TypeScript
-  - TSLint
-  - Progressive web app
-  - StyleLint
-  - Prettier
-  - Lint-Staged
-  - Styling:SCSS
-  - Prisim.js
-  - Style Components
-  - Markdown
-  - Pagination
-
 ### Features
   - Mobile-First approach in development.
   - TSLint & Prettier
@@ -48,3 +23,8 @@ gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-b
   - Automatic RSS generation.
   - Automatic Sitemap generation.
   - Automatic support for Google Tag Manager
+
+### Special Thanks
+
+Based on Gatsby Starter: [Gatsby-Typescript-Power-Blog](https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png)
+```
