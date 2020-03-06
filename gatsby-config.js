@@ -13,6 +13,9 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    github: config.userGithub,
+    twitter: config.userTwitter,
+    mail: config.userMail,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

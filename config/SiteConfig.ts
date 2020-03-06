@@ -12,8 +12,9 @@ export default {
   author: 'Nico Domino', // Author for schemaORGJSONLD
   siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
 
-  userTwitter: '@ndom91', // Twitter Username - Optional
-  userGithub: '@ndom91', // Github Username - Optional
+  userTwitter: 'ndom91', // Twitter Username - Optional
+  userGithub: 'ndom91', // Github Username - Optional
+  userMail: 'yo@ndo.dev', // Github Username - Optional
   ogSiteName: 'ndom91', // Facebook Site Name - Optional
   ogLanguage: 'en_US', // Facebook Language
 

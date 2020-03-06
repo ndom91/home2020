@@ -7,20 +7,21 @@ const colors = {
     default: 'rgba(0, 0, 0, 0.7)',
     light: 'rgba(0, 0, 0, 0.5)',
     ultraLight: 'rgba(0, 0, 0, 0.25)',
+    ultraUltraLight: 'rgba(0, 0, 0, 0.1)',
   },
-};
+}
 
 const transitions = {
   normal: '0.5s',
-};
+}
 
 const fontSize = {
   small: '0.9rem',
   big: '2.9rem',
-};
+}
 
 export default {
   colors,
   transitions,
   fontSize,
-};
+}
