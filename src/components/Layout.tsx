@@ -1,10 +1,10 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import theme from '../../config/Theme';
-import { media } from '../utils/media';
-import split from 'lodash/split';
-import './layout.scss';
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import theme from '../../config/Theme'
+import { media } from '../utils/media'
+import split from 'lodash/split'
+import './layout.scss'
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -58,19 +58,46 @@ const GlobalStyle = createGlobalStyle`
   .textRight {
     text-align:right;
   }
-`;
+`
 
 const Footer = styled.footer`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid ${theme.colors.grey.ultraUltraLight};
   text-align: center;
-  padding: 3rem 0;
+  padding: 0.5rem 0;
   span {
     font-size: 0.75rem;
   }
-`;
+`
+
+const FooterSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 20px;
+  min-width: 6rem;
+  font-size: 0.85rem;
+
+  & div:nth-child(1) {
+    color: ${theme.colors.grey.dark};
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0rem;
+  }
+  & a {
+    font-weight: 100;
+    color: ${theme.colors.grey.light};
+    display: inline;
+    letter-spacing: -0.2px;
+  }
+`
 
 export class Layout extends React.PureComponent<{}> {
   public render() {
-    const { children } = this.props;
+    const { children } = this.props
 
     return (
       <StaticQuery
@@ -78,6 +105,11 @@ export class Layout extends React.PureComponent<{}> {
           query LayoutQuery {
             site {
               buildTime(formatString: "DD.MM.YYYY")
+              siteMetadata {
+                github
+                twitter
+                mail
+              }
             }
           }
         `}
@@ -87,14 +119,31 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]} by Majid Hajian. All rights reserved. <br />
-                <a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">GitHub Repository</a> <br />
-                <span>Last build: {data.site.buildTime}</span>
+                <FooterSection>
+                  <div>&copy; {split(data.site.buildTime, '.')[2]}</div>
+                  <a href="#">Nico Domino</a>
+                </FooterSection>
+                <FooterSection>
+                  <div>Contact</div>
+                  <a href={`mailto:${data.site.siteMetadata.mail}`}>{data.site.siteMetadata.mail}</a>
+                </FooterSection>
+                <FooterSection>
+                  <div>Social</div>
+                  <div>
+                    <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
+                      Twitter
+                    </a>
+                    {' / '}
+                    <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${data.site.siteMetadata.github}`}>
+                      Github
+                    </a>
+                  </div>
+                </FooterSection>
               </Footer>
             </React.Fragment>
           </ThemeProvider>
         )}
       />
-    );
+    )
   }
 }
