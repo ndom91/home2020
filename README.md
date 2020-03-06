@@ -8,23 +8,26 @@ More features are coming, stay tuned!
 
 This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
 
-```
 ### Features
-  - Mobile-First approach in development.
-  - TSLint & Prettier
-  - Offline support
-  - Category and Tag for post
-  - Type Safe by TypeScript
-  - Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky)
-  - Blog page
-  - Syntax highlighting in code blocks.
-  - Pagination Ready
-  - Ready to deploy to Github pages
-  - Automatic RSS generation.
-  - Automatic Sitemap generation.
-  - Automatic support for Google Tag Manager
+
+- Mobile-First approach in development.
+- TSLint & Prettier
+- Offline support
+- Category and Tag for post
+- Type Safe by TypeScript
+- Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky)
+- Blog page
+- Syntax highlighting in code blocks.
+- Pagination Ready
+- Ready to deploy to Github pages
+- Automatic RSS generation.
+- Automatic Sitemap generation.
+- Automatic support for Google Tag Manager
 
 ### Special Thanks
 
-Based on Gatsby Starter: [Gatsby-Typescript-Power-Blog](https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png)
+Based on Gatsby Starter: [Gatsby-Typescript-Power-Blog](https://github.com/mhadaily/gatsby-starter-typescript-power-blog)
+
+```
+
 ```
