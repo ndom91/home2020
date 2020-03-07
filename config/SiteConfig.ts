@@ -25,6 +25,7 @@ export default {
 
   // Settings for typography.ts
   headerFontFamily: 'Bitter',
+  serifFontFamily: 'Cormorant Garamond',
   bodyFontFamily: 'Open Sans',
   baseFontSize: '18px',
 

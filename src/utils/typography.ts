@@ -17,6 +17,10 @@ const typography = new Typography({
       name: config.bodyFontFamily,
       styles: ['100', '400'],
     },
+    {
+      name: config.serifFontFamily,
+      styles: ['100', '400'],
+    },
   ],
 })
 

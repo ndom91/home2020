@@ -87,6 +87,7 @@ const FooterSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-family: 'Cormorant Garamond';
   justify-content: center;
   margin: 20px;
   min-width: 6rem;

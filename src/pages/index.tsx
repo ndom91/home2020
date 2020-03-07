@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Layout, Wrapper, Button, Article } from '../components'
 import PageProps from '../models/PageProps'
 import Helmet from 'react-helmet'
+import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
@@ -54,6 +55,20 @@ const HomepageContent: any = styled.div`
   }
 `
 
+const PreHeader: any = styled.div`
+  font-size: 1.2rem;
+  font-family: ${config.serifFontFamily};
+  color: ${theme.colors.primary};
+`
+const HeaderText: any = styled.h3`
+  font-size: 2rem;
+  color: ${theme.colors.grey.default};
+`
+const SubHeader: any = styled.div`
+  font-size: 1.8rem;
+  color: ${theme.colors.grey.light};
+`
+
 export default class IndexPage extends React.Component<PageProps> {
   public render() {
     const { data } = this.props
@@ -66,12 +81,13 @@ export default class IndexPage extends React.Component<PageProps> {
           <Homepage>
             <GridRow>
               <HomepageContent center={true}>
-                <h3>Hi. I'm Nico Domino, and I make shit for the web</h3>
-                <p>
+                <PreHeader>Hi. I'm Nico Domino</PreHeader>
+                <HeaderText>...and I make shit for the web</HeaderText>
+                <SubHeader>
                   I’m a Sys Admin and Web Developer at Newtelco, a full service datacenter management company in Frankfurt, Germany. I
                   occasionally write about my thoughts on tech and other happenings here on my blog and you can find some of my (much less)
                   serious stuff on Twitter.
-                </p>
+                </SubHeader>
                 {/* <Link to="/contact">
                   <Button big={true}>
                     <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
