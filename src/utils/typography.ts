@@ -18,8 +18,12 @@ const typography = new Typography({
       styles: ['100', '400'],
     },
     {
+      name: config.sanSerifFontFamily,
+      styles: ['100', '300', '400'],
+    },
+    {
       name: config.serifFontFamily,
-      styles: ['100', '400'],
+      styles: ['100', '300', '500', '600'],
     },
   ],
 })

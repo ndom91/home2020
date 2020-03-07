@@ -5,6 +5,7 @@ import { darken, lighten } from 'polished'
 import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
+import theme from '../../config/Theme'
 
 const HeaderWrapper: any = styled.header`
   position: relative;
@@ -68,10 +69,46 @@ const LinkWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   margin: 5px 20px;
+  height: 39px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
 
   a {
-    margin-left: 10px;
+    margin-left: 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: ${config.sanSerifFontFamily};
   }
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background: ${theme.colors.primary};
+    height: 4px;
+    transition-property: left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    left: 0;
+  }
+`
+
+const MenuNumber = styled.span`
+  color: ${theme.colors.grey.light};
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: ${config.serifFontFamily};
 `
 
 interface Props {
@@ -87,13 +124,13 @@ export class Header extends React.PureComponent<Props> {
           <img height="128" src={config.siteLogo} />
           <Content>
             <LinkWrapper>
-              01 <Link to={`/`}>Home</Link>
+              <MenuNumber>01</MenuNumber> <Link to={`/`}>Home</Link>
             </LinkWrapper>
             <LinkWrapper>
-              02 <Link to={`/blog`}>Blog</Link>
+              <MenuNumber>02</MenuNumber> <Link to={`/blog`}>Blog</Link>
             </LinkWrapper>
             <LinkWrapper>
-              03 <Link to={`/about`}>About</Link>
+              <MenuNumber>03</MenuNumber> <Link to={`/about`}>About</Link>
             </LinkWrapper>
           </Content>
         </ContentWrapper>
