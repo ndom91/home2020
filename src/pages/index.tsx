@@ -13,7 +13,7 @@ import lighten from 'polished/lib/color/lighten'
 
 const Homepage = styled.main`
   display: flex;
-  height: 100vh;
+  height: 60vh;
   flex-direction: row;
   @media ${media.tablet} {
     height: 100%;
@@ -28,9 +28,9 @@ const Homepage = styled.main`
 const GridRow: any = styled.div`
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 4rem;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 4rem 8rem;
   color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
   h1 {
     color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
@@ -44,8 +44,14 @@ const GridRow: any = styled.div`
 `
 
 const HomepageContent: any = styled.div`
-  max-width: 30rem;
-  text-align: ${(props: any) => (props.center ? 'center' : 'left')};
+  max-width: 50rem;
+  /* text-align: ${(props: any) => (props.center ? 'center' : 'left')}; */
+  text-align: left;
+  font-size: 1.5rem;
+
+  & h3 {
+    font-size: 2rem;
+  }
 `
 
 export default class IndexPage extends React.Component<PageProps> {
@@ -60,12 +66,13 @@ export default class IndexPage extends React.Component<PageProps> {
           <Homepage>
             <GridRow>
               <HomepageContent center={true}>
-                <h1>
-                  Hi. I am <br />
-                  Majid Hajian
-                </h1>
-                <p>I write about JavaScript, Angular, Ember, React, Vue, GlimmerJs, NodeJs, Rails, Go, Gatsby and ...</p>
-                <Link to="/contact">
+                <h3>Hi. I'm Nico Domino, and I make shit for the web</h3>
+                <p>
+                  I’m a Sys Admin and Web Developer at Newtelco, a full service datacenter management company in Frankfurt, Germany. I
+                  occasionally write about my thoughts on tech and other happenings here on my blog and you can find some of my (much less)
+                  serious stuff on Twitter.
+                </p>
+                {/* <Link to="/contact">
                   <Button big={true}>
                     <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1764 11q33 24 27 64l-256 1536q-5 29-32 45-14 8-31 8-11 0-24-5l-453-185-242 295q-18 23-49 23-13 0-22-4-19-7-30.5-23.5t-11.5-36.5v-349l864-1059-1069 925-395-162q-37-14-40-55-2-40 32-59l1664-960q15-9 32-9 20 0 36 11z" />
@@ -80,10 +87,10 @@ export default class IndexPage extends React.Component<PageProps> {
                     </svg>
                     Blog
                   </Button>
-                </Link>
+                </Link> */}
               </HomepageContent>
             </GridRow>
-            <GridRow>
+            {/* <GridRow>
               <HomepageContent>
                 <h2>About Me</h2>
                 <p>
@@ -108,7 +115,7 @@ export default class IndexPage extends React.Component<PageProps> {
                   <Link to={'/blog'}>All articles ({totalCount})</Link>
                 </p>
               </HomepageContent>
-            </GridRow>
+            </GridRow> */}
           </Homepage>
         </Wrapper>
       </Layout>

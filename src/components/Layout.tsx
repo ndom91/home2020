@@ -61,6 +61,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Footer = styled.footer`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -70,6 +73,14 @@ const Footer = styled.footer`
   span {
     font-size: 0.75rem;
   }
+`
+
+const FooterContent = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
 `
 
 const FooterSection = styled.div`
@@ -119,26 +130,28 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                <FooterSection>
-                  <div>&copy; {split(data.site.buildTime, '.')[2]}</div>
-                  <a href="#">Nico Domino</a>
-                </FooterSection>
-                <FooterSection>
-                  <div>Contact</div>
-                  <a href={`mailto:${data.site.siteMetadata.mail}`}>{data.site.siteMetadata.mail}</a>
-                </FooterSection>
-                <FooterSection>
-                  <div>Social</div>
-                  <div>
-                    <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
-                      Twitter
-                    </a>
-                    {' / '}
-                    <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${data.site.siteMetadata.github}`}>
-                      Github
-                    </a>
-                  </div>
-                </FooterSection>
+                <FooterContent>
+                  <FooterSection>
+                    <div>&copy; {split(data.site.buildTime, '.')[2]}</div>
+                    <a href="#">Nico Domino</a>
+                  </FooterSection>
+                  <FooterSection>
+                    <div>Contact</div>
+                    <a href={`mailto:${data.site.siteMetadata.mail}`}>{data.site.siteMetadata.mail}</a>
+                  </FooterSection>
+                  <FooterSection>
+                    <div>Social</div>
+                    <div>
+                      <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
+                        Twitter
+                      </a>
+                      {' / '}
+                      <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${data.site.siteMetadata.github}`}>
+                        Github
+                      </a>
+                    </div>
+                  </FooterSection>
+                </FooterContent>
               </Footer>
             </React.Fragment>
           </ThemeProvider>
