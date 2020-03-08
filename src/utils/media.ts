@@ -1,9 +1,11 @@
 const sizes = {
-  tablet: '1200px',
-  phone: '600px',
-};
+  large: '1200px',
+  medium: '900px',
+  small: '600px',
+}
 
 export const media = {
-  tablet: `(max-width: ${sizes.tablet})`,
-  phone: `(max-width: ${sizes.phone})`,
-};
+  large: `(max-width: ${sizes.large})`,
+  medium: `(max-width: ${sizes.medium})`,
+  small: `(max-width: ${sizes.small})`,
+}

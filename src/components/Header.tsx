@@ -6,6 +6,7 @@ import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
+import ButtonMenu from './ButtonMenu'
 
 const HeaderWrapper: any = styled.header`
   position: relative;
@@ -32,10 +33,13 @@ const HeaderWrapper: any = styled.header`
     position: absolute;
     width: 100%;
   }
-  @media ${media.tablet} {
+  @media ${media.large} {
     padding: 1rem 2rem 1rem;
   }
-  @media ${media.phone} {
+  @media ${media.medium} {
+    padding: 0.5rem 1rem 0.5rem;
+  }
+  @media ${media.small} {
     padding: 1rem 0.5rem 2rem;
   }
 `
@@ -55,6 +59,9 @@ const Content = styled.div`
   justify-content: space-around;
   align-items: flex-end;
   z-index: 99;
+  @media ${media.small} {
+    display: none;
+  }
 
   a {
     color: white;
@@ -72,7 +79,6 @@ const LinkWrapper = styled.div`
   height: 39px;
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
@@ -94,8 +100,8 @@ const LinkWrapper = styled.div`
     background: ${theme.colors.primary};
     height: 4px;
     transition-property: left;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
   }
   &:hover:before,
   &:focus:before,
@@ -121,7 +127,8 @@ export class Header extends React.PureComponent<Props> {
     return (
       <HeaderWrapper banner={this.props.banner || config.defaultBg}>
         <ContentWrapper>
-          <img height="128" src={config.siteLogo} />
+          <img height="110" src={config.siteLogo} />
+          <ButtonMenu />
           <Content>
             <LinkWrapper>
               <MenuNumber>01</MenuNumber> <Link to={`/`}>Home</Link>

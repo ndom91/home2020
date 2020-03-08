@@ -19,11 +19,11 @@ const Homepage = styled.main`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  @media ${media.tablet} {
+  @media ${media.large} {
     height: 100%;
     flex-direction: column;
   }
-  @media ${media.phone} {
+  @media ${media.small} {
     height: 100%;
     flex-direction: column;
   }
@@ -34,21 +34,24 @@ const GridRow: any = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 5rem 10rem;
+  padding: 5rem 6rem;
   color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
   h1 {
     color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
   }
-  @media ${media.tablet} {
+  @media ${media.large} {
+    padding: 4rem 5rem;
+  }
+  @media ${media.medium} {
     padding: 3rem 3rem;
   }
-  @media ${media.phone} {
+  @media ${media.small} {
     padding: 2rem 1.5rem;
   }
 `
 
 const HomepageContent: any = styled.div`
-  max-width: 50rem;
+  max-width: 60rem;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -58,6 +61,17 @@ const HomepageContent: any = styled.div`
 
   & h3 {
     font-size: 2rem;
+  }
+
+  @media ${media.large} {
+    font-size: 90%;
+  }
+  @media ${media.medium} {
+    font-size: 80%;
+  }
+  @media ${media.small} {
+    font-size: 70%;
+    justify-content: flex-start;
   }
 `
 
@@ -73,13 +87,32 @@ const HeaderText: any = styled.h3`
   font-family: ${config.serifFontFamily};
   color: ${theme.colors.grey.default};
   margin-bottom: 20px;
+  @media ${media.large} {
+    font-size: 2.8rem !important;
+  }
+  @media ${media.medium} {
+    font-size: 2.3rem !important;
+  }
+  @media ${media.small} {
+    font-size: 1.9rem !important;
+  }
 `
 const SubHeader: any = styled.div`
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 300;
   font-family: ${config.sanSerifFontFamily};
   color: ${theme.colors.grey.light};
   margin-bottom: 20px;
+
+  @media ${media.large} {
+    font-size: 1.6rem;
+  }
+  @media ${media.medium} {
+    font-size: 1.3rem;
+  }
+  @media ${media.small} {
+    font-size: 1.2rem;
+  }
 
   a {
     display: inline-block;
@@ -90,6 +123,25 @@ const SubHeader: any = styled.div`
     position: relative;
     overflow: hidden;
     height: 60px;
+
+    @media ${media.large} {
+      height: 52px;
+      &:before {
+        bottom: 9px !important;
+      }
+    }
+    @media ${media.medium} {
+      height: 43px;
+      &:before {
+        bottom: 9px !important;
+      }
+    }
+    @media ${media.small} {
+      height: 39px;
+      &:before {
+        bottom: 8px !important;
+      }
+    }
 
     &:before {
       content: '';
@@ -153,15 +205,16 @@ export default class IndexPage extends React.Component<PageProps> {
                 <PreHeader>Hi, I'm Nico Domino</PreHeader>
                 <HeaderText>I make shit for the web</HeaderText>
                 <SubHeader>
-                  I’m a Sys Admin and Web Developer at <a href="https://newtelco.dev">Newtelco</a>, a global managed services company
-                  specializing in datacenter management based in Frankfurt, Germany. I occasionally write about my thoughts on tech and
-                  other happenings here on my <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
+                  During the week you can find me doing Sys Admin work as well as a lot of Web Development at{' '}
+                  <a href="https://newtelco.dev">Newtelco</a>, a global managed services company specializing in datacenter management based
+                  in Frankfurt, Germany. I occasionally write about my thoughts on tech and other happenings here on my{' '}
+                  <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
                   <a href="https://twitter.com/ndom91">Twitter</a>.
                 </SubHeader>
                 <LinkWrapper>
-                  <Link to="/contact">
+                  <Link to="/about#work">
                     <Button big={true}>
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8">
+                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8">
                         <path
                           fill-rule="evenodd"
                           d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
@@ -171,16 +224,16 @@ export default class IndexPage extends React.Component<PageProps> {
                       Work
                     </Button>
                   </Link>
-                  <Link to="/blog">
+                  <Link to="/about#contact">
                     <Button big>
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8">
+                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8">
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
-                      Blog
+                      Contact
                     </Button>
                   </Link>
                 </LinkWrapper>

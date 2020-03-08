@@ -20,8 +20,16 @@ const fontSize = {
   big: '2.9rem',
 }
 
+const space = {
+  normal: '2rem',
+  small: '1rem',
+  medium: '1.5rem',
+  large: '3rem',
+}
+
 export default {
   colors,
   transitions,
   fontSize,
+  space,
 }
