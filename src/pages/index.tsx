@@ -62,7 +62,7 @@ const HomepageContent: any = styled.div`
 `
 
 const PreHeader: any = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-family: ${config.serifFontFamily};
   color: ${theme.colors.primary};
   margin-bottom: 20px;
@@ -151,7 +151,7 @@ export default class IndexPage extends React.Component<PageProps> {
             <GridRow>
               <HomepageContent center={true}>
                 <PreHeader>Hi, I'm Nico Domino</PreHeader>
-                <HeaderText>...and I make shit for the web</HeaderText>
+                <HeaderText>I make shit for the web</HeaderText>
                 <SubHeader>
                   I’m a Sys Admin and Web Developer at <a href="https://newtelco.dev">Newtelco</a>, a global managed services company
                   specializing in datacenter management based in Frankfurt, Germany. I occasionally write about my thoughts on tech and
