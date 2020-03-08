@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 // import { media } from '../utils/media'
 import theme from '../../config/Theme'
-import config from '../../config/SiteConfig'
+// import config from '../../config/SiteConfig'
 
 const OverlayWrapper = styled.div`
   width: 100vw;
