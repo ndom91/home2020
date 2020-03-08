@@ -72,7 +72,7 @@ const Content = styled.div`
   }
 `
 
-const LinkWrapper = styled.div`
+const LinkWrapper = styled(Link)`
   display: flex;
   justify-content: flex-start;
   margin: 5px 20px;
@@ -84,12 +84,26 @@ const LinkWrapper = styled.div`
   position: relative;
   overflow: hidden;
 
-  a {
-    margin-left: 5px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-family: ${config.sanSerifFontFamily};
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: ${config.sanSerifFontFamily};
+
+  &.active {
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: ${theme.colors.grey.ultraLight};
+      height: 4px;
+      transition-property: left;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
+    }
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -97,15 +111,15 @@ const LinkWrapper = styled.div`
     left: 100%;
     right: 0;
     bottom: 0;
-    background: ${theme.colors.primary};
+    background-color: ${theme.colors.primary};
     height: 4px;
-    transition-property: left;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in-out;
+    transition: left 200ms ease-in-out, background-color 250ms ease-in-out;
   }
+
   &:hover:before,
   &:focus:before,
   &:active:before {
+    background-color: ${theme.colors.primary};
     left: 0;
   }
 `
@@ -115,10 +129,10 @@ const MenuNumber = styled.span`
   font-size: 1.2rem;
   font-weight: 600;
   font-family: ${config.serifFontFamily};
+  margin-right: 5px;
 `
 
 interface Props {
-  children: any
   banner?: string
 }
 
@@ -127,17 +141,17 @@ export class Header extends React.PureComponent<Props> {
     return (
       <HeaderWrapper banner={this.props.banner || config.defaultBg}>
         <ContentWrapper>
-          <img height="110" src={config.siteLogo} />
+          <img height="110" src={config.siteLogo} alt="Logo" />
           <ButtonMenu />
           <Content>
-            <LinkWrapper>
-              <MenuNumber>01</MenuNumber> <Link to={`/`}>Home</Link>
+            <LinkWrapper to={`/`} activeClassName="active">
+              <MenuNumber>01</MenuNumber>Home
             </LinkWrapper>
-            <LinkWrapper>
-              <MenuNumber>02</MenuNumber> <Link to={`/blog`}>Blog</Link>
+            <LinkWrapper to={`/blog`} activeClassName="active">
+              <MenuNumber>02</MenuNumber>Blog
             </LinkWrapper>
-            <LinkWrapper>
-              <MenuNumber>03</MenuNumber> <Link to={`/about`}>About</Link>
+            <LinkWrapper to={`/about`} activeClassName="active">
+              <MenuNumber>03</MenuNumber>About
             </LinkWrapper>
           </Content>
         </ContentWrapper>

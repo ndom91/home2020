@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { media } from '../utils/media'
+// import { media } from '../utils/media'
 import theme from '../../config/Theme'
+import config from '../../config/SiteConfig'
 
 const OverlayWrapper = styled.div`
   width: 100vw;
@@ -11,16 +12,12 @@ const OverlayWrapper = styled.div`
   top: 0;
   right: 0;
   z-index: -2;
-  /* opacity: 0; */
-  /* visibility: hidden; */
   overflow: hidden;
   transition: opacity 0.35s ease-in-out 750ms, scale 0.5s 500ms, visibility 0.35s ease-in-out 500ms, height 0.35s;
 
   &.active {
     z-index: 9998;
-    /* opacity: 1; */
     transform: translate(0%, 0%);
-    /* visibility: visible; */
     height: 100vh;
 
     & a {

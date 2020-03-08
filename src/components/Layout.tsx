@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
@@ -134,22 +134,22 @@ export class Layout extends React.PureComponent<{}> {
                 <FooterContent>
                   <FooterSection>
                     <div>&copy; {split(data.site.buildTime, '.')[2]}</div>
-                    <a href="#">Nico Domino</a>
+                    <Link to="/">Nico Domino</Link>
                   </FooterSection>
                   <FooterSection>
                     <div>Contact</div>
-                    <a href={`mailto:${data.site.siteMetadata.mail}`}>{data.site.siteMetadata.mail}</a>
+                    <Link to={`mailto:${data.site.siteMetadata.mail}`}>{data.site.siteMetadata.mail}</Link>
                   </FooterSection>
                   <FooterSection>
                     <div>Social</div>
                     <div>
-                      <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
+                      <Link target="_blank" rel="noopener noreferrer" to={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
                         Twitter
-                      </a>
+                      </Link>
                       {' / '}
-                      <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${data.site.siteMetadata.github}`}>
+                      <Link target="_blank" rel="noopener noreferrer" to={`https://github.com/${data.site.siteMetadata.github}`}>
                         Github
-                      </a>
+                      </Link>
                     </div>
                   </FooterSection>
                 </FooterContent>

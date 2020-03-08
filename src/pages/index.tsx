@@ -1,16 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Wrapper, Button, Article } from '../components'
+import { Layout, Wrapper, Button } from '../components'
 import PageProps from '../models/PageProps'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
-import rgba from 'polished/lib/color/rgba'
-import darken from 'polished/lib/color/darken'
-import lighten from 'polished/lib/color/lighten'
 
 const Homepage = styled.main`
   display: flex;
@@ -129,17 +126,26 @@ const SubHeader: any = styled.div`
       &:before {
         bottom: 9px !important;
       }
+      &:after {
+        bottom: 9px !important;
+      }
     }
     @media ${media.medium} {
       height: 43px;
       &:before {
         bottom: 9px !important;
       }
+      &:after {
+        bottom: 9px !important;
+      }
     }
     @media ${media.small} {
       height: 39px;
       &:before {
-        bottom: 8px !important;
+        bottom: 7px !important;
+      }
+      &:after {
+        bottom: 7px !important;
       }
     }
 
@@ -192,8 +198,7 @@ const LinkWrapper = styled.div`
 
 export default class IndexPage extends React.Component<PageProps> {
   public render() {
-    const { data } = this.props
-    const { edges, totalCount } = data.allMarkdownRemark
+    // const { data } = this.props
     return (
       <Layout>
         <Wrapper fullWidth={true}>
@@ -239,32 +244,6 @@ export default class IndexPage extends React.Component<PageProps> {
                 </LinkWrapper>
               </HomepageContent>
             </GridRow>
-            {/* <GridRow>
-              <HomepageContent>
-                <h2>About Me</h2>
-                <p>
-                  Though I am a results-driven front-end developer by day who have converted inactive designs to fully interactive,
-                  well-developed, accessible and standards-based user interfaces. I am completely enthusiast with a full stack environment
-                  and passionate about JavaScript world.
-                </p>
-                <hr />
-                <h2>Latest Blog</h2>
-                {edges.map(post => (
-                  <Article
-                    title={post.node.frontmatter.title}
-                    date={post.node.frontmatter.date}
-                    excerpt={post.node.excerpt}
-                    timeToRead={post.node.timeToRead}
-                    slug={post.node.fields.slug}
-                    category={post.node.frontmatter.category}
-                    key={post.node.fields.slug}
-                  />
-                ))}
-                <p className={'textRight'}>
-                  <Link to={'/blog'}>All articles ({totalCount})</Link>
-                </p>
-              </HomepageContent>
-            </GridRow> */}
           </Homepage>
         </Wrapper>
       </Layout>
