@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Footer = styled.footer`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -104,6 +104,12 @@ const FooterSection = styled.div`
     color: ${theme.colors.grey.light};
     display: inline;
     letter-spacing: -0.2px;
+  }
+  @media ${media.medium} {
+    margin: 20px;
+  }
+  @media ${media.small} {
+    margin: 10px;
   }
 `
 

@@ -40,7 +40,7 @@ const HeaderWrapper: any = styled.header`
     padding: 0.5rem 1rem 0.5rem;
   }
   @media ${media.small} {
-    padding: 1rem 0.5rem 2rem;
+    padding: 1rem 0.5rem 0rem;
   }
 `
 

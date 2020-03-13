@@ -8,6 +8,7 @@ import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
+import office from '../../static/assets/office.svg'
 
 const Homepage = styled.main`
   display: flex;
@@ -23,6 +24,7 @@ const Homepage = styled.main`
   @media ${media.small} {
     height: 100%;
     flex-direction: column;
+    margin-bottom: 100px;
   }
 `
 
@@ -95,14 +97,13 @@ const HeaderText: any = styled.h3`
   }
 `
 const SubHeader: any = styled.div`
-  font-size: 1.8rem;
   font-weight: 300;
   font-family: ${config.sanSerifFontFamily};
   color: ${theme.colors.grey.light};
   margin-bottom: 20px;
 
   @media ${media.large} {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   @media ${media.medium} {
     font-size: 1.3rem;
@@ -119,7 +120,7 @@ const SubHeader: any = styled.div`
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
-    height: 60px;
+    height: 50px;
 
     @media ${media.large} {
       height: 52px;
@@ -196,6 +197,31 @@ const LinkWrapper = styled.div`
   justify-content: flex-start;
 `
 
+const OfficeWorker = styled.img`
+  position: absolute;
+  width: 30vw;
+  opacity: 0.1;
+  top: 17%;
+  right: 10%;
+  transform: rotate(2deg);
+  @media ${media.huge} {
+    top: 27%;
+    transform: rotate(2deg);
+  }
+  @media ${media.large} {
+    width: 50vw;
+    top: 50%;
+    right: 50%;
+    transform: rotate(0deg) translate(50%, -20%);
+  }
+  @media ${media.small} {
+    width: 90vw;
+    top: 50%;
+    right: 50%;
+    transform: rotate(0deg) translate(50%, -20%);
+  }
+`
+
 export default class IndexPage extends React.Component<PageProps> {
   public render() {
     // const { data } = this.props
@@ -216,7 +242,7 @@ export default class IndexPage extends React.Component<PageProps> {
                   <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
                   <a href="https://twitter.com/ndom91">Twitter</a>.
                 </SubHeader>
-                <LinkWrapper>
+                {/* <LinkWrapper>
                   <Link to="/about#work">
                     <Button big={true}>
                       <svg viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8">
@@ -241,8 +267,9 @@ export default class IndexPage extends React.Component<PageProps> {
                       Contact
                     </Button>
                   </Link>
-                </LinkWrapper>
+                </LinkWrapper> */}
               </HomepageContent>
+              <OfficeWorker src={office} alt="Office Worker" />
             </GridRow>
           </Homepage>
         </Wrapper>
