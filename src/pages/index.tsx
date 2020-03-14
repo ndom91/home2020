@@ -8,7 +8,7 @@ import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
-import office from '../../static/assets/office.svg'
+import office from '../../static/assets/office2.svg'
 
 const Homepage = styled.main`
   display: flex;
@@ -141,7 +141,7 @@ const SubHeader: any = styled.div`
       }
     }
     @media ${media.small} {
-      height: 39px;
+      height: 33px;
       &:before {
         bottom: 7px !important;
       }
@@ -203,16 +203,22 @@ const OfficeWorker = styled.img`
   opacity: 0.08;
   top: 20%;
   right: 10%;
-  transform: rotate(6deg);
+  transform: rotate(12deg);
   @media ${media.huge} {
-    top: 27%;
-    transform: rotate(2deg);
+    top: 20%;
+    right: 4%;
+    width: 50vw;
+    transform: rotate(12deg);
   }
   @media ${media.large} {
-    width: 50vw;
+    top: 20%;
+    right: 5%;
+    width: 60vw;
+    transform: rotate(12deg);
+    /* width: 50vw;
     top: 50%;
     right: 50%;
-    transform: rotate(0deg) translate(50%, -30%);
+    transform: rotate(0deg) translate(50%, -30%); */
   }
   @media ${media.small} {
     display: none;
