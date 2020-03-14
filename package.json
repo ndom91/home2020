@@ -70,6 +70,8 @@
     "typography": "^0.16.19"
   },
   "dependencies": {
-    "gatsby-plugin-google-tagmanager": "^2.1.26"
+    "gatsby-plugin-google-tagmanager": "^2.1.26",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-transformer-json": "^2.2.27"
   }
 }

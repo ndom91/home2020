@@ -34,6 +34,14 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/data`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
@@ -63,6 +71,14 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography.ts',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: '/static/assets/tech/',
+        },
       },
     },
     {

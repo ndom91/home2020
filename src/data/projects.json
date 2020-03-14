@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Newtelco Homepage",
+    "url": "https://github.com/ndom91/newtelco-gatsby-netlify",
+    "image": "assets/screenshots/newtelcohome.png",
+    "desc": "Homepage redesign for NewTelco GmbH (2020)",
+    "tech": ["react", "cloudflareworkers", "gatsby", "reactspring", "netlify"]
+  },
+  {
+    "name": "Company Absences",
+    "url": "https://github.com/ndom91/timeoff",
+    "image": "assets/screenshots/timeoff.png",
+    "desc": "Company Absences Management application for making, approving, auditing, and checking up on vacation/sick/business trip requests",
+    "tech": ["react", "nextjs", "activedirectory"]
+  },
+  {
+    "name": "Network Maintenance",
+    "url": "https://github.com/ndom91/next-maintenance",
+    "image": "assets/screenshots/maintenance.png",
+    "desc": "Application for managing, organizing, and auditing Network Maintenance requests from suppliers and forwarding on notifications to the appropriate customers",
+    "tech": ["react", "nextjs", "algolia", "express", "nodejs"]
+  },
+  {
+    "name": "Youtube Playlists",
+    "url": "https://github.com/ndom91/youtube-playlists",
+    "image": "assets/screenshots/youtube.png",
+    "desc": "Side-project for creating dynamic YouTube Playlists. PWA which makes use of the Web Share Target API as well as Google's Cast API (Coming Soon)",
+    "tech": ["react", "cloudflareworkers", "styledcomponents", "netlify"]
+  },
+  {
+    "name": "Newtelco Landing",
+    "url": "https://github.com/ndom91/gatsby-landing",
+    "image": "assets/screenshots/homenewtelco.png",
+    "desc": "Browser 'New Tab' page for Employees at Newtelco GmbH",
+    "tech": ["react", "cloudflareworkers", "gatsby", "styledcomponents", "netlify"]
+  },
+  {
+    "name": "NOC Dashboard",
+    "url": "https://github.com/ndom91/nt-noc-dashboard",
+    "image": "assets/screenshots/nocdashboard.png",
+    "desc": "Network Operations Center Dashboard which is displayed 24/7 on a large display in our office. Includes stats from Netdata as well as Observium and live video feeds transcoded via ffmpeg live for displaying in the browser"
+  },
+  {
+    "name": "PreactTyper",
+    "url": "https://github.com/ndom91/terminal-homepage",
+    "image": "assets/screenshots/terminal.gif",
+    "desc": "Pika / Preact example project. Typer effect in Terminal",
+    "tech": ["pika", "preact", "typescript"]
+  },
+  {
+    "name": "@pikapkg/snowpack-init",
+    "url": "https://github.com/pikapkg/snowpack-init",
+    "image": "assets/screenshots/snowpack.gif",
+    "desc": "Bootstrapping cli for @pikapkg/snowpack",
+    "tech": ["pika", "nodejs"]
+  }
+]
