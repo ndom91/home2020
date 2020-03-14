@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
+import Img from 'gatsby-image'
 
 const ProjectCard = styled.div`
   border: 1px solid ${theme.colors.grey.ultraUltraLight};
@@ -162,13 +163,28 @@ interface ProjectProps {
       desc: string
     }
   }
+  image: {
+    node: {
+      fluid: {
+        base64: string
+        aspectRatio: number
+        src: string
+        srcSet: string
+        sizes: string
+      }
+    }
+  }
 }
 
 const Project: React.SFC<ProjectProps> = props => {
   return (
     <ProjectCard>
       <ProjectSquareLeft />
-      <ProjectScreenshot src={props.project.node.image} alt={`Screenshot ${props.project.node.name}`} />
+      {props.image ? (
+        <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
+      ) : (
+        <ProjectScreenshot src={`assets/images/screenshots/${props.project.node.image}`} alt={`Screenshot ${props.project.node.name}`} />
+      )}
       <ProjectTechWrapper>
         {props.project.node.tech &&
           props.project.node.tech.map(tech => (
@@ -176,7 +192,7 @@ const Project: React.SFC<ProjectProps> = props => {
           ))}
       </ProjectTechWrapper>
       <ProjectDetails className="project__details">
-        <a target="_blank" rel="noopener noreferer" href={props.project.node.url}>
+        <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
           <ProjectLabel>
             {props.project.node.name}
             <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">

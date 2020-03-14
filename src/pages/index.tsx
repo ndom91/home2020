@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Wrapper, Button } from '../components'
+import { Layout, Wrapper } from '../components'
 import PageProps from '../models/PageProps'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
-import office from '../../static/assets/office.svg'
 
 const Homepage = styled.main`
   display: flex;
@@ -191,13 +190,6 @@ const SubHeader: any = styled.div`
   }
 `
 
-const LinkWrapper = styled.div`
-  margin-top: 20px;
-  display: flex;
-  width: auto;
-  justify-content: flex-start;
-`
-
 const OfficeWorker = styled.img`
   position: absolute;
   width: 40vw;
@@ -216,23 +208,14 @@ const OfficeWorker = styled.img`
     right: 5%;
     width: 60vw;
     transform: rotate(12deg);
-    /* width: 50vw;
-    top: 50%;
-    right: 50%;
-    transform: rotate(0deg) translate(50%, -30%); */
   }
   @media ${media.small} {
     display: none;
-    /* width: 90vw;
-    top: 50%;
-    right: 50%;
-    transform: rotate(0deg) translate(50%, -20%); */
   }
 `
 
 export default class IndexPage extends React.Component<PageProps> {
   public render() {
-    // const { data } = this.props
     return (
       <Layout>
         <Wrapper fullWidth={true}>
@@ -250,34 +233,8 @@ export default class IndexPage extends React.Component<PageProps> {
                   <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
                   <a href="https://twitter.com/ndom91">Twitter</a>.
                 </SubHeader>
-                {/* <LinkWrapper>
-                  <Link to="/about#work">
-                    <Button big={true}>
-                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8">
-                        <path
-                          fill-rule="evenodd"
-                          d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Work
-                    </Button>
-                  </Link>
-                  <Link to="/about#contact">
-                    <Button big>
-                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8">
-                        <path
-                          fillRule="evenodd"
-                          d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      Contact
-                    </Button>
-                  </Link>
-                </LinkWrapper> */}
               </HomepageContent>
-              <OfficeWorker src={office} alt="Office Worker" />
+              <OfficeWorker src="assets/office.svg" alt="Office Worker" />
             </GridRow>
           </Homepage>
         </Wrapper>

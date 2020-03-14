@@ -7,6 +7,7 @@ import '../utils/prismjs-theme.css'
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
 import Project from '../components/Project'
+import Img from 'gatsby-image'
 
 const AboutHeader = styled.h1`
   text-align: center;
@@ -27,7 +28,7 @@ const SubHeaderText = styled.div`
   font-weight: 300;
 `
 
-const HeaderImage = styled.img`
+const HeaderImage = styled.div`
   width: 450px;
   border: 15px solid ${theme.colors.primary};
   border-radius: 10px;
@@ -51,7 +52,7 @@ interface Project {
 }
 
 const About = () => {
-  const { allProjectsJson } = useStaticQuery(
+  const { allProjectsJson, allImageSharp } = useStaticQuery(
     graphql`
       query allProjectsQuery {
         allProjectsJson {
@@ -65,11 +66,24 @@ const About = () => {
             }
           }
         }
+        allImageSharp {
+          edges {
+            node {
+              fluid {
+                ...GatsbyImageSharpFluid
+                originalName
+              }
+            }
+          }
+        }
       }
     `,
   )
 
   const projects = allProjectsJson.edges
+  const images = allImageSharp.edges
+
+  console.log(images.find(img => img.node.fluid.originalName === 'ndo2.jpg'))
 
   return (
     <Layout>
@@ -81,7 +95,14 @@ const About = () => {
         <Content>
           <AboutHeader>Hey there.</AboutHeader>
           <SubHeader>
-            <HeaderImage src="assets/ndo2.jpg" />
+            <HeaderImage>
+              <Img
+                style={{ width: '400px' }}
+                fluid={images.find(img => img.node.fluid.originalName === 'ndo2.jpg').node.fluid}
+                fadeIn
+                alt="ndom91"
+              />
+            </HeaderImage>
             <SubHeaderText>
               My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the (underrated) city of
               Frankfurt am Main, Germany and I've been building stuff on the web for the past 2-3 years.
@@ -89,7 +110,9 @@ const About = () => {
           </SubHeader>
           <Projects>
             {projects.map((project: Project, index: number) => {
-              return <Project project={project} key={index} />
+              return (
+                <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
+              )
             })}
           </Projects>
         </Content>
