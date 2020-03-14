@@ -109,7 +109,7 @@ const SubHeader: any = styled.div`
     font-size: 1.3rem;
   }
   @media ${media.small} {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   a {
@@ -199,11 +199,11 @@ const LinkWrapper = styled.div`
 
 const OfficeWorker = styled.img`
   position: absolute;
-  width: 30vw;
-  opacity: 0.1;
-  top: 17%;
+  width: 40vw;
+  opacity: 0.08;
+  top: 20%;
   right: 10%;
-  transform: rotate(2deg);
+  transform: rotate(6deg);
   @media ${media.huge} {
     top: 27%;
     transform: rotate(2deg);
@@ -212,13 +212,14 @@ const OfficeWorker = styled.img`
     width: 50vw;
     top: 50%;
     right: 50%;
-    transform: rotate(0deg) translate(50%, -20%);
+    transform: rotate(0deg) translate(50%, -30%);
   }
   @media ${media.small} {
-    width: 90vw;
+    display: none;
+    /* width: 90vw;
     top: 50%;
     right: 50%;
-    transform: rotate(0deg) translate(50%, -20%);
+    transform: rotate(0deg) translate(50%, -20%); */
   }
 `
 

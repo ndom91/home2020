@@ -81,6 +81,9 @@ const FooterContent = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
+  @media ${media.small} {
+    margin: 15px;
+  }
 `
 
 const FooterSection = styled.div`
@@ -109,7 +112,7 @@ const FooterSection = styled.div`
     margin: 20px;
   }
   @media ${media.small} {
-    margin: 10px;
+    margin: 5px;
   }
 `
 
