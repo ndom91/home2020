@@ -31,7 +31,8 @@ export const PaginationContent = styled.div`
 
       &:hover,
       &.current {
-        background-color: ${curriedDarken(0.2, theme.colors.primary)};
+        /* background-color: ${curriedDarken(0.1, theme.colors.primary)}; */
+        background-color:  ${theme.colors.primary};
         color: ${theme.colors.white};
       }
       

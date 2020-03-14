@@ -93,6 +93,12 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const postTemplate = path.resolve(`src/templates/Post.tsx`)
+  const aboutTemplate = path.resolve(`src/templates/About.tsx`)
+
+  createPage({
+    path: `/about`,
+    component: aboutTemplate,
+  })
 
   return graphql(`
     {

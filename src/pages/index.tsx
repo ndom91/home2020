@@ -16,6 +16,7 @@ const Homepage = styled.main`
   flex-direction: row;
   width: 100%;
   max-width: 1200px;
+  flex: 1;
   margin: 0 auto;
   @media ${media.large} {
     height: 100%;

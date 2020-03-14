@@ -60,8 +60,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const PrimaryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`
+
 const Footer = styled.footer`
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -136,7 +142,7 @@ export class Layout extends React.PureComponent<{}> {
         `}
         render={data => (
           <ThemeProvider theme={theme}>
-            <React.Fragment>
+            <PrimaryWrapper>
               <GlobalStyle />
               {children}
               <Footer>
@@ -163,7 +169,7 @@ export class Layout extends React.PureComponent<{}> {
                   </FooterSection>
                 </FooterContent>
               </Footer>
-            </React.Fragment>
+            </PrimaryWrapper>
           </ThemeProvider>
         )}
       />
