@@ -17,6 +17,7 @@ const HeaderWrapper: any = styled.header`
     ),
     url(${(props: any) => props.banner}) no-repeat;
   background-size: cover;
+  background-position-y: 40%;
   padding: 2rem 2rem 3rem;
   text-align: center;
   display: flex;
