@@ -8,7 +8,7 @@ import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
-import office from '../../static/assets/office2.svg'
+import office from '../../static/assets/office.svg'
 
 const Homepage = styled.main`
   display: flex;
