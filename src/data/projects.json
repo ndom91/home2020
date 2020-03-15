@@ -57,7 +57,7 @@
   {
     "name": "node-snmp",
     "url": "https://github.com/newtelco/node-snmp",
-    "image": "node-snmp.jpg",
+    "image": "node-snmp.png",
     "desc": "SNMP based checker for dry contact I/O and temperature monitoring in the datacenter",
     "tech": ["nodejs", "telegram", "gmail"]
   }
