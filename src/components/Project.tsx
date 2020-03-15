@@ -188,7 +188,7 @@ const Project: React.SFC<ProjectProps> = props => {
       <ProjectTechWrapper>
         {props.project.node.tech &&
           props.project.node.tech.map(tech => (
-            <ProjectTech height="64" className="project__tech" src={`assets/tech/${tech}.svg`} key={tech} alt={tech} title={tech} />
+            <ProjectTech height="64" className="project__tech" src={`assets/images/tech/${tech}.svg`} key={tech} alt={tech} title={tech} />
           ))}
       </ProjectTechWrapper>
       <ProjectDetails className="project__details">
