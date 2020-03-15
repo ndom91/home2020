@@ -1,12 +1,11 @@
 const sizes = {
   large: '1400px',
   medium: '700px',
-  small: '375px',
-  xsmall: '320px',
+  small: '425px',
+  xsmall: '350px',
 }
 
 export const media = {
-  huge: `(max-width: ${sizes.huge})`,
   large: `(max-width: ${sizes.large})`,
   medium: `(max-width: ${sizes.medium})`,
   small: `(max-width: ${sizes.small})`,

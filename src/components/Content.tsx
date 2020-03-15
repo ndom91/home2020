@@ -25,13 +25,14 @@ export const Content = styled.div`
       }
     }
   }
-  @media ${media.huge} {
+  @media ${media.large} {
+    margin-top: -35px;
     padding: 3rem 5rem;
   }
-  @media ${media.large} {
-    padding: 3rem 3rem;
+  @media ${media.medium} {
+    padding: 2rem 4.5rem;
   }
   @media ${media.small} {
-    padding: 2rem 1.5rem;
+    padding: 2rem 2.5rem;
   }
 `

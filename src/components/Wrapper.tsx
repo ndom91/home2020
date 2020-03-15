@@ -10,7 +10,7 @@ export const Wrapper: any = styled.div`
   @media ${media.large} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 3rem')};
   }
-  @media ${media.small} {
+  @media ${media.medium} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
   }
 `

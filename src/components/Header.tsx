@@ -60,7 +60,7 @@ const Content = styled.div`
   justify-content: space-around;
   align-items: flex-end;
   z-index: 99;
-  @media ${media.small} {
+  @media ${media.medium} {
     display: none;
   }
 

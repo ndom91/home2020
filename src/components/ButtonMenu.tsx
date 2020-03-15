@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     align-items: center;
   }
   justify-items: center;
-  @media ${media.small} {
+  @media ${media.medium} {
     display: flex;
     margin: 1rem;
   }
@@ -30,7 +30,7 @@ const ButtonHamburger = styled.button`
   z-index: 99;
   top: ${theme.space.medium};
   right: ${theme.space.medium};
-  @media ${media.small} {
+  @media ${media.medium} {
     display: inline-block;
   }
 

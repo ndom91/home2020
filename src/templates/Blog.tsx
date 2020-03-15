@@ -5,6 +5,7 @@ import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } f
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import Data from '../models/Data'
+import { motion } from 'framer-motion'
 
 const BlogHeader = styled.h1`
   text-align: center;
@@ -25,6 +26,12 @@ export default class BlogPage extends React.Component<Props> {
 
     const { data } = this.props
     const { edges, totalCount } = data.allMarkdownRemark
+    const list = {
+      visible: {
+        opacity: [0, 1],
+        transition: { staggerChildren: 0.15, delayChildren: 0.15, type: 'inertia', damping: 0 },
+      },
+    }
 
     return (
       <Layout>
@@ -36,17 +43,19 @@ export default class BlogPage extends React.Component<Props> {
         <Wrapper>
           <Content>
             <BlogHeader>Blog</BlogHeader>
-            {edges.map(post => (
-              <Article
-                title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
-                excerpt={post.node.excerpt}
-                timeToRead={post.node.timeToRead}
-                slug={post.node.fields.slug}
-                category={post.node.frontmatter.category}
-                key={post.node.fields.slug}
-              />
-            ))}
+            <motion.div initial animate="visible" variants={list}>
+              {edges.map(post => (
+                <Article
+                  title={post.node.frontmatter.title}
+                  date={post.node.frontmatter.date}
+                  excerpt={post.node.excerpt}
+                  timeToRead={post.node.timeToRead}
+                  slug={post.node.fields.slug}
+                  category={post.node.frontmatter.category}
+                  key={post.node.fields.slug}
+                />
+              ))}
+            </motion.div>
             <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
           </Content>
         </Wrapper>

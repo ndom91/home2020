@@ -192,24 +192,18 @@ const SubHeader: any = styled.div`
 
 const OfficeWorker = styled.img`
   position: absolute;
-  width: 40vw;
+  width: 50vw;
   opacity: 0.08;
   top: 20%;
   right: 10%;
   transform: rotate(12deg);
-  @media ${media.huge} {
-    top: 20%;
-    right: 4%;
-    width: 50vw;
-    transform: rotate(12deg);
-  }
   @media ${media.large} {
     top: 20%;
     right: 5%;
     width: 60vw;
     transform: rotate(12deg);
   }
-  @media ${media.small} {
+  @media ${media.medium} {
     display: none;
   }
 `
