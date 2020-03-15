@@ -45,6 +45,45 @@ const Projects = styled.div`
   align-items: center;
 `
 
+const LocationIcon = styled.div`
+  display: block;
+  margin: 0 7px;
+  transition: transform 150ms ease-in-out;
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  &:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 6px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateY(-3px);
+    cursor: pointer;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+`
+
 interface Project {
   node: {
     name: string
@@ -106,8 +145,27 @@ const About = () => {
               />
             </HeaderImage>
             <SubHeaderText>
-              My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the (underrated) city of
-              Frankfurt am Main, Germany and I've been building stuff on the web for the past 2-3 years.
+              My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the city of Frankfurt am
+              Main, Germany
+              <LocationIcon>
+                <a
+                  href="https://www.google.com/maps/place/Frankfurt/@50.121212,8.6365638,11z"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Google Maps - Frankfurt am Main"
+                >
+                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke={theme.colors.primary}>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </a>
+              </LocationIcon>
+              and I've been building stuff on the web for the past 2-3 years.
             </SubHeaderText>
           </SubHeader>
           <Projects>

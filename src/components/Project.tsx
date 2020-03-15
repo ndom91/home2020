@@ -153,6 +153,12 @@ const ProjectDesc = styled.div`
   color: ${theme.colors.grey.default};
 `
 
+const ImgWrapper = styled.div`
+  margin: 20px;
+  padding: 20px;
+  background-color: ${theme.colors.grey.ultraUltraLight};
+`
+
 interface ProjectProps {
   project: {
     node: {
@@ -181,7 +187,9 @@ const Project: React.SFC<ProjectProps> = props => {
     <ProjectCard>
       <ProjectSquareLeft />
       {props.image ? (
-        <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
+        <ImgWrapper>
+          <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
+        </ImgWrapper>
       ) : (
         <ProjectScreenshot src={`assets/images/screenshots/${props.project.node.image}`} alt={`Screenshot ${props.project.node.name}`} />
       )}

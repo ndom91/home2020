@@ -1,21 +1,21 @@
 [
   {
     "name": "Newtelco Homepage",
-    "url": "https://github.com/ndom91/newtelco-gatsby-netlify",
+    "url": "https://github.com/newtelco/newtelco-gatsby-netlify",
     "image": "newtelcohome.png",
     "desc": "Homepage redesign for NewTelco GmbH (2020)",
     "tech": ["react", "cloudflareworkers", "gatsby", "reactspring", "netlify"]
   },
   {
     "name": "Company Absences",
-    "url": "https://github.com/ndom91/timeoff",
+    "url": "https://github.com/newtelco/timeoff",
     "image": "timeoff.png",
     "desc": "Company Absences Management application for making, approving, auditing, and checking up on vacation/sick/business trip requests",
     "tech": ["react", "nextjs", "activedirectory"]
   },
   {
     "name": "Network Maintenance",
-    "url": "https://github.com/ndom91/next-maintenance",
+    "url": "https://github.com/newtelco/next-maintenance",
     "image": "maintenance.png",
     "desc": "Application for managing, organizing, and auditing Network Maintenance requests from suppliers and forwarding on notifications to the appropriate customers",
     "tech": ["react", "nextjs", "algolia", "express", "nodejs"]
@@ -29,7 +29,7 @@
   },
   {
     "name": "Newtelco Landing",
-    "url": "https://github.com/ndom91/gatsby-landing",
+    "url": "https://github.com/newtelco/gatsby-landing",
     "image": "homenewtelco.png",
     "desc": "Browser 'New Tab' page for Employees at Newtelco GmbH",
     "tech": ["react", "cloudflareworkers", "gatsby", "styledcomponents", "netlify"]
@@ -53,5 +53,12 @@
     "image": "snowpack.gif",
     "desc": "Bootstrapping cli for @pikapkg/snowpack",
     "tech": ["pika", "nodejs"]
+  },
+  {
+    "name": "node-snmp",
+    "url": "https://github.com/newtelco/node-snmp",
+    "image": "node-snmp.jpg",
+    "desc": "SNMP based checker for dry contact I/O and temperature monitoring in the datacenter",
+    "tech": ["nodejs", "telegram", "gmail"]
   }
 ]
