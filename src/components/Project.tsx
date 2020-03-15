@@ -91,6 +91,10 @@ const ProjectScreenshot = styled.img`
   border: 25px solid ${theme.colors.grey.ultraUltraLight};
   overflow: hidden;
   z-index: -2;
+
+  @media ${media.medium} {
+    width: calc(100% - 40px);
+  }
 `
 
 const ProjectLabel = styled.h3`

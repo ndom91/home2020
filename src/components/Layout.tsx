@@ -87,8 +87,9 @@ const FooterContent = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  @media ${media.small} {
+  @media ${media.medium} {
     margin: 15px;
+    width: 90%;
   }
 `
 
@@ -115,7 +116,7 @@ const FooterSection = styled.div`
     letter-spacing: -0.2px;
   }
   @media ${media.medium} {
-    margin: 20px;
+    margin: 10px;
   }
   @media ${media.small} {
     margin: 5px;

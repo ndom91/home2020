@@ -192,7 +192,7 @@ const SubHeader: any = styled.div`
 
 const OfficeWorker = styled.img`
   position: absolute;
-  width: 50vw;
+  width: 40vw;
   opacity: 0.08;
   top: 20%;
   right: 10%;

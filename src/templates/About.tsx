@@ -17,6 +17,9 @@ const AboutHeader = styled.h1`
   font-size: 5rem;
   font-weight: 500;
   padding-bottom: 50px;
+  @media ${media.medium} {
+    font-size: 3rem;
+  }
 `
 
 const SubHeader = styled.div`
@@ -33,7 +36,7 @@ const SubHeaderText = styled.div`
   font-family: ${config.sanSerifFontFamily};
   font-weight: 300;
   @media ${media.medium} {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 `
 
@@ -49,9 +52,9 @@ const HeaderImage = styled.div`
     margin: 10px 10px 40px 10px;
   }
   @media ${media.small} {
-    width: 80%;
+    width: 110%;
     transform: none;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 `
 
