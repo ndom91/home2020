@@ -87,8 +87,6 @@ const About = () => {
   const projects = allProjectsJson.edges
   const images = allImageSharp.edges
 
-  console.log(images.find(img => img.node.fluid.originalName === 'ndo2.jpg'))
-
   return (
     <Layout>
       <Helmet title={'About'} />
