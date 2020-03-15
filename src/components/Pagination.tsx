@@ -151,7 +151,7 @@ export class Pagination extends React.PureComponent<Props> {
         <PaginationContent>
           {!isFirst && (
             <Link className="prev page-numbers" to={prevPage} rel="prev">
-              {window && window.innerWidth > 700 ? '← Prev' : '←'}
+              {typeof window !== 'undefined' && window.innerWidth > 700 ? '← Prev' : '←'}
             </Link>
           )}
           <PageNumberWrapper>
@@ -168,7 +168,7 @@ export class Pagination extends React.PureComponent<Props> {
           {!isLast && (
             <Link className="next page-numbers" to={nextPage} rel="next">
               {/* Next → */}
-              {window && window.innerWidth > 700 ? 'Next →' : '→'}
+              {typeof window !== 'undefined' && window.innerWidth > 700 ? 'Next →' : '→'}
             </Link>
           )}
         </PaginationContent>
