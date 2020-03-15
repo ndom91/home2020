@@ -66,6 +66,7 @@ export const Article: React.SFC<Props> = props => {
       transition: {
         type: 'inertia',
         damping: 10,
+        duration: 0.3,
       },
     },
   }

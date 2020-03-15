@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'
-// import config from '../../config/SiteConfig'
 import { motion } from 'framer-motion'
 
 const OverlayWrapper = styled.div`
@@ -25,6 +24,11 @@ const OverlayWrapper = styled.div`
       z-index: 999;
       opacity: 1;
     }
+  }
+  &.hidden {
+    z-index: 9998;
+    transform: translate(0%, 0%);
+    height: 0vh;
   }
 
   & #shape-overlays {
@@ -58,6 +62,9 @@ const Circle = styled.div`
   &.active {
     transform: scale(1.5);
   }
+  /* &.hidden {
+    transform: scale(0);
+  } */
 `
 
 const Navigation = styled.div`
@@ -77,6 +84,9 @@ const Navigation = styled.div`
   &.active {
     opacity: 1;
   }
+  /* &.hidden {
+    opacity: 0;
+  } */
 `
 
 const NavigationLink = styled(Link)`
@@ -134,33 +144,31 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
       opacity: [0, 1],
       transition: {
         duration: 0.3,
-        type: 'inertia',
-        damping: 10,
       },
     },
   }
   return (
-    <OverlayWrapper className={isActive ? 'active' : ''}>
-      <Navigation className={isActive ? 'active' : ''}>
+    <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
+      <Navigation className={isActive ? 'active' : 'hidden'}>
         <motion.div animate={isActive ? 'visible' : 'hidden'} variants={list}>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
             <NavigationLink activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
             <NavigationLink activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
             <NavigationLink activeClassName="active" to={`/about`}>
               <MenuNumber>03</MenuNumber>About
             </NavigationLink>
           </motion.div>
         </motion.div>
       </Navigation>
-      <Circle className={isActive ? 'active' : ''} />
+      <Circle className={isActive ? 'active' : 'hidden'} />
       {/* <S.ShapeOverlays className="shape-overlays" id="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path className="shape-overlays__path" />
         <path className="shape-overlays__path" />

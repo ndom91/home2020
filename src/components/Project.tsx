@@ -203,6 +203,7 @@ const Project: React.SFC<ProjectProps> = props => {
       opacity: [0, 1],
       transition: {
         x: { stiffness: 1000, velocity: -100 },
+        duration: 0.3,
       },
     },
   }

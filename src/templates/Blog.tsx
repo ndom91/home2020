@@ -29,7 +29,10 @@ export default class BlogPage extends React.Component<Props> {
     const list = {
       visible: {
         opacity: [0, 1],
-        transition: { staggerChildren: 0.15, delayChildren: 0.15, type: 'inertia', damping: 0 },
+        transition: {
+          staggerChildren: 0.15,
+          delayChildren: 0.15,
+        },
       },
     }
 
