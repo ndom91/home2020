@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-// import { media } from '../utils/media'
+import { media } from '../utils/media'
 import theme from '../../config/Theme'
 // import config from '../../config/SiteConfig'
+import { motion } from 'framer-motion'
 
 const OverlayWrapper = styled.div`
   width: 100vw;
@@ -102,6 +103,10 @@ const NavigationLink = styled(Link)`
     top: 75px;
     left: -150px;
   }
+  @media ${media.medium} {
+    margin: 30px 0;
+    font-size: 2.3rem;
+  }
 `
 
 const MenuNumber = styled.div`
@@ -116,18 +121,44 @@ type MenuProps = {
 }
 
 const OverlayMenu = ({ isActive }: MenuProps) => {
+  const list = {
+    visible: {
+      opacity: [0, 1],
+      transition: { staggerChildren: 0.15, delayChildren: 0.35, type: 'inertia' },
+    },
+  }
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      x: [-50, 0],
+      opacity: [0, 1],
+      transition: {
+        duration: 0.3,
+        type: 'inertia',
+        damping: 10,
+      },
+    },
+  }
   return (
     <OverlayWrapper className={isActive ? 'active' : ''}>
       <Navigation className={isActive ? 'active' : ''}>
-        <NavigationLink activeClassName="active" to={`/`}>
-          <MenuNumber>01</MenuNumber>Home
-        </NavigationLink>
-        <NavigationLink activeClassName="active" to={`/blog`}>
-          <MenuNumber>02</MenuNumber> Blog
-        </NavigationLink>
-        <NavigationLink activeClassName="active" to={`/about`}>
-          <MenuNumber>03</MenuNumber>About
-        </NavigationLink>
+        <motion.div animate={isActive ? 'visible' : 'hidden'} variants={list}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
+            <NavigationLink activeClassName="active" to={`/`}>
+              <MenuNumber>01</MenuNumber>Home
+            </NavigationLink>
+          </motion.div>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+            <NavigationLink activeClassName="active" to={`/blog`}>
+              <MenuNumber>02</MenuNumber> Blog
+            </NavigationLink>
+          </motion.div>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+            <NavigationLink activeClassName="active" to={`/about`}>
+              <MenuNumber>03</MenuNumber>About
+            </NavigationLink>
+          </motion.div>
+        </motion.div>
       </Navigation>
       <Circle className={isActive ? 'active' : ''} />
       {/* <S.ShapeOverlays className="shape-overlays" id="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
