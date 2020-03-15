@@ -11,7 +11,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: config.headerFontFamily,
-      styles: ['400', '700'],
+      styles: ['100', '400', '700'],
     },
     {
       name: config.bodyFontFamily,

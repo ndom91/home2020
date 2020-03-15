@@ -25,19 +25,19 @@ const Prev = styled.div`
   align-items: flex-start;
   z-index: 3;
   background-color: white;
-  border: 1px solid ${props => props.theme.colors.grey.ultraUltraLight};
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 5px 10px ${props => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px ${props => props.theme.colors.grey.ultraUltraLight};
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: ${props => props.theme.colors.grey.light};
   }
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
   }
 `
 
@@ -47,20 +47,20 @@ const Next = styled.div`
   align-items: flex-end;
   z-index: 3;
   background-color: white;
-  border: 1px solid ${props => props.theme.colors.grey.ultraUltraLight};
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 5px 10px ${props => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px ${props => props.theme.colors.grey.ultraUltraLight};
   text-align: right;
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: ${props => props.theme.colors.grey.light};
   }
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
   }
 `
 

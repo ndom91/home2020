@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext, SectionTitle, Content } from '../components'
 import config from '../../config/SiteConfig'
-import theme from '../../config/Theme'
 import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
 import Post from '../models/Post'
@@ -27,6 +26,7 @@ const Position = styled.svg`
 const TagWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  margin-top: 20px;
 `
 const Tag = styled.div`
   padding: 10px 15px;

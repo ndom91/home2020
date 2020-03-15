@@ -99,8 +99,8 @@ const LinkWrapper = styled(Link)`
       bottom: 0;
       background: ${theme.colors.grey.ultraLight};
       height: 4px;
-      transition-property: left;
-      transition-duration: 200ms;
+      transition-property: left, background-color;
+      transition-duration: 400ms;
       transition-timing-function: ease-in-out;
     }
   }
@@ -127,10 +127,10 @@ const LinkWrapper = styled(Link)`
 
 const MenuNumber = styled.span`
   color: ${theme.colors.grey.light};
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  font-family: ${config.serifFontFamily};
-  margin-right: 5px;
+  font-family: ${config.sanSerifFontFamily};
+  margin-right: 8px;
 `
 
 interface Props {
@@ -146,13 +146,13 @@ export class Header extends React.PureComponent<Props> {
           <ButtonMenu />
           <Content>
             <LinkWrapper to={`/`} activeClassName="active">
-              <MenuNumber>01</MenuNumber>Home
+              <MenuNumber>01</MenuNumber>home
             </LinkWrapper>
-            <LinkWrapper to={`/blog`} activeClassName="active">
-              <MenuNumber>02</MenuNumber>Blog
+            <LinkWrapper to={`/blog`} partiallyActive activeClassName="active">
+              <MenuNumber>02</MenuNumber>blog
             </LinkWrapper>
             <LinkWrapper to={`/about`} activeClassName="active">
-              <MenuNumber>03</MenuNumber>About
+              <MenuNumber>03</MenuNumber>about
             </LinkWrapper>
           </Content>
         </ContentWrapper>
