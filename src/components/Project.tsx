@@ -183,9 +183,18 @@ interface ProjectProps {
 }
 
 const Project: React.SFC<ProjectProps> = props => {
-  const item = { hidden: { y: [-50, 0], opacity: [0, 1] } }
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      x: [-50, 0],
+      opacity: [0, 1],
+      transition: {
+        x: { stiffness: 1000, velocity: -100 },
+      },
+    },
+  }
   return (
-    <motion.div variants={item} whileHover={{ scale: 1.03 }}>
+    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.03 }}>
       <ProjectCard>
         <ProjectSquareLeft />
         {props.image ? (

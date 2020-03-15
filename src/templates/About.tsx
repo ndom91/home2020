@@ -127,7 +127,12 @@ const About = () => {
 
   const projects = allProjectsJson.edges
   const images = allImageSharp.edges
-  const list = { hidden: { opacity: 1 } }
+  const list = {
+    visible: {
+      opacity: [0, 1],
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  }
 
   return (
     <Layout>
@@ -164,7 +169,7 @@ const About = () => {
                       strokeWidth="2"
                       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                     />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </a>
               </LocationIcon>
@@ -172,17 +177,7 @@ const About = () => {
             </SubHeaderText>
           </SubHeader>
           <Projects>
-            <motion.div
-              initial
-              animate="hidden"
-              transition={{
-                ease: 'easeIn',
-                duration: 2,
-                staggerChildren: 0.15,
-              }}
-              variants={list}
-              className="stat-wrapper"
-            >
+            <motion.div initial animate="visible" variants={list}>
               {projects.map((project: Project, index: number) => {
                 return (
                   <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
