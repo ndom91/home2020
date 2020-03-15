@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Content } from '../components'
 import '../utils/prismjs-theme.css'
 import config from '../../config/SiteConfig'
+import { media } from '../utils/media'
 import theme from '../../config/Theme'
 import Project from '../components/Project'
 import Img from 'gatsby-image'
@@ -33,6 +34,9 @@ const HeaderImage = styled.div`
   border: 15px solid ${theme.colors.primary};
   border-radius: 10px;
   transform: translateX(-20%);
+  @media ${media.huge} {
+    transform: translateX(-10%);
+  }
 `
 
 const Projects = styled.div`

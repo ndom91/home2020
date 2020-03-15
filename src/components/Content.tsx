@@ -25,6 +25,9 @@ export const Content = styled.div`
       }
     }
   }
+  @media ${media.huge} {
+    padding: 3rem 5rem;
+  }
   @media ${media.large} {
     padding: 3rem 3rem;
   }
