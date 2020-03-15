@@ -4,6 +4,7 @@ import theme from '../../config/Theme'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Post from '../models/Post'
+import { media } from '../utils/media'
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,6 +18,10 @@ const Wrapper = styled.div`
     align-items: center;
   }
   justify-content: space-between;
+  @media ${media.medium} {
+    flex-direction: column;
+    transform: translateY(-4rem);
+  }
 `
 
 const Prev = styled.div`
@@ -38,6 +43,10 @@ const Prev = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
+  }
+  @media ${media.medium} {
+    width: 100%;
+    padding: 10px 20px;
   }
 `
 
@@ -62,6 +71,11 @@ const Next = styled.div`
     transform: translateY(-5px);
     box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
   }
+  @media ${media.medium} {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
 `
 
 const ArrowPrev = styled.svg`
@@ -71,6 +85,10 @@ const ArrowPrev = styled.svg`
   left: -75px;
   width: 128px;
   z-index: -1;
+  @media ${media.medium} {
+    top: 10px;
+    left: -55px;
+  }
 `
 const ArrowNext = styled.svg`
   position: absolute;
@@ -79,6 +97,10 @@ const ArrowNext = styled.svg`
   right: -75px;
   width: 128px;
   z-index: -1;
+  @media ${media.medium} {
+    top: 10px;
+    right: -55px;
+  }
 `
 
 interface Props {

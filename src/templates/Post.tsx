@@ -8,6 +8,7 @@ import config from '../../config/SiteConfig'
 import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
 import Post from '../models/Post'
+import { media } from '../utils/media'
 
 const PostContent = styled.div`
   margin-top: 4rem;
@@ -17,6 +18,9 @@ const TagWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin-top: 20px;
+  @media ${media.medium} {
+    flex-wrap: wrap;
+  }
 `
 const Tag = styled.div`
   padding: 10px 15px;

@@ -9,6 +9,7 @@ import theme from '../../config/Theme'
 import Project from '../components/Project'
 import Img from 'gatsby-image'
 import { motion } from 'framer-motion'
+import { media } from '../utils/media'
 
 const AboutHeader = styled.h1`
   text-align: center;
@@ -21,19 +22,37 @@ const AboutHeader = styled.h1`
 const SubHeader = styled.div`
   display: flex;
   align-items: center;
+  @media ${media.medium} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const SubHeaderText = styled.div`
   font-size: 1.7rem;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 300;
+  @media ${media.medium} {
+    font-size: 1.3rem;
+  }
 `
 
 const HeaderImage = styled.div`
-  width: 450px;
+  min-width: 400px;
   border: 15px solid ${theme.colors.primary};
   border-radius: 10px;
   transform: translateX(-20%);
+  @media ${media.medium} {
+    min-width: unset;
+    width: 100%;
+    transform: none;
+    margin: 10px 10px 40px 10px;
+  }
+  @media ${media.small} {
+    width: 80%;
+    transform: none;
+    margin-bottom: 20px;
+  }
 `
 
 const Projects = styled.div`
@@ -142,7 +161,7 @@ const About = () => {
           <SubHeader>
             <HeaderImage>
               <Img
-                style={{ width: '400px' }}
+                style={{ width: 'auto' }}
                 fluid={images.find(img => img.node.fluid.originalName === 'ndo2.jpg').node.fluid}
                 fadeIn
                 alt="ndom91"

@@ -20,6 +20,10 @@ const ProjectCard = styled.div`
     transform: translateY(-5px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
+  @media ${media.medium} {
+    width: 90%;
+    margin: 150px auto;
+  }
 `
 
 const ProjectSquareLeft = styled.div`
@@ -129,6 +133,9 @@ const ProjectLabel = styled.h3`
   &:focus:before,
   &:active:before {
     transform: scaleX(1);
+  }
+  @media ${media.medium} {
+    max-width: 97%;
   }
 `
 const ProjectLabelLink = styled.svg`
