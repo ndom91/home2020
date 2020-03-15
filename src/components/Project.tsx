@@ -60,9 +60,11 @@ const ProjectTech = styled.img`
   }
   @media ${media.medium} {
     padding: 2.5rem 2rem;
+    max-width: 48px;
   }
   @media ${media.small} {
     padding: 2rem 1.5rem;
+    max-width: 48px;
   }
 `
 

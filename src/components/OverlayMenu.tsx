@@ -148,12 +148,12 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
             <NavigationLink activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9, rotate: 0.5 }}>
             <NavigationLink activeClassName="active" to={`/about`}>
               <MenuNumber>03</MenuNumber>About
             </NavigationLink>

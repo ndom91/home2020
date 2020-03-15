@@ -8,17 +8,22 @@ import curriedDarken from 'polished/lib/color/darken'
 export const PaginationContainer = styled.div`
   text-align: center;
   margin: 2rem;
+  @media ${media.medium} {
+    margin: 0rem;
   }
 `
 
 export const PaginationContent = styled.div`
-    display: inline-block;
+    display: inline-flex;
+    justify-content: space-between;
     padding: 0 2.5rem;
     border-radius: 3.5rem;
     background-color: #eee;
     
-     @media ${media.small} {
+     @media ${media.medium} {
       padding: 0 1rem;
+      width: 130%;
+      transform: translateX(-12.5%);
      }
 
     .page-numbers {
@@ -53,17 +58,23 @@ export const PaginationContent = styled.div`
 
       @media ${media.large} {
         padding: 0 1.4rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         display: none;
 
         &:nth-of-type(2) {
           position: relative;
           padding-right: 5rem;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
 
           &::after {
             content: '...';
             position: absolute;
             top: 0;
             left: 4.5rem;
+            padding-top: 0.8rem;
+            padding-bottom: 1.2rem;
           }
         }
 
@@ -80,7 +91,47 @@ export const PaginationContent = styled.div`
           }
         }
       }
-    `
+      @media ${media.medium} {
+        padding: 0.5rem 0.8rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: none;
+
+        &:nth-of-type(2) {
+          position: relative;
+          padding-right: 2.5rem;
+
+          &::after {
+            content: '...';
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+          }
+        }
+
+        &:nth-child(-n + 3),
+        &:nth-last-child(-n + 3) {
+          display: block;
+        }
+
+        &:nth-last-child(-n + 4) {
+          padding-right: 0.8rem;
+
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+  `
+
+const PageNumberWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  @media ${media.medium} {
+    justify-content: space-around;
+  }
+`
 
 interface Props {
   currentPage: number
@@ -100,21 +151,24 @@ export class Pagination extends React.PureComponent<Props> {
         <PaginationContent>
           {!isFirst && (
             <Link className="prev page-numbers" to={prevPage} rel="prev">
-              ← Prev
+              {window && window.innerWidth > 700 ? '← Prev' : '←'}
             </Link>
           )}
-          {Array.from({ length: totalPages }, (_, i) => (
-            <Link
-              className={currentPage === i + 1 ? 'page-numbers current' : 'page-numbers'}
-              key={`pagination-number${i + 1}`}
-              to={`/${url}/${i === 0 ? '' : i + 1}`}
-            >
-              {i + 1}
-            </Link>
-          ))}
+          <PageNumberWrapper>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <Link
+                className={currentPage === i + 1 ? 'page-numbers current' : 'page-numbers'}
+                key={`pagination-number${i + 1}`}
+                to={`/${url}/${i === 0 ? '' : i + 1}`}
+              >
+                {i + 1}
+              </Link>
+            ))}
+          </PageNumberWrapper>
           {!isLast && (
             <Link className="next page-numbers" to={nextPage} rel="next">
-              Next →
+              {/* Next → */}
+              {window && window.innerWidth > 700 ? 'Next →' : '→'}
             </Link>
           )}
         </PaginationContent>
