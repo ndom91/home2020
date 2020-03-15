@@ -4,6 +4,7 @@ import theme from '../../config/Theme'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
 import Img from 'gatsby-image'
+import { motion } from 'framer-motion'
 
 const ProjectCard = styled.div`
   border: 1px solid ${theme.colors.grey.ultraUltraLight};
@@ -132,7 +133,6 @@ const ProjectLabel = styled.h3`
 `
 const ProjectLabelLink = styled.svg`
   width: 32px;
-  /* stroke: ${theme.colors.primary}; */
   stroke: none;
   fill: ${theme.colors.primary};
   display: inline-block;
@@ -183,36 +183,46 @@ interface ProjectProps {
 }
 
 const Project: React.SFC<ProjectProps> = props => {
+  const item = { hidden: { y: [-50, 0], opacity: [0, 1] } }
   return (
-    <ProjectCard>
-      <ProjectSquareLeft />
-      {props.image ? (
-        <ImgWrapper>
-          <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
-        </ImgWrapper>
-      ) : (
-        <ProjectScreenshot src={`assets/images/screenshots/${props.project.node.image}`} alt={`Screenshot ${props.project.node.name}`} />
-      )}
-      <ProjectTechWrapper>
-        {props.project.node.tech &&
-          props.project.node.tech.map(tech => (
-            <ProjectTech height="64" className="project__tech" src={`assets/images/tech/${tech}.svg`} key={tech} alt={tech} title={tech} />
-          ))}
-      </ProjectTechWrapper>
-      <ProjectDetails className="project__details">
-        <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
-          <ProjectLabel>
-            {props.project.node.name}
-            <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </ProjectLabelLink>
-          </ProjectLabel>
-          <ProjectDesc className="project__desc">{props.project.node.desc}</ProjectDesc>
-        </a>
-      </ProjectDetails>
-      <ProjectSquareRight />
-    </ProjectCard>
+    <motion.div variants={item} whileHover={{ scale: 1.03 }}>
+      <ProjectCard>
+        <ProjectSquareLeft />
+        {props.image ? (
+          <ImgWrapper>
+            <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
+          </ImgWrapper>
+        ) : (
+          <ProjectScreenshot src={`assets/images/screenshots/${props.project.node.image}`} alt={`Screenshot ${props.project.node.name}`} />
+        )}
+        <ProjectTechWrapper>
+          {props.project.node.tech &&
+            props.project.node.tech.map(tech => (
+              <ProjectTech
+                height="64"
+                className="project__tech"
+                src={`assets/images/tech/${tech}.svg`}
+                key={tech}
+                alt={tech}
+                title={tech}
+              />
+            ))}
+        </ProjectTechWrapper>
+        <ProjectDetails className="project__details">
+          <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
+            <ProjectLabel>
+              {props.project.node.name}
+              <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </ProjectLabelLink>
+            </ProjectLabel>
+            <ProjectDesc className="project__desc">{props.project.node.desc}</ProjectDesc>
+          </a>
+        </ProjectDetails>
+        <ProjectSquareRight />
+      </ProjectCard>
+    </motion.div>
   )
 }
 

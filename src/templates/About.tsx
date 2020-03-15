@@ -9,6 +9,7 @@ import { media } from '../utils/media'
 import theme from '../../config/Theme'
 import Project from '../components/Project'
 import Img from 'gatsby-image'
+import { motion } from 'framer-motion'
 
 const AboutHeader = styled.h1`
   text-align: center;
@@ -53,6 +54,7 @@ const LocationIcon = styled.div`
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
+  vertical-align: middle;
   transition-duration: 0.3s;
   transition-property: transform;
 
@@ -125,6 +127,7 @@ const About = () => {
 
   const projects = allProjectsJson.edges
   const images = allImageSharp.edges
+  const list = { hidden: { opacity: 1 } }
 
   return (
     <Layout>
@@ -169,11 +172,23 @@ const About = () => {
             </SubHeaderText>
           </SubHeader>
           <Projects>
-            {projects.map((project: Project, index: number) => {
-              return (
-                <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
-              )
-            })}
+            <motion.div
+              initial
+              animate="hidden"
+              transition={{
+                ease: 'easeIn',
+                duration: 2,
+                staggerChildren: 0.15,
+              }}
+              variants={list}
+              className="stat-wrapper"
+            >
+              {projects.map((project: Project, index: number) => {
+                return (
+                  <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
+                )
+              })}
+            </motion.div>
           </Projects>
         </Content>
       </Wrapper>

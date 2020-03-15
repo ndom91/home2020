@@ -1,8 +1,8 @@
 const sizes = {
-  huge: '1500px',
-  large: '1200px',
-  medium: '900px',
-  small: '600px',
+  large: '1400px',
+  medium: '700px',
+  small: '375px',
+  xsmall: '320px',
 }
 
 export const media = {
@@ -10,4 +10,5 @@ export const media = {
   large: `(max-width: ${sizes.large})`,
   medium: `(max-width: ${sizes.medium})`,
   small: `(max-width: ${sizes.small})`,
+  xsmall: `(max-width: ${sizes.xsmall})`,
 }
