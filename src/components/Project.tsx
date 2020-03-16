@@ -17,7 +17,7 @@ const ProjectCard = styled.div`
   transform-style: preserve-3d;
 
   &:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
   @media ${media.medium} {
@@ -53,18 +53,15 @@ const ProjectTechWrapper = styled.div`
 `
 
 const ProjectTech = styled.img`
-  max-width: 64px;
+  width: 64px;
 
-  @media ${media.large} {
-    padding: 3rem 3rem;
-  }
   @media ${media.medium} {
-    padding: 2.5rem 2rem;
-    max-width: 48px;
+    width: 48px;
+    height: 48px;
   }
   @media ${media.small} {
-    padding: 2rem 1.5rem;
-    max-width: 48px;
+    width: 32px;
+    height: 32px;
   }
 `
 
@@ -208,7 +205,7 @@ const Project: React.SFC<ProjectProps> = props => {
     },
   }
   return (
-    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.03 }}>
+    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 1 }}>
       <ProjectCard>
         <ProjectSquareLeft />
         {props.image ? (

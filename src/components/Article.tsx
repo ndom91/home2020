@@ -72,7 +72,11 @@ export const Article: React.SFC<Props> = props => {
   }
 
   return (
-    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }}>
+    <motion.div
+      initial="hidden"
+      variants={variants}
+      whileHover={{ scale: 1.04, rotate: 0.8, transition: { ease: 'easeInOut', duration: 0.3 } }}
+    >
       <Post>
         <Title>
           <Initiale>{firstChar}</Initiale>
