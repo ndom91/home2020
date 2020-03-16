@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 const OverlayWrapper = styled.div`
   width: 100vw;
@@ -76,9 +76,9 @@ const Navigation = styled.div`
   width: 60%;
   margin: 0 auto;
   position: relative;
-  top: 50%;
+  /* top: 50%; */
   opacity: 0;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   transition: opacity 250ms ease-in-out 500ms;
 
   &.active {
@@ -114,7 +114,7 @@ const NavigationLink = styled(Link)`
     left: -150px;
   }
   @media ${media.medium} {
-    margin: 30px 0;
+    margin: 50px 0;
     font-size: 2.3rem;
   }
 `
@@ -131,6 +131,9 @@ type MenuProps = {
 }
 
 const OverlayMenu = ({ isActive }: MenuProps) => {
+  const x = useMotionValue(10)
+  const y = useTransform(x, value => value * 2)
+
   const list = {
     visible: {
       opacity: [0, 1],
@@ -150,7 +153,7 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
   return (
     <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
       <Navigation className={isActive ? 'active' : 'hidden'}>
-        <motion.div animate={isActive ? 'visible' : 'hidden'} variants={list}>
+        <motion.div style={{ x, y }} animate={isActive ? 'visible' : 'hidden'} variants={list}>
           <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
             <NavigationLink activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home

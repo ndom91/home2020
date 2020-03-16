@@ -139,6 +139,7 @@ const ProjectLabel = styled.h3`
   }
   @media ${media.medium} {
     max-width: 97%;
+    font-size: 1.2rem;
   }
 `
 const ProjectLabelLink = styled.svg`
@@ -155,6 +156,11 @@ const ProjectLabelLink = styled.svg`
   &:focus,
   &:active {
     color: white;
+  }
+  @media ${media.medium} {
+    width: 24px;
+    bottom: 3px;
+    right: -26px;
   }
 `
 

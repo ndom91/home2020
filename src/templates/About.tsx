@@ -38,6 +38,29 @@ const SubHeaderText = styled.div`
   @media ${media.medium} {
     font-size: 1.1rem;
   }
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+    width: 300px;
+    height: 420px;
+    /* background-color: ${theme.colors.grey.ultraUltraLight}; */
+    background-color: ${theme.colors.primary};
+    transform: translate(24px, 19px) rotate(-72deg);
+    border-radius: 0px 80px;
+    opacity: 0.1;
+    @media ${media.medium} {
+      font-size: 1.1rem;
+      left: 21%;
+      top: 68%;
+      width: 200px;
+      height: 300px;
+    }
+  }
 `
 
 const HeaderImage = styled.div`
@@ -45,11 +68,18 @@ const HeaderImage = styled.div`
   border: 15px solid ${theme.colors.primary};
   border-radius: 10px;
   transform: translateX(-20%);
+  /* transition: translate 250ms ease-in-out scale 250ms ease-in-out rotate 250ms ease-in-out; */
+  transition-property: transform scale rotate;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+  &:hover {
+    transform: translateX(-20%) scale(1.05) rotate(-7deg);
+  }
   @media ${media.medium} {
     min-width: unset;
     width: 100%;
     transform: none;
-    margin: 10px 10px 40px 10px;
+    margin: 10px 10px 140px 10px;
   }
   @media ${media.small} {
     width: 110%;
@@ -172,8 +202,8 @@ const About = () => {
             </HeaderImage>
             <SubHeaderText>
               My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the city of Frankfurt am
-              Main, Germany
-              <LocationIcon>
+              Main, Germany{` `}
+              {/* <LocationIcon>
                 <a
                   href="https://www.google.com/maps/place/Frankfurt/@50.121212,8.6365638,11z"
                   rel="noopener noreferrer"
@@ -190,7 +220,7 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </a>
-              </LocationIcon>
+              </LocationIcon> */}
               and I've been building stuff on the web for the past 2-3 years.
             </SubHeaderText>
           </SubHeader>
