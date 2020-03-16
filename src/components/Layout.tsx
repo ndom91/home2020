@@ -79,6 +79,9 @@ const Footer = styled.footer`
   span {
     font-size: 0.75rem;
   }
+  @media ${media.medium} {
+    padding: none;
+  }
 `
 
 const FooterContent = styled.div`

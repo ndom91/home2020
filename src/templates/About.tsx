@@ -14,7 +14,7 @@ import { media } from '../utils/media'
 const AboutHeader = styled.h1`
   text-align: center;
   font-family: ${config.serifFontFamily};
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 500;
   padding-bottom: 50px;
   @media ${media.medium} {
@@ -23,6 +23,7 @@ const AboutHeader = styled.h1`
 `
 
 const SubHeader = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   @media ${media.medium} {
@@ -42,23 +43,27 @@ const SubHeaderText = styled.div`
     content: '';
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: -10%;
     right: auto;
     bottom: auto;
     z-index: 1;
     width: 300px;
     height: 420px;
-    /* background-color: ${theme.colors.grey.ultraUltraLight}; */
     background-color: ${theme.colors.primary};
     transform: translate(24px, 19px) rotate(-72deg);
     border-radius: 0px 80px;
     opacity: 0.1;
     @media ${media.medium} {
-      font-size: 1.1rem;
       left: 21%;
-      top: 68%;
+      top: 65%;
       width: 200px;
       height: 300px;
+    }
+    @media ${media.small} {
+      left: -45%;
+      top: 60%;
+      width: 350px;
+      height: 150px;
     }
   }
 `
@@ -92,46 +97,25 @@ const Projects = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 `
 
-const LocationIcon = styled.div`
-  display: block;
-  margin: 0 7px;
-  transition: transform 150ms ease-in-out;
-  display: inline-block;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  vertical-align: middle;
-  transition-duration: 0.3s;
-  transition-property: transform;
+const ProjectsHeader = styled.h1`
+  margin-top: 80px;
+  text-align: center;
+  font-family: ${config.serifFontFamily};
+  font-size: 3.5rem;
+  font-weight: 500;
+  padding-bottom: 50px;
+  @media ${media.medium} {
+    font-size: 3rem;
+  }
+`
 
-  &:before {
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 100%;
-    left: 5%;
-    height: 6px;
-    width: 90%;
-    opacity: 0;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-    transition-duration: 0.3s;
-    transition-property: transform, opacity;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    transform: translateY(-3px);
-    cursor: pointer;
-  }
-  &:hover:before,
-  &:focus:before,
-  &:active:before {
-    opacity: 1;
-    transform: translateY(-5px);
-  }
+const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `
 
 interface Project {
@@ -203,34 +187,19 @@ const About = () => {
             <SubHeaderText>
               My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the city of Frankfurt am
               Main, Germany{` `}
-              {/* <LocationIcon>
-                <a
-                  href="https://www.google.com/maps/place/Frankfurt/@50.121212,8.6365638,11z"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Google Maps - Frankfurt am Main"
-                >
-                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke={theme.colors.primary}>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </a>
-              </LocationIcon> */}
               and I've been building stuff on the web for the past 2-3 years.
             </SubHeaderText>
           </SubHeader>
           <Projects>
+            <ProjectsHeader>Projects</ProjectsHeader>
             <motion.div initial animate="visible" variants={list}>
-              {projects.map((project: Project, index: number) => {
-                return (
-                  <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
-                )
-              })}
+              <ProjectsWrapper>
+                {projects.map((project: Project, index: number) => {
+                  return (
+                    <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
+                  )
+                })}
+              </ProjectsWrapper>
             </motion.div>
           </Projects>
         </Content>

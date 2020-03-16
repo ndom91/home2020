@@ -4,6 +4,7 @@ import theme from '../../config/Theme'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
 import Img from 'gatsby-image'
+import Tilt from 'react-parallax-tilt'
 import { motion } from 'framer-motion'
 
 const ProjectCard = styled.div`
@@ -12,7 +13,8 @@ const ProjectCard = styled.div`
   position: relative;
   background: #fff;
   margin: 75px 0;
-  width: 640px;
+  padding: 10px;
+  width: 370px;
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
   transform-style: preserve-3d;
 
@@ -24,6 +26,15 @@ const ProjectCard = styled.div`
     width: 90%;
     margin: 150px auto;
   }
+  border: none;
+  box-shadow: 0 1px 10px ${theme.colors.primary};
+  /* border-radius: 50px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; */
+
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: inset -20px 20px 60px #d9d9d9, inset 20px -20px 60px #ffffff;
 `
 
 const ProjectSquareLeft = styled.div`
@@ -35,6 +46,11 @@ const ProjectSquareLeft = styled.div`
   top: -15px;
   left: -15px;
   border-radius: 10px 0 0 0;
+  @media ${media.medium} {
+    width: 200px;
+    height: 200px;
+  }
+  display: none;
 `
 const ProjectSquareRight = styled.div`
   background-color: ${theme.colors.primary};
@@ -45,6 +61,11 @@ const ProjectSquareRight = styled.div`
   bottom: -15px;
   right: -15px;
   border-radius: 0 0 10px 0;
+  @media ${media.medium} {
+    width: 200px;
+    height: 200px;
+  }
+  display: none;
 `
 
 const ProjectTechWrapper = styled.div`
@@ -53,7 +74,7 @@ const ProjectTechWrapper = styled.div`
 `
 
 const ProjectTech = styled.img`
-  width: 64px;
+  width: 48px;
 
   @media ${media.medium} {
     width: 48px;
@@ -66,12 +87,17 @@ const ProjectTech = styled.img`
 `
 
 const ProjectDetails = styled.div`
-  width: 100%;
+  /* width: 100%; */
   padding: 40px;
   background: ${theme.colors.grey.ultraUltraLight};
   border-radius: 0 0 10px 10px;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 400;
+
+  margin: 20px;
+  border-radius: 50px;
+  background: linear-gradient(225deg, #ffffff, #e6e6e6);
+  box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
 
   &:before {
     position: absolute;
@@ -82,12 +108,13 @@ const ProjectDetails = styled.div`
 `
 
 const ProjectScreenshot = styled.img`
-  width: 100%;
   margin: 20px;
-  max-width: 600px;
-  border: 25px solid ${theme.colors.grey.ultraUltraLight};
-  overflow: hidden;
-  z-index: -2;
+  padding: 20px;
+  /* background-color: ${theme.colors.grey.ultraUltraLight}; */
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 15px;
+  margin-top: 30px;
+  width: 90%;
 
   @media ${media.medium} {
     width: calc(100% - 40px);
@@ -105,6 +132,7 @@ const ProjectLabel = styled.h3`
   padding: 5px;
   font-family: ${config.serifFontFamily};
   font-weight: 600;
+  font-size: 1.3rem;
 
   &:before {
     content: '';
@@ -112,7 +140,7 @@ const ProjectLabel = styled.h3`
     z-index: -1;
     top: 0;
     left: 0;
-    right: -40px;
+    right: 0px;
     bottom: 0;
     background: ${theme.colors.primary};
     transform: scaleX(0);
@@ -166,13 +194,20 @@ const ProjectLabelLink = styled.svg`
 
 const ProjectDesc = styled.div`
   font-size: 1rem;
+  font-weight: 100;
   color: ${theme.colors.grey.default};
+  @media ${media.medium} {
+    font-size: 0.9rem;
+  }
 `
 
 const ImgWrapper = styled.div`
   margin: 20px;
   padding: 20px;
-  background-color: ${theme.colors.grey.ultraUltraLight};
+  /* background-color: ${theme.colors.grey.ultraUltraLight}; */
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 15px;
+  margin-top: 30px;
 `
 
 interface ProjectProps {
@@ -211,43 +246,48 @@ const Project: React.SFC<ProjectProps> = props => {
     },
   }
   return (
-    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 1 }}>
-      <ProjectCard>
-        <ProjectSquareLeft />
-        {props.image ? (
-          <ImgWrapper>
-            <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
-          </ImgWrapper>
-        ) : (
-          <ProjectScreenshot src={`assets/images/screenshots/${props.project.node.image}`} alt={`Screenshot ${props.project.node.name}`} />
-        )}
-        <ProjectTechWrapper>
-          {props.project.node.tech &&
-            props.project.node.tech.map(tech => (
-              <ProjectTech
-                height="64"
-                className="project__tech"
-                src={`assets/images/tech/${tech}.svg`}
-                key={tech}
-                alt={tech}
-                title={tech}
-              />
-            ))}
-        </ProjectTechWrapper>
-        <ProjectDetails className="project__details">
-          <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
-            <ProjectLabel>
-              {props.project.node.name}
-              <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </ProjectLabelLink>
-            </ProjectLabel>
-            <ProjectDesc className="project__desc">{props.project.node.desc}</ProjectDesc>
-          </a>
-        </ProjectDetails>
-        <ProjectSquareRight />
-      </ProjectCard>
+    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.1 }}>
+      <Tilt tiltReverse transitionSpeed={1900}>
+        <ProjectCard>
+          <ProjectSquareLeft />
+          {props.image ? (
+            <ImgWrapper>
+              <Img fluid={props.image.node.fluid} fadeIn alt={`Screenshot ${props.project.node.name}`} />
+            </ImgWrapper>
+          ) : (
+            <ProjectScreenshot
+              src={`assets/images/screenshots/${props.project.node.image}`}
+              alt={`Screenshot ${props.project.node.name}`}
+            />
+          )}
+          <ProjectTechWrapper>
+            {props.project.node.tech &&
+              props.project.node.tech.map(tech => (
+                <ProjectTech
+                  height="64"
+                  className="project__tech"
+                  src={`assets/images/tech/${tech}.svg`}
+                  key={tech}
+                  alt={tech}
+                  title={tech}
+                />
+              ))}
+          </ProjectTechWrapper>
+          <ProjectDetails className="project__details">
+            <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
+              <ProjectLabel>
+                {props.project.node.name}
+                {/* <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </ProjectLabelLink> */}
+              </ProjectLabel>
+              <ProjectDesc className="project__desc">{props.project.node.desc}</ProjectDesc>
+            </a>
+          </ProjectDetails>
+          <ProjectSquareRight />
+        </ProjectCard>
+      </Tilt>
     </motion.div>
   )
 }
