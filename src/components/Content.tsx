@@ -9,22 +9,6 @@ export const Content = styled.div`
   z-index: 9000;
   margin-top: -4rem;
   margin-bottom: 5rem;
-  form {
-    p {
-      label,
-      input {
-        display: block;
-      }
-      input {
-        min-width: 275px;
-      }
-      textarea {
-        resize: vertical;
-        min-height: 150px;
-        width: 100%;
-      }
-    }
-  }
   @media ${media.large} {
     margin-top: -35px;
     padding: 3rem 5rem;

@@ -170,27 +170,6 @@ const ProjectLabel = styled.h3`
     font-size: 1.2rem;
   }
 `
-const ProjectLabelLink = styled.svg`
-  width: 32px;
-  stroke: none;
-  fill: ${theme.colors.primary};
-  display: inline-block;
-  transition: stroke 150ms ease-in;
-  position: absolute;
-  bottom: 5px;
-  right: -32px;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: white;
-  }
-  @media ${media.medium} {
-    width: 24px;
-    bottom: 3px;
-    right: -26px;
-  }
-`
 
 const ProjectDesc = styled.div`
   font-size: 1rem;

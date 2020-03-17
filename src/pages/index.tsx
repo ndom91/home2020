@@ -197,6 +197,7 @@ const OfficeWorker = styled.img`
   top: 20%;
   right: 10%;
   transform: rotate(12deg);
+  max-width: 700px;
   @media ${media.large} {
     top: 20%;
     right: 5%;
@@ -212,9 +213,9 @@ export default class IndexPage extends React.Component<PageProps> {
   public render() {
     return (
       <Layout>
+        <Header />
         <Wrapper fullWidth={true}>
           <Helmet title={`Homepage | ${config.siteTitle}`} />
-          <Header />
           <Homepage>
             <GridRow>
               <HomepageContent center={true}>
