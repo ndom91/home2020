@@ -101,6 +101,7 @@ const SubHeader: any = styled.div`
   font-family: ${config.sanSerifFontFamily};
   color: ${theme.colors.grey.light};
   margin-bottom: 20px;
+  z-index: 2;
 
   @media ${media.large} {
     font-size: 1.5rem;

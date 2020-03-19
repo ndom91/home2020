@@ -60,6 +60,7 @@ export const Article: React.SFC<Props> = props => {
 
   const variants = {
     hidden: { opacity: 0 },
+
     visible: {
       x: [-50, 0],
       opacity: [0, 1],
@@ -75,11 +76,13 @@ export const Article: React.SFC<Props> = props => {
     <motion.div
       initial="hidden"
       variants={variants}
-      whileHover={{ scale: 1.04, rotate: 0.8, transition: { ease: 'easeInOut', duration: 0.3 } }}
+      // whileHover={{ scale: 1.04, rotate: 0.8, transition: { ease: 'easeInOut', duration: 0.3 } }}
     >
       <Post>
         <Title>
-          <Initiale>{firstChar}</Initiale>
+          <motion.div initial="hidden" whileHover={{ scale: 1.2, transition: { ease: 'easeInOut', duration: 0.3 } }}>
+            <Initiale>{firstChar}</Initiale>
+          </motion.div>
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>
