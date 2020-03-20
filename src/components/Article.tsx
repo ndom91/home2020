@@ -12,6 +12,12 @@ const Post = styled.article`
   flex-direction: column;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+
+  &:hover {
+    & .post-initial {
+      transform: scale(1.3) translate(-60%, -50%);
+    }
+  }
 `
 
 const Title = styled.h2`
@@ -30,6 +36,8 @@ const Initiale = styled.span`
   opacity: 0.08;
   user-select: none;
   z-index: -1;
+  transition: transform 250ms ease-in-out;
+
   @media ${media.medium} {
     font-size: 5rem;
   }
@@ -80,9 +88,9 @@ export const Article: React.SFC<Props> = props => {
     >
       <Post>
         <Title>
-          <motion.div initial="hidden" whileHover={{ scale: 1.2, transition: { ease: 'easeInOut', duration: 0.3 } }}>
-            <Initiale>{firstChar}</Initiale>
-          </motion.div>
+          {/* <motion.div initial="hidden" whileHover={{ scale: 1.2, transition: { ease: 'easeInOut', duration: 0.3 } }}> */}
+          <Initiale className="post-initial">{firstChar}</Initiale>
+          {/* </motion.div> */}
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>
