@@ -19,7 +19,6 @@ const ProjectCard = styled.div`
   transform-style: preserve-3d;
 
   &:hover {
-    /* transform: translateY(-5px); */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
   @media ${media.medium} {
@@ -28,9 +27,6 @@ const ProjectCard = styled.div`
   }
   border: none;
   box-shadow: 0 1px 10px ${theme.colors.primary};
-  /* border-radius: 50px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; */
 
   border-radius: 50px;
   background: #ffffff;
@@ -183,8 +179,7 @@ const ProjectDesc = styled.div`
 const ImgWrapper = styled.div`
   margin: 20px;
   padding: 20px;
-  /* background-color: ${theme.colors.grey.ultraUltraLight}; */
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   margin-top: 30px;
 `
@@ -226,7 +221,7 @@ const Project: React.SFC<ProjectProps> = props => {
   }
   return (
     <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.1 }}>
-      <Tilt tiltReverse transitionSpeed={1900}>
+      <Tilt tiltReverse gyroscope tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={1900}>
         <ProjectCard>
           <ProjectSquareLeft />
           {props.image ? (
@@ -254,13 +249,7 @@ const Project: React.SFC<ProjectProps> = props => {
           </ProjectTechWrapper>
           <ProjectDetails className="project__details">
             <a target="_blank" rel="noopener noreferrer" href={props.project.node.url}>
-              <ProjectLabel>
-                {props.project.node.name}
-                {/* <ProjectLabelLink className="project__label--link" height="32" width="32" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                </ProjectLabelLink> */}
-              </ProjectLabel>
+              <ProjectLabel>{props.project.node.name}</ProjectLabel>
               <ProjectDesc className="project__desc">{props.project.node.desc}</ProjectDesc>
             </a>
           </ProjectDetails>

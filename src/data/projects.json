@@ -1,5 +1,12 @@
 [
   {
+    "name": "Corona-API",
+    "url": "https://github.com/ndom91/coronaAWS",
+    "image": "coronaapi.png",
+    "desc": "Coronavirus API for German Gov. #wirvsvirus hackathon",
+    "tech": ["aws-api-gateway", "aws-lambda", "serverless", "vue-js"]
+  },
+  {
     "name": "Newtelco Homepage",
     "url": "https://github.com/newtelco/newtelco-gatsby-netlify",
     "image": "newtelcohome.png",

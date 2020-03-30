@@ -8,6 +8,8 @@ import Data from '../models/Data'
 import { motion } from 'framer-motion'
 
 const BlogHeader = styled.h1`
+  font-family: ${config.serifFontFamily};
+  font-size: 4rem;
   text-align: center;
   padding-bottom: 50px;
 `

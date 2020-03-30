@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { darken, lighten } from 'polished'
 import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
@@ -133,30 +133,43 @@ const MenuNumber = styled.span`
   margin-right: 8px;
 `
 
+const HeaderImage = styled.img`
+  height: 110px;
+  z-index: 99;
+
+  /* &:hover {
+    cursor: pointer;
+  } */
+`
+
 interface Props {
   banner?: string
 }
 
-export class Header extends React.PureComponent<Props> {
-  public render() {
-    return (
-      <HeaderWrapper banner={this.props.banner || config.defaultBg}>
-        <ContentWrapper>
-          <img height="110" src={config.siteLogo} alt="Logo" />
-          <ButtonMenu />
-          <Content>
-            <LinkWrapper to={`/`} activeClassName="active">
-              <MenuNumber>01</MenuNumber>home
-            </LinkWrapper>
-            <LinkWrapper to={`/blog`} partiallyActive activeClassName="active">
-              <MenuNumber>02</MenuNumber>blog
-            </LinkWrapper>
-            <LinkWrapper to={`/about`} activeClassName="active">
-              <MenuNumber>03</MenuNumber>about
-            </LinkWrapper>
-          </Content>
-        </ContentWrapper>
-      </HeaderWrapper>
-    )
-  }
+const navigateHome = () => {
+  console.log('clicked image')
+  navigate('/')
+}
+export const Header: React.SFC<Props> = props => {
+  return (
+    <HeaderWrapper banner={props.banner || config.defaultBg}>
+      <ContentWrapper>
+        <Link to="/" style={{ zIndex: 99 }}>
+          <HeaderImage height="110" src={config.siteLogo} alt="Logo" />
+        </Link>
+        <ButtonMenu />
+        <Content>
+          <LinkWrapper to={`/`} activeClassName="active">
+            <MenuNumber>01</MenuNumber>home
+          </LinkWrapper>
+          <LinkWrapper to={`/blog`} partiallyActive activeClassName="active">
+            <MenuNumber>02</MenuNumber>blog
+          </LinkWrapper>
+          <LinkWrapper to={`/about`} activeClassName="active">
+            <MenuNumber>03</MenuNumber>about
+          </LinkWrapper>
+        </Content>
+      </ContentWrapper>
+    </HeaderWrapper>
+  )
 }
