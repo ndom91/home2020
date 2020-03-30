@@ -2,6 +2,7 @@
 date: '2020-03-29'
 title: 'My journey to serverless and back'
 tags: ['aws', 'lambda', 'netlify', 'serverless']
+category: 'Web'
 ---
 
 So I've had some experience with the whole "serverless" thing over the past few months. A few cloudflare workers, a netlify function here or there to spice up a static site. But a full-on serverless function based project was not something I'd decided to take on. Until now.
