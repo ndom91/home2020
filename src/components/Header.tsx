@@ -35,7 +35,7 @@ const HeaderWrapper: any = styled.header`
     width: 100%;
   }
   @media ${media.large} {
-    padding: 1rem 2rem 1rem;
+    padding: 1rem 2rem 2.5rem;
   }
   @media ${media.medium} {
     padding: 0.5rem 1rem 0.5rem;

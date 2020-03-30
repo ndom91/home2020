@@ -3,7 +3,6 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Footer from './Footer'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
-import './layout.scss'
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -56,6 +55,20 @@ const GlobalStyle = createGlobalStyle`
   }
   .textRight {
     text-align:right;
+  }
+  :root {
+    // Colors
+   --white: #fff;
+   --black: #000;
+   --grey: #595959;
+   --grey-dark: #2b2b2b;
+   --grey-light: #eee;
+   --green: #86c023;
+   --blue: #017ac7;
+
+    // Transition
+   --duration: 400ms;
+   --easing: ease;
   }
 `
 

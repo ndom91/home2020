@@ -15,7 +15,7 @@ const Post = styled.article`
 
   &:hover {
     & .post-initial {
-      transform: scale(1.3) translate(-60%, -50%);
+      transform: scale(1.1) translate(-50%, -50%);
     }
   }
 `
@@ -81,16 +81,10 @@ export const Article: React.SFC<Props> = props => {
   }
 
   return (
-    <motion.div
-      initial="hidden"
-      variants={variants}
-      // whileHover={{ scale: 1.04, rotate: 0.8, transition: { ease: 'easeInOut', duration: 0.3 } }}
-    >
+    <motion.div initial="hidden" variants={variants}>
       <Post>
         <Title>
-          {/* <motion.div initial="hidden" whileHover={{ scale: 1.2, transition: { ease: 'easeInOut', duration: 0.3 } }}> */}
           <Initiale className="post-initial">{firstChar}</Initiale>
-          {/* </motion.div> */}
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>

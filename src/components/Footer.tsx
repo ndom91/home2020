@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, StaticQuery } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import split from 'lodash/split'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'

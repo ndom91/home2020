@@ -3,15 +3,44 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext, SectionTitle, Content } from '../components'
+import { Layout, Header, Subline, SEO, PrevNext, SectionTitle, Content } from '../components'
 import config from '../../config/SiteConfig'
 import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
 import Post from '../models/Post'
-import { media } from '../utils/media'
+import { media, titleCase } from '../utils/media'
+
+const Wrapper: any = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: center;
+  max-width: ${(props: any) => (props.fullWidth ? '100%' : '100rem')};
+  padding: ${(props: any) => (props.fullWidth ? '0' : '0 10rem')};
+  @media ${media.large} {
+    padding: ${(props: any) => (props.fullWidth ? '0' : '0 8rem')};
+  }
+  @media ${media.medium} {
+    padding: ${(props: any) => (props.fullWidth ? '0' : '0 1.5rem')};
+  }
+  @media ${media.small} {
+    padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
+  }
+`
 
 const PostContent = styled.div`
+  max-width: 80vw;
   margin-top: 4rem;
+`
+
+const ContentWrapper = styled.div`
+  padding: 5em 4em;
+  @media ${media.medium} {
+    padding: 1em 1.5em;
+  }
+  @media ${media.small} {
+    padding: 0em;
+  }
 `
 
 const TagWrapper = styled.div`
@@ -51,6 +80,32 @@ const Tag = styled.div`
   }
 `
 
+const Title = styled.h1`
+  font-weight: 600;
+  @media ${media.medium} {
+    font-size: 2.2rem;
+  }
+  @media ${media.small} {
+    font-size: 1.8rem;
+  }
+`
+
+const Initiale = styled.span`
+  position: absolute;
+  font-size: 8rem;
+  transform: translate(-50%, -40%);
+  opacity: 0.08;
+  user-select: none;
+  z-index: -1;
+  transition: transform 250ms ease-in-out;
+  font-family: 'Bitter', sans-serif;
+  font-weight: 700;
+
+  @media ${media.medium} {
+    font-size: 5rem;
+  }
+`
+
 interface Props {
   data: {
     markdownRemark: Post
@@ -79,21 +134,25 @@ const PostPage: React.SFC<Props> = props => {
           </Header>
           <Wrapper>
             <Content id="content">
-              <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-              {post.frontmatter.tags ? (
-                <Subline>
-                  Tags: &#160;
-                  <TagWrapper>
-                    {post.frontmatter.tags.map((tag, i) => (
-                      <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                        <Tag>
-                          <strong>{tag}</strong>
-                        </Tag>
-                      </Link>
-                    ))}
-                  </TagWrapper>
-                </Subline>
-              ) : null}
+              <ContentWrapper>
+                <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
+                <Title>{titleCase(post.frontmatter.title)}</Title>
+                <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+                {post.frontmatter.tags ? (
+                  <Subline>
+                    Tags: &#160;
+                    <TagWrapper>
+                      {post.frontmatter.tags.map((tag, i) => (
+                        <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                          <Tag>
+                            <strong>{tag}</strong>
+                          </Tag>
+                        </Link>
+                      ))}
+                    </TagWrapper>
+                  </Subline>
+                ) : null}
+              </ContentWrapper>
               <PrevNext prev={prev} next={next} />
             </Content>
           </Wrapper>
