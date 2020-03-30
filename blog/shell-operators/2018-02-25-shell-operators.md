@@ -1,10 +1,10 @@
 ---
-date: "2018-02-25"
-title:  "Bash Operators"
-tags: ["servers", "linux"]
+date: '2018-02-25'
+title: 'Bash Operators'
+tags: ['servers', 'linux']
 ---
 
-![bash]({{ 'bash.png' | media(page) }})
+![bash](/assets/images/blog/bash.png)
 
 These are called shell operators and yes, there are more of them. I will give a brief overview of the most common among the two major classes, control operators and redirection operators.
 
@@ -13,6 +13,7 @@ A. Control operators
 These are tokens that perform control functions, one of `\|\|, !, &&, &, ;, ;;, \|, \|&, (, or )`.
 
 A.1 List terminators
+
 ```
   >  ; : Will run one command after another has finished, irrespective of the outcome of the first.
 
@@ -68,7 +69,9 @@ A.2 Logical operators
 
   > ! command1
 ```
+
 A.3 Pipe operator
+
 ```
   > | : The pipe operator, it passes the output of one command as input to another. A command built from the pipe operator is called a pipeline.
 
@@ -79,13 +82,17 @@ A.3 Pipe operator
 
   > command1 |& command2
 ```
+
 A.4 Other list punctuation
+
 ```
   > ;; is used solely to mark the end of a case statement. Ksh, bash and zsh also support ;& to fall through to the next case and ;;& (not in ATT ksh) to go on and test subsequent cases.
 
   > ( and ) are used to group commands and launch them in a subshell. { and } also group commands, but do not launch them in a subshell. See this answer for a discussion of the various types of parentheses, brackets and braces in shell syntax.
 ```
+
 B. Redirection Operators
+
 ```
   > These allow you to control the input and output of your commands. They can appear anywhere within a simple command or may follow a command. Redirections are processed in the order they appear, from left to right.
 
@@ -177,5 +184,5 @@ That only covers the most common operators of Bourne-like shells. Some shells ha
 Ksh, bash and zsh also have constructs `<(…)`, `>(…)` and `=(…)` (that latter one in zsh only). These are not redirections, but process substitution.
 
 ---
-  
-  Source: [StackExchange](https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators)
+
+Source: [StackExchange](https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators)

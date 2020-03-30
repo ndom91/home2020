@@ -1,16 +1,15 @@
 ---
-date: "2018-03-04"
-title:  "Nextcloud Setup"
-tags: ["side project", "self hosted", "linux"]
+date: '2018-03-04'
+title: 'Nextcloud Setup'
+tags: ['side project', 'self hosted', 'linux']
 ---
 
-![nextcloud splash]({{ 'nextcloud.png' | media(page) }})
+![nextcloud splash](/assets/images/blog/nextcloud.png)
 
 So you want to install your own dropbox like cloud storage service? Well you’ve made the right choice with nextcloud! Its relatively easy to install and maintain and has a vibrant community and full app store of its own!
 So without further adieu, lets begin!
 
 First and foremost, we must install dependencies.
-
 
 ```bash
 apt-get install apache2 mariadb-server libapache2-mod-php7.0
@@ -19,7 +18,6 @@ apt-get install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
 ```
 
 Next we’ll download newest version of nextcloud. As of writing it was 13.0.0, but if you’re looking at this page a few months or even years from publication, then just check their [website](https://nextcloud.com/install/) for the newest link and replace it after wget here:
-
 
 ```bash
 cd /opt
