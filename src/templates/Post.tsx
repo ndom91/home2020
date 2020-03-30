@@ -29,7 +29,7 @@ const Wrapper: any = styled.div`
 `
 
 const PostContent = styled.div`
-  max-width: 80vw;
+  max-width: 55vw;
   margin-top: 4rem;
 `
 
@@ -138,21 +138,21 @@ const PostPage: React.SFC<Props> = props => {
                 <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
                 <Title>{titleCase(post.frontmatter.title)}</Title>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-                {post.frontmatter.tags ? (
-                  <Subline>
-                    Tags: &#160;
-                    <TagWrapper>
-                      {post.frontmatter.tags.map((tag, i) => (
-                        <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                          <Tag>
-                            <strong>{tag}</strong>
-                          </Tag>
-                        </Link>
-                      ))}
-                    </TagWrapper>
-                  </Subline>
-                ) : null}
               </ContentWrapper>
+              {post.frontmatter.tags ? (
+                <Subline>
+                  Tags: &#160;
+                  <TagWrapper>
+                    {post.frontmatter.tags.map((tag, i) => (
+                      <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                        <Tag>
+                          <strong>{tag}</strong>
+                        </Tag>
+                      </Link>
+                    ))}
+                  </TagWrapper>
+                </Subline>
+              ) : null}
               <PrevNext prev={prev} next={next} />
             </Content>
           </Wrapper>

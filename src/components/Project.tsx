@@ -221,7 +221,7 @@ const Project: React.SFC<ProjectProps> = props => {
   }
   return (
     <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.1 }}>
-      <Tilt tiltReverse gyroscope tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={1900}>
+      <Tilt tiltReverse tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={1900}>
         <ProjectCard>
           <ProjectSquareLeft />
           {props.image ? (

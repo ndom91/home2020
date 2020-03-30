@@ -22,7 +22,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',

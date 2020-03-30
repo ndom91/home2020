@@ -61,7 +61,6 @@ interface Props {
   category: string
 }
 
-// export class Article extends React.PureComponent<Props> {
 export const Article: React.SFC<Props> = props => {
   const { title, date, excerpt, slug, timeToRead, category } = props
   const firstChar = title.charAt(0)

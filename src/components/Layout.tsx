@@ -78,18 +78,16 @@ const PrimaryWrapper = styled.div`
   height: 100vh;
 `
 
-export class Layout extends React.PureComponent<{}> {
-  public render() {
-    const { children } = this.props
+export const Layout: React.SFC = props => {
+  const { children } = props
 
-    return (
-      <ThemeProvider theme={theme}>
-        <PrimaryWrapper>
-          <GlobalStyle />
-          {children}
-          <Footer />
-        </PrimaryWrapper>
-      </ThemeProvider>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <PrimaryWrapper>
+        <GlobalStyle />
+        {children}
+        <Footer />
+      </PrimaryWrapper>
+    </ThemeProvider>
+  )
 }

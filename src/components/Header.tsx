@@ -145,11 +145,6 @@ const HeaderImage = styled.img`
 interface Props {
   banner?: string
 }
-
-const navigateHome = () => {
-  console.log('clicked image')
-  navigate('/')
-}
 export const Header: React.SFC<Props> = props => {
   return (
     <HeaderWrapper banner={props.banner || config.defaultBg}>
