@@ -34,7 +34,7 @@ This is a normal Gatsby project, so just install the dependencies and start the 
 - Pagination Ready
 - Automatic RSS generation.
 - Automatic Sitemap generation.
-- Automatic support for Google Tag Manager
+- 100 Lighthouse Score
 
 ## 📸 Screenshot
 
