@@ -8,8 +8,6 @@
 ![Lighthouse](https://next.ndo.dev/assets/lighthouse.svg)
 ![Twitter Follow](https://img.shields.io/twitter/follow/ndom91?label=follow&style=social)
 
-More features are coming, stay tuned!
-
 ## 🏷️ Description
 
 This a static Gatsby site built with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), StyleComponents, PWA, Sharp, and Framer-Motion
