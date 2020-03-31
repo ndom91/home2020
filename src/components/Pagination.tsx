@@ -25,6 +25,11 @@ export const PaginationContent = styled.div`
       width: 130%;
       transform: translateX(-12.5%);
      }
+     @media ${media.small} {
+      padding: 0 1rem;
+      width: 90%;
+      transform: none;
+     }
 
     .page-numbers {
       display: block;
@@ -122,6 +127,37 @@ export const PaginationContent = styled.div`
           }
         }
       }
+      @media ${media.small} {
+        padding: 0.2rem 0.4rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: none;
+
+        &:nth-of-type(2) {
+          position: relative;
+          padding-right: 1.5rem;
+
+          &::after {
+            content: '...';
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+          }
+        }
+
+        &:nth-child(-n + 3),
+        &:nth-last-child(-n + 3) {
+          display: block;
+        }
+
+        &:nth-last-child(-n + 4) {
+          padding-right: 0.8rem;
+
+          &::after {
+            content: none;
+          }
+        }
+      }
     }
   `
 
@@ -129,6 +165,9 @@ const PageNumberWrapper = styled.div`
   display: flex;
   flex: 1;
   @media ${media.medium} {
+    justify-content: space-around;
+  }
+  @media ${media.small} {
     justify-content: space-around;
   }
 `

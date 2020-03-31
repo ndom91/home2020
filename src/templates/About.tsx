@@ -87,11 +87,17 @@ const HeaderImage = styled.div`
     width: 100%;
     transform: none;
     margin: 10px 10px 140px 10px;
+    &:hover {
+      transform: scale(1.05) rotate(-7deg);
+    }
   }
   @media ${media.small} {
     width: 90%;
     transform: none;
     margin-bottom: 50px;
+    &:hover {
+      transform: scale(1.05) rotate(-7deg);
+    }
   }
 `
 

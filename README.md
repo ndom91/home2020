@@ -3,7 +3,6 @@
 ## ndom91 2020
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1d9c322e-4f72-4721-aa0a-79a3df0782f4/deploy-status)](https://app.netlify.com/sites/optimistic-swirles-1010d5/deploys)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/ndom91/home2020?style=flat-square)
 ![Twitter Follow](https://img.shields.io/twitter/follow/ndom91?label=follow&style=social)
 
 ## 🏷️ Description

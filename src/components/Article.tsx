@@ -18,6 +18,10 @@ const Post = styled.article`
       transform: scale(1.1) translate(-50%, -50%);
     }
   }
+  @media ${media.small} {
+    width: 80%;
+    margin: 0 auto;
+  }
 `
 
 const Title = styled.h2`
@@ -40,6 +44,9 @@ const Initiale = styled.span`
 
   @media ${media.medium} {
     font-size: 5rem;
+  }
+  @media ${media.small} {
+    transform: translate(-35%, -40%);
   }
 `
 

@@ -31,6 +31,13 @@ const ProjectCard = styled.div`
     width: 90%;
     margin: 100px auto;
   }
+  @media ${media.small} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    margin: 100px auto;
+  }
 `
 
 const ProjectTechWrapper = styled.div`
@@ -144,6 +151,9 @@ const ProjectDesc = styled.div`
   color: ${theme.colors.grey.default};
   @media ${media.medium} {
     font-size: 0.9rem;
+  }
+  @media ${media.medium} {
+    font-size: 1rem;
   }
 `
 
