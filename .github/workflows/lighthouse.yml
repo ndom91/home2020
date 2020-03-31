@@ -1,43 +1,16 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+name: Lighthouse CI
+on: push
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  lighthouse:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    - name: Lighthouse CI Action
-      uses: treosh/lighthouse-ci-action@v2
-      with:
-        # List of URL(s) to analyze
-        urls: https://next.ndo.dev# optional
-        # Path to a Lighthouse budgets.json file
-        # budgetPath: # optional
-        # Path to a LHCI lighthouserc.json file
-        # configPath: # optional
-        # Opt-out of saving Lighthouse results as an action artifacts
-        uploadArtifacts: true # optional
-        # 
-        # temporaryPublicStorage: # optional
-        # Number of runs to do per URL
-        # runs: # optional, default is 1
-        # Address of a LHCI server
-        # serverBaseUrl: # optional
-        # API token to push to LHCI server
-        # serverToken: # optional
+      - uses: actions/checkout@v1
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: |
+            https://next.ndo.dev
+            https://ndo.dev
+          # budgetPath: ./budget.json # test performance budgets
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
