@@ -11,19 +11,19 @@ const typography = new Typography({
   googleFonts: [
     {
       name: config.headerFontFamily,
-      styles: ['100', '400', '700'],
+      styles: ['100', '400', '700&display=swap'],
     },
     {
       name: config.bodyFontFamily,
-      styles: ['100', '400'],
+      styles: ['100', '400&display=swap'],
     },
     {
       name: config.sanSerifFontFamily,
-      styles: ['100', '300', '400'],
+      styles: ['100', '300', '400&display=swap'],
     },
     {
       name: config.serifFontFamily,
-      styles: ['100', '300', '500', '600'],
+      styles: ['100', '300', '500', '600&display=swap'],
     },
   ],
 })
