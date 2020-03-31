@@ -22,6 +22,9 @@ const Wrapper = styled.div`
     flex-direction: column;
     transform: translateY(-4rem);
   }
+  @media ${media.small} {
+    margin: 6rem 2rem;
+  }
 `
 
 const Prev = styled.div`

@@ -5,9 +5,13 @@ tags: ['aws', 'lambda', 'netlify', 'serverless']
 category: 'Web'
 ---
 
+## Introduction
+
 So I've had some experience with the whole "serverless" thing over the past few months. A few cloudflare workers, a netlify function here or there to spice up a static site. But a full-on serverless function based project was not something I'd decided to take on. Until now.
 
 I recently took part in the German government's [#wirvsvirus](https://wirvsvirushackathon.org) coronavirus hackathon. My team and I brainstormed for a while, and decided to create an API to provide data to other projects. Of course there were other APIs serving coronavirus data already, but we wanted to make ours easy to use, with a flashy homepage and easy to digest examples. We even got 500 USD credit from Amazon from the hackathon organisers.
+
+### Coffee #1
 
 So we got down to work and in the spirit of a hackathon, decided to work with what we knew best - an EC2 VM running an Express API. We got our source data from [@lazd/coronadatascraper](https://github.com/lazd/coronadatascraper) which is a great project that serves as a repository for scrapers of all sorts. They scrape health department websites, newspaper, etc. to grab the latest stats and spit out a daily `data.json` file with the results. In the EC2 architecture we just filtered / mapped this with javascript and returned the results depending on the route requested.
 
@@ -18,6 +22,8 @@ So I got started with AWS Lambda directly via their interface and got an MVP up 
 The `coronadatascraper` was still executed manually on the server, but instead of just dropping a json file on the filesystem, this was imported into DynamoDB. Each route then queried DyanmoDB for its data, did whatever mapping / filtering / reducing it needed to based on the query parameters, and returned the result.
 
 Technically this worked great, however the performance was almost 2x as slow as the original EC2 based solution.
+
+### Coffee #2
 
 So I made another coffee and gave it a think, and decided a cache would be perfect. That way we could save the expensive DB calls only for when it was absolutely necessary. Since these were serverless functions I couldn't just install `memcached` or `redis` directly onto the system, but thankfully Redis offers a cloud version of its cache.
 
@@ -30,6 +36,8 @@ Performance improved immensely. Lambda cold-starts and the first query of a new 
 I was delighted.
 
 The only problem now was developer experience. AWS is notoriously difficult to manage and work with. I didn't want to manually upload zips of my project every time a change was made.
+
+### Coffee #3
 
 So I made another coffee and had another think..
 
@@ -45,7 +53,11 @@ After another coffee or two, I decided to swap the AWS Database with another ser
 
 After importing our data into Fauna and adjusting the code to query it instead of Dynamo, queries were once again working without redis keys.
 
+### Wait, what just happened?!
+
 I realize this is getting a bit long-winded, so let me summarize what we've done so far. We have 1 initial implementation running on a classic AWS EC2 instance based on a node / express API which simply serves json files off the disk. Then we have another version running on AWS Lambda functions and DynamoDB. Last, but not least, we have a third version running on Netlify Functions with FaunaDB as the datastore.
+
+### Testing
 
 It was now time for some performance testing.
 
@@ -57,12 +69,14 @@ The Netlify functions, as you can see in the screenshot above, were often taking
 
 I now had a conundrum - Netlify offered a great developer experience, but the end result had lackluster performance. AWS Lambda had great performance, but was a pain in the ass to develop on.
 
+### Coffee #4
+
 Another coffee and a think weren't going to fix this one..
 
 I decided to do some research and sleep on this one. The next morning I found a few different services built around making developing with AWS Lambda functions more palatable. One of which was [serverless](https://serverless.com). It was a bit of a pain to initially setup as it required an additional Cloudformation / Ansible like document to orchestrate the whole thing. But after that was setup and my AWS Account and Github were linked, `serverless` made the whole experience a breeze.
 
 Unfortunately there was no nice local development tool like Netlify Dev that I could find (if there is and I've overlooked it, please let me know!). But in general the development / deployment / CI/CD experience was fantastic, almost as easy as with Netlify itself. Pushes to Github get their own preview deploy URLs and pushes to master get deployed to the production URL automatically. There is also a really nice monitoring dashboard if you link a serverless cloud account.
 
-To summarize my take aways from working on a serverless-first project are the following: it ain't easy!
+### Summary
 
 It is obviously still fairly new and the ecosystem is still very fluid, with new services / frameworks / tools coming out constantly. Working with AWS directly is a pain in the ass, but performance is great. Therefore, if you're thinking about whether or not to try your next project as a serverless functions only project, I highly recommend you find a nice framework / tooling solution that wraps AWS, like `serverless` provides, and you're golden!

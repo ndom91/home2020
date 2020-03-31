@@ -31,6 +31,10 @@ const Wrapper: any = styled.div`
 const PostContent = styled.div`
   max-width: 55vw;
   margin-top: 4rem;
+  @media ${media.small} {
+    max-width: 75vw;
+    margin: 0 auto;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -49,6 +53,9 @@ const TagWrapper = styled.div`
   margin-top: 20px;
   @media ${media.medium} {
     flex-wrap: wrap;
+  }
+  @media ${media.small} {
+    margin: 1rem;
   }
 `
 const Tag = styled.div`
@@ -88,6 +95,7 @@ const Title = styled.h1`
   }
   @media ${media.small} {
     font-size: 1.8rem;
+    margin: 1em 0.5em;
   }
 `
 
@@ -105,6 +113,9 @@ const Initiale = styled.span`
 
   @media ${media.medium} {
     font-size: 5rem;
+  }
+  @media ${media.small} {
+    transform: translate(30%, -50%);
   }
 `
 

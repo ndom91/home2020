@@ -21,6 +21,12 @@ const Post = styled.article`
   @media ${media.small} {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 50px;
+    &:hover {
+      & .post-initial {
+        transform: scale(1.05) translate(-40%, -50%);
+      }
+    }
   }
 `
 
