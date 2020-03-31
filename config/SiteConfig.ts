@@ -8,7 +8,7 @@ export default {
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/dawn.jpg', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Typescript Power Blog with big typography', // Your site description
+  siteDescription: 'ndom91', // Your site description
   author: 'Nico Domino', // Author for schemaORGJSONLD
   siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
 
@@ -34,6 +34,5 @@ export default {
   siteFBAppID: '',
 
   //
-  Google_Tag_Manager_ID: 'GTM-XXXXXXX',
-  POST_PER_PAGE: 4,
+  POST_PER_PAGE: 6,
 }
