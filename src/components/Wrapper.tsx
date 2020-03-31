@@ -14,4 +14,8 @@ export const Wrapper: any = styled.div`
   @media ${media.medium} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
   }
+  @media ${media.small} {
+    max-width: 100%;
+    padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
+  }
 `

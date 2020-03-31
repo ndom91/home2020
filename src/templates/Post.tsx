@@ -26,6 +26,9 @@ const Wrapper: any = styled.div`
   @media ${media.small} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
   }
+  & > div {
+    padding: 1rem 1rem;
+  }
 `
 
 const PostContent = styled.div`
@@ -41,9 +44,6 @@ const ContentWrapper = styled.div`
   padding: 5em 4em;
   @media ${media.medium} {
     padding: 1em 1.5em;
-  }
-  @media ${media.small} {
-    padding: 0em;
   }
 `
 
@@ -95,7 +95,7 @@ const Title = styled.h1`
   }
   @media ${media.small} {
     font-size: 1.8rem;
-    margin: 1em 0.5em;
+    margin: 1em 0em;
   }
 `
 
@@ -115,7 +115,7 @@ const Initiale = styled.span`
     font-size: 5rem;
   }
   @media ${media.small} {
-    transform: translate(30%, -50%);
+    transform: translate(-30%, -30%);
   }
 `
 

@@ -17,6 +17,6 @@ export const Content = styled.div`
     padding: 2rem 1.6rem;
   }
   @media ${media.small} {
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
   }
 `

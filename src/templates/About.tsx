@@ -63,8 +63,8 @@ const SubHeaderText = styled.div`
       height: 300px;
     }
     @media ${media.small} {
-      left: 0%;
-      top: 70%;
+      left: -5%;
+      top: 65%;
       width: 300px;
       height: 150px;
     }
@@ -106,6 +106,11 @@ const Projects = styled.div`
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  @media ${media.small} {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const ProjectsHeader = styled.h1`
@@ -125,6 +130,10 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  @media ${media.small} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 interface Project {
