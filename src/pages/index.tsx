@@ -77,6 +77,7 @@ const HomepageContent: any = styled.div`
 const PreHeader: any = styled.div`
   font-size: 1.4rem;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   color: ${theme.colors.primary};
   margin-bottom: 20px;
 `
@@ -84,6 +85,7 @@ const HeaderText: any = styled.h3`
   font-size: 3rem !important;
   font-weight: 600;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   color: ${theme.colors.grey.default};
   margin-bottom: 20px;
   @media ${media.large} {
@@ -99,6 +101,7 @@ const HeaderText: any = styled.h3`
 const SubHeader: any = styled.div`
   font-weight: 300;
   font-family: ${config.sanSerifFontFamily};
+  font-display: swap;
   color: ${theme.colors.grey.light};
   margin-bottom: 20px;
   z-index: 2;

@@ -55,6 +55,7 @@ const ProjectDetails = styled.div`
   padding: 40px;
   border-radius: 0 0 10px 10px;
   font-family: ${config.sanSerifFontFamily};
+  font-display: swap;
   font-weight: 400;
 
   margin: 20px;
@@ -96,6 +97,7 @@ const ProjectLabel = styled.h3`
   transition-duration: 250ms;
   padding: 5px;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   font-weight: 600;
   font-size: 1.3rem;
 

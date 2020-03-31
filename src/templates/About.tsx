@@ -14,6 +14,7 @@ import { media } from '../utils/media'
 const AboutHeader = styled.h1`
   text-align: center;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   font-size: 4rem;
   font-weight: 500;
   padding-bottom: 50px;
@@ -35,6 +36,7 @@ const SubHeader = styled.div`
 const SubHeaderText = styled.div`
   font-size: 1.4rem;
   font-family: ${config.sanSerifFontFamily};
+  font-display: swap;
   font-weight: 300;
   padding: 0 2em;
   @media ${media.medium} {
@@ -104,6 +106,7 @@ const ProjectsHeader = styled.h1`
   margin-top: 80px;
   text-align: center;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   font-size: 3.5rem;
   font-weight: 500;
   padding-bottom: 50px;

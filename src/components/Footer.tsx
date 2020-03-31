@@ -41,6 +41,7 @@ const FooterSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   font-family: ${config.bodyFontFamily};
+  font-display: swap;
   justify-content: center;
   margin: 20px;
   min-width: 6rem;

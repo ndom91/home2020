@@ -9,6 +9,7 @@ const HeaderText = styled.h1`
   text-align: center;
   font-size: 6rem;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   margin-bottom: 20px;
 `
 
@@ -27,6 +28,7 @@ const Subtitle = styled.h3`
   font-size: 2rem;
   font-weight: 100;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   margin-bottom: 50px;
 `
 

@@ -88,6 +88,7 @@ const LinkWrapper = styled(Link)`
   font-weight: 400;
   letter-spacing: 1px;
   font-family: ${config.sanSerifFontFamily};
+  font-display: swap;
 
   &.active {
     &:before {
@@ -130,6 +131,7 @@ const MenuNumber = styled.span`
   font-size: 1rem;
   font-weight: 600;
   font-family: ${config.sanSerifFontFamily};
+  font-display: swap;
   margin-right: 8px;
 `
 

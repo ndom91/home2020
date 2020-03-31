@@ -98,6 +98,7 @@ const NavigationLink = styled(Link)`
   text-align: left;
   font-size: 2.8rem;
   font-family: 'Cormorant Garamond';
+  font-display: swap;
   font-weight: 300;
   opacity: 1;
   transition: opacity 250ms ease-in-out 1500ms;
@@ -109,6 +110,7 @@ const NavigationLink = styled(Link)`
     border-bottom: 10px solid #fff;
     width: 370px;
     font-family: 'Cormorant Garamond';
+    font-display: swap;
     position: absolute;
     top: 75px;
     left: -150px;
@@ -123,6 +125,7 @@ const MenuNumber = styled.div`
   display: inline-block;
   color: ${theme.colors.grey.ultraLight};
   font-family: 'Playfair Display', 'serif';
+  font-display: swap;
   margin-right: 10px;
 `
 

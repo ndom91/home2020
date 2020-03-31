@@ -65,6 +65,7 @@ const Tag = styled.div`
   transition-timing-function: ease-in;
   padding: 8px 15px;
   font-family: ${config.serifFontFamily};
+  font-display: swap;
   font-weight: 600;
 
   &:hover,
@@ -99,6 +100,7 @@ const Initiale = styled.span`
   z-index: -1;
   transition: transform 250ms ease-in-out;
   font-family: 'Bitter', sans-serif;
+  font-display: swap;
   font-weight: 700;
 
   @media ${media.medium} {
