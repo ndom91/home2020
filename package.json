@@ -69,7 +69,6 @@
   "dependencies": {
     "framer-motion": "^1.9.1",
     "gatsby-image": "^2.2.43",
-    "gatsby-plugin-google-tagmanager": "^2.1.26",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-transformer-json": "^2.2.27",

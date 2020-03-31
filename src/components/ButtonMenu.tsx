@@ -92,7 +92,7 @@ const ButtonMenu = () => {
 
   return (
     <Wrapper>
-      <ButtonHamburger onClick={() => setActive(!active)} className={active ? 'active' : ''}>
+      <ButtonHamburger aria-label="Toggle Menu" onClick={() => setActive(!active)} className={active ? 'active' : ''}>
         <span />
       </ButtonHamburger>
       <OverlayMenu isActive={active} />
