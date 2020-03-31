@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
 import { darken, lighten } from 'polished'
 import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
