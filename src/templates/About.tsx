@@ -14,7 +14,7 @@ import { media } from '../utils/media'
 const AboutHeader = styled.h1`
   text-align: center;
   font-family: ${config.serifFontFamily};
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 500;
   padding-bottom: 50px;
   @media ${media.medium} {
@@ -33,9 +33,10 @@ const SubHeader = styled.div`
 `
 
 const SubHeaderText = styled.div`
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 300;
+  padding: 0 2em;
   @media ${media.medium} {
     font-size: 1.1rem;
   }
@@ -60,25 +61,24 @@ const SubHeaderText = styled.div`
       height: 300px;
     }
     @media ${media.small} {
-      left: -45%;
-      top: 60%;
-      width: 350px;
+      left: 0%;
+      top: 70%;
+      width: 300px;
       height: 150px;
     }
   }
 `
 
 const HeaderImage = styled.div`
-  min-width: 400px;
+  min-width: 350px;
   border: 15px solid ${theme.colors.primary};
   border-radius: 10px;
-  transform: translateX(-20%);
-  /* transition: translate 250ms ease-in-out scale 250ms ease-in-out rotate 250ms ease-in-out; */
+  transform: translateX(-10%);
   transition-property: transform scale rotate;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
   &:hover {
-    transform: translateX(-20%) scale(1.05) rotate(-7deg);
+    transform: translateX(-10%) scale(1.05) rotate(-7deg);
   }
   @media ${media.medium} {
     min-width: unset;
@@ -87,7 +87,7 @@ const HeaderImage = styled.div`
     margin: 10px 10px 140px 10px;
   }
   @media ${media.small} {
-    width: 110%;
+    width: 90%;
     transform: none;
     margin-bottom: 50px;
   }
@@ -125,6 +125,14 @@ interface Project {
     image: string
     tech: []
     desc: string
+  }
+}
+
+interface ImageGraphQL {
+  node: {
+    fluid: {
+      originalName: string
+    }
   }
 }
 
@@ -179,7 +187,7 @@ const About = () => {
             <HeaderImage>
               <Img
                 style={{ width: 'auto' }}
-                fluid={images.find(img => img.node.fluid.originalName === 'ndo2.jpg').node.fluid}
+                fluid={images.find((img: ImageGraphQL) => img.node.fluid.originalName === 'ndo2.jpg').node.fluid}
                 fadeIn
                 alt="ndom91"
               />
@@ -196,7 +204,11 @@ const About = () => {
               <ProjectsWrapper>
                 {projects.map((project: Project, index: number) => {
                   return (
-                    <Project project={project} image={images.find(img => img.node.fluid.originalName === project.node.image)} key={index} />
+                    <Project
+                      project={project}
+                      image={images.find((img: ImageGraphQL) => img.node.fluid.originalName === project.node.image)}
+                      key={index}
+                    />
                   )
                 })}
               </ProjectsWrapper>
