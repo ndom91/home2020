@@ -32,7 +32,7 @@ jobs:
         # Path to a LHCI lighthouserc.json file
         # configPath: # optional
         # Opt-out of saving Lighthouse results as an action artifacts
-        # uploadArtifacts: false # optional
+        uploadArtifacts: true # optional
         # 
         # temporaryPublicStorage: # optional
         # Number of runs to do per URL
