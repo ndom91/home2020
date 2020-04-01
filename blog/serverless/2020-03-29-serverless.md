@@ -65,7 +65,7 @@ After the initial query, all Netlify and Lambda requests were served from the sa
 
 ![Performance screenshot](/assets/images/blog/performance.png)
 
-The Netlify functions, as you can see in the screenshot above, were often taking over 1.2s-1.5s! While the EC2 and classic Lambda versions were way more competitive around 300-500ms.
+The Netlify functions, as you can see in the screenshot above, were often taking over 2! While the EC2 and classic Lambda versions were way more competitive around 200-500ms.
 
 I now had a conundrum - Netlify offered a great developer experience, but the end result had lackluster performance. AWS Lambda had great performance, but was a pain in the ass to develop on.
 

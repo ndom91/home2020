@@ -46,6 +46,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-images-medium-zoom`,
+          {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',

@@ -25,9 +25,9 @@ const Wrapper: any = styled.div`
   }
   @media ${media.small} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
-  }
-  & > div {
-    padding: 1rem 1rem;
+    & > div {
+      padding: 1rem 1rem;
+    }
   }
 `
 
