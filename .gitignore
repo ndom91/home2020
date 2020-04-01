@@ -58,3 +58,6 @@ public/
 
 # Bundle stats
 bundle-stats.json
+
+# Snowpack web_modules
+web_modules/
