@@ -80,3 +80,17 @@ Unfortunately there was no nice local development tool like Netlify Dev that I c
 ### Summary
 
 It is obviously still fairly new and the ecosystem is still very fluid, with new services / frameworks / tools coming out constantly. Working with AWS directly is a pain in the ass, but performance is great. Therefore, if you're thinking about whether or not to try your next project as a serverless functions only project, I highly recommend you find a nice framework / tooling solution that wraps AWS, like `serverless` provides, and you're golden!
+
+#### Update:
+
+After having all three implementations run a few days and experimenting around with them all, I decided to kill the Netlify implementation entirely. So we're left with the EC2 Node / Express based server as well as the Lambda serverless implementation.
+
+I've begun migrating more of the routes over to Lambda functions which has been working well. However, what is still difficult is the data import via serverless functions. The provider offers their output data on the web at [coronadatascraper.com/data.json](https://coronadatascraper.com/data.json), however, I'm not sure when exactly they post it / how often, etc. I thinkkk they post it once daily, so I've been pulling it then.
+
+The other option is to clone the repo and run the node process manually to get the most up-to-date output data. I still haven't figured out how to clone a repo, run npm install, run a node process, and write output data all inside a lambda function.
+
+So anyway, other than manually importing the data the Lambda implementation has been running great.
+
+![Performance 2](performance2.png)
+
+The performance of the Lambda function compared to the EC2 instance is on average even ~ 150ms-200ms better. The workflow via `serverless` also couldn't be easier, props again to them!
