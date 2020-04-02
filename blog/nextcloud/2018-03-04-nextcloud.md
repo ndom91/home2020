@@ -2,6 +2,7 @@
 date: '2018-03-04'
 title: 'Nextcloud Setup'
 tags: ['side project', 'self hosted', 'linux']
+category: 'linux'
 ---
 
 ![nextcloud splash](nextcloud.png)

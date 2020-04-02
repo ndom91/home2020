@@ -1,10 +1,11 @@
 ---
-date: "2019-12-08"
-title:  "Docker + Localhost MySQL"
-tags: ["servers", "linux", "mysql", "docker"]
+date: '2019-12-08'
+title: 'Docker + Localhost MySQL'
+tags: ['servers', 'linux', 'mysql', 'docker']
+category: 'linux'
 ---
 
-I was having the hardest time getting docker containers to connect to the hosts instance of mysql. 
+I was having the hardest time getting docker containers to connect to the hosts instance of mysql.
 
 I finally found a great solution, so I wanted to post it here for myself and others in the future:
 

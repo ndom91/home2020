@@ -1,7 +1,8 @@
 ---
-date: "2018-03-20"
-title:  "iptables"
-tags: ["servers", "linux"]
+date: '2018-03-20'
+title: 'iptables'
+tags: ['servers', 'linux']
+category: 'linux'
 ---
 
 Run the following. It'll insert the rule at the top of your iptables and will allow all traffic unless subsequently handled by another rule.

@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Header, Subline, SEO, PrevNext, SectionTitle, Content } from '../components'
+import { Layout, Header, Subline, SEO, PrevNext, Content } from '../components'
 import config from '../../config/SiteConfig'
 import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
@@ -139,17 +139,18 @@ const PostPage: React.SFC<Props> = props => {
           <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
           <Header banner={post.frontmatter.banner}>
             <Link to="/">{config.siteTitle}</Link>
-            <SectionTitle>{post.frontmatter.title}</SectionTitle>
-            <Subline light={true}>
-              {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In{' '}
-              <Link to={`/categories/${kebabCase(post.frontmatter.category)}`}>{post.frontmatter.category}</Link>
-            </Subline>
           </Header>
           <Wrapper>
             <Content id="content">
               <ContentWrapper>
                 <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
                 <Title>{titleCase(post.frontmatter.title)}</Title>
+                <Subline>
+                  {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
+                  <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>
+                    {post.frontmatter.category}
+                  </Link>
+                </Subline>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
               </ContentWrapper>
               {post.frontmatter.tags ? (

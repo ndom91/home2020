@@ -1,22 +1,22 @@
 ---
-title:  "Hangouts Emojis"
+title: 'Hangouts Emojis'
 date: '2018-04-15'
-tags: ["web", "reverse-engineering"]
-category: "Web"
+tags: ['web', 'reverse-engineering']
+category: 'Web'
 ---
 
-So I've been looking for a list of emojis and their text counterparts for google hangouts. This seems like a fairly easy thing for them to publish, right? 
+So I've been looking for a list of emojis and their text counterparts for google hangouts. This seems like a fairly easy thing for them to publish, right?
 
 Wrong.
-It also was only dug up in parts by people around the web. 
+It also was only dug up in parts by people around the web.
 
 So I was lucky enough to find a page that did most of the hard thinking, in that they thought of going directly to the source - Google's own js file where the unicode codes and their text equivalents are stored i.e. "`"!:)": 128579`"
 
-So I did some digging and stumbled upon the variable `h9a` in one of the files with approximately 105 emojis! [Beat that internet noobs with your lists of 10-15] 
+So I did some digging and stumbled upon the variable `h9a` in one of the files with approximately 105 emojis! [Beat that internet noobs with your lists of 10-15]
 
 My favorites are highlighted (bold + italic) below for easy finding again in the future :)
 
-So, without further adieu: 
+So, without further adieu:
 
 ### Google Hangouts Emojis
 
@@ -131,4 +131,4 @@ So, without further adieu:
 
 Pastebin: [hangouts emojis](https://paste.iamnico.xyz/I8vDQZHLTf)
 
-If I have some free time in the future, I will edit this page to make a nice little table with the pictures and what not, but for now I think you should be able to decipher what most of them are just by their text versions. 
+If I have some free time in the future, I will edit this page to make a nice little table with the pictures and what not, but for now I think you should be able to decipher what most of them are just by their text versions.

@@ -2,6 +2,7 @@
 date: '2018-02-25'
 title: 'Bash Operators'
 tags: ['servers', 'linux']
+category: 'linux'
 ---
 
 ![bash](bash.png)

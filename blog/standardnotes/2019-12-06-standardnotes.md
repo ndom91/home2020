@@ -2,6 +2,7 @@
 date: '2019-12-06'
 title: 'Standard Notes Selfhosted Installation'
 tags: ['servers', 'linux', 'standardnotes']
+category: 'linux'
 ---
 
 # What?

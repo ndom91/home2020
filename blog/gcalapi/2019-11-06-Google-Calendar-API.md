@@ -1,15 +1,16 @@
 ---
-date: "2019-11-06"
-title:  "Google Calendar API Sucks"
-tags: ["google calendar", "api", "rant"]
-demo: "https://github.com/ndom91/next-maintenance"
+date: '2019-11-06'
+title: 'Google Calendar API Sucks'
+tags: ['google calendar', 'api', 'rant']
+category: 'web'
+demo: 'https://github.com/ndom91/next-maintenance'
 ---
 
 \<rant>
 
-I've been building a little enterprise app at work to deal with network maintenances and it has a good deal of Google Calendar integration. 
+I've been building a little enterprise app at work to deal with network maintenances and it has a good deal of Google Calendar integration.
 
-Please tell me if this makes sense to you.. 
+Please tell me if this makes sense to you..
 
 When creating an event you get an event object back with all the details, which looks like this:
 
@@ -56,17 +57,17 @@ When creating an event you get an event object back with all the details, which 
 }
 ```
 
-Which ID do you think is the actual eventID? 
+Which ID do you think is the actual eventID?
 
 The one called `id` ? ...wrong.
 
 The one called `iCalUID` ? ...wrong.
 
-In fact, its the ID which is appended as a parameter to the URL in the field `htmlLink`. 
+In fact, its the ID which is appended as a parameter to the URL in the field `htmlLink`.
 
-You have to parse this URL manually and extract the `eid` parameter just to save the Calendar ID. 
+You have to parse this URL manually and extract the `eid` parameter just to save the Calendar ID.
 
-Without it you obviously cannot manipulate the calendar entry later on. 
+Without it you obviously cannot manipulate the calendar entry later on.
 
 Come on Google - I thought you were better than this.
 

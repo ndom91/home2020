@@ -1,19 +1,21 @@
 ---
-date: "2018-04-14"
-title:  "Remember the Milk Syntax"
-tags: ["organisation", "linux"]
+date: '2018-04-14'
+title: 'Remember the Milk Syntax'
+tags: ['organisation', 'linux']
+category: 'services'
 ---
 
-So, like any modern person on the internet today, we all have our own workflows. Our own ways of staying on top of our responsibilities. 
+So, like any modern person on the internet today, we all have our own workflows. Our own ways of staying on top of our responsibilities.
 
-One of the key aspects of this, at least for me, is a solid application for notes and reminders. 
+One of the key aspects of this, at least for me, is a solid application for notes and reminders.
 
-I've spent a lot of time searching around and trying out different solutions. 
+I've spent a lot of time searching around and trying out different solutions.
 
-The one I've settled on, for now, is called [`Remember the Milk`](https://rememberthemilk.com). 
+The one I've settled on, for now, is called [`Remember the Milk`](https://rememberthemilk.com).
 
 <!--more-->
-They have many channels for interacting with your notes, including mobile apps (iOS / Android), Desktop apps (including a client of Linux! [via electron]), a modern web app, as well as a full featured command line client. 
+
+They have many channels for interacting with your notes, including mobile apps (iOS / Android), Desktop apps (including a client of Linux! [via electron]), a modern web app, as well as a full featured command line client.
 
 This app checks all my boxes:
 
@@ -24,21 +26,22 @@ This app checks all my boxes:
 - [x] Ability to _very_ quickly add short tasks
 - [x] Extensive Keyboard shortcuts
 - [x] Commandline client [**BONUS**]
-- [x] Google Assistant "client" [**BONUS**] 
+- [x] Google Assistant "client" [**BONUS**]
 
 So I just want to gather all my search operators and shortcuts here so that I may be able to quickly refer back to them here:
 
-### Smart Add  
+### Smart Add
 
 ```
-Due Date          -         ^ date/time  
-Priority          -         ! priority  
-List and Tags     -         # list/tag  
-Location          -         @ location  
-Repeat            -         * how often 
-Time Estimate     -         = time est.  
+Due Date          -         ^ date/time
+Priority          -         ! priority
+List and Tags     -         # list/tag
+Location          -         @ location
+Repeat            -         * how often
+Time Estimate     -         = time est.
 URL               -         Begin with http://
 ```
+
 ### RTM CLI
 
 ```
@@ -50,10 +53,10 @@ URL               -         Begin with http://
 -d, --hideDue [value]    hide tasks due more than n days from today (false/number of days)
 -f, --config [file]      specify configuration file
 -h, --help               output usage information
-    
-    
+
+
    Commands:
-    
+
 add|a [task...]                     Add a new Task
 addList|al [name] [filter...]       Add a new List or Smart List
 addTags|at [index] [tags...]        Add one or more tags to a Task
@@ -84,4 +87,3 @@ today                               Display prioritized tasks and tasks due or c
 ```
 
 I hope you guys like RememberTheMilk as much as I do and a big thanks to their devs!
-

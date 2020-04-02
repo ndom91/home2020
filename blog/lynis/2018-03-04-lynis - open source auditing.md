@@ -1,9 +1,9 @@
 ---
-date: "2018-03-04"
-title:  "Lynis - Linux Server Auditing"
-tags: ["servers", "linux"]
+date: '2018-03-04'
+title: 'Lynis - Linux Server Auditing'
+tags: ['servers', 'linux']
+category: 'linux'
 ---
-
 
 So you’ve got your system up and running the way you like it, but your wondering what else can I do to harden my server?
 
@@ -16,11 +16,9 @@ So lets get started!
 
 I like to run it out of /opt, so we’ll cd there.
 
-
 ```bash
 cd /opt
 ```
-
 
 Then we’ll download the tool. Please check the [lynis download page](https://cisofy.com/downloads/lynis/) for the newest version
 

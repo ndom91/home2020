@@ -1,7 +1,8 @@
 ---
-date: "2018-03-17"
-title:  "Smarthome Ideas"
-tags: ["side projects", "linux"]
+date: '2018-03-17'
+title: 'Smarthome Ideas'
+tags: ['side projects', 'linux']
+category: 'linux'
 ---
 
 # Smart Home - Schöne Aussicht 10a
@@ -10,9 +11,9 @@ I've begun assembling the beginnings of a nice little smart-home implementation 
 
 ## openHAB
 
-[**OpenHAB**](https://openhab.org) is the software I've decided to go with for this project. It supports a ton of smart home devices and integrates them all into one coherent system. 
+[**OpenHAB**](https://openhab.org) is the software I've decided to go with for this project. It supports a ton of smart home devices and integrates them all into one coherent system.
 
-No more messing with various provider clouds and trying to orchestrate actions between multiple smart phone apps from different manufacturers. 
+No more messing with various provider clouds and trying to orchestrate actions between multiple smart phone apps from different manufacturers.
 
 Here is the list of openHab supported "addons", as they call them: [openhab.org/addons](https://www.openhab.org/addons/)
 
@@ -20,8 +21,8 @@ The creator also has a fantastic 1hr long talk from 'Froscon 2018' describing it
 
 @[youtube](DYB20Y4jXnA)
 
-
 ### Hardware
+
 This is not exhaustive, but I have integrated some of the following items into my smart home:
 
 - MiLight 6W E27 Lightbulbs [Source](https://www.amazon.de/LIGHTEU®-Multicolor-Original-dimmable-Changing/dp/B01HD2RD6Q/)
@@ -33,10 +34,10 @@ This is not exhaustive, but I have integrated some of the following items into m
 - MiLight iBox WiFi Controller [Source](https://www.amazon.de/Kontrolleinrichtung-kabelloser-Mi-Lampen-Smartphone-Kontrolle/dp/B00OH2ES9Q)
 - TP-Link Kasa HS100 Smart Plug [Source](https://www.amazon.de/TP-Link-Steckdose-funktionieren-erforderlich-Steuern/dp/B06W586CDZ)
 
-When buying hardware, I try to get things where you don't have to buy an extra "hub" to connect it to your wifi network. Such as the aforementioned smart plugs and motion sensors. This makes integration even easier. 
+When buying hardware, I try to get things where you don't have to buy an extra "hub" to connect it to your wifi network. Such as the aforementioned smart plugs and motion sensors. This makes integration even easier.
 
 ### Example Actions
 
-openHab has its own scripting language whereby you can create extremely complex rules / scenarios with your devices and many other external data sources. For example, I have the suns position linked as an external source. This is used to calculate when it gets dark every day and automatically activates the motion sensor / light rules then. That way I never have to adjust the timing of this throughout the year. Whether its summer or winter, the motion sensors will begin turning on the lights at the exact correct time each night. 
+openHab has its own scripting language whereby you can create extremely complex rules / scenarios with your devices and many other external data sources. For example, I have the suns position linked as an external source. This is used to calculate when it gets dark every day and automatically activates the motion sensor / light rules then. That way I never have to adjust the timing of this throughout the year. Whether its summer or winter, the motion sensors will begin turning on the lights at the exact correct time each night.
 
-I also have some other basic rules such as before bed, turn the lights in my room `rgb(255,0,0)` to stimulate sleep. Conversely I have the LEDs come on as `rgb(0,0,255)` in the morning to stimulate waking up. 
+I also have some other basic rules such as before bed, turn the lights in my room `rgb(255,0,0)` to stimulate sleep. Conversely I have the LEDs come on as `rgb(0,0,255)` in the morning to stimulate waking up.

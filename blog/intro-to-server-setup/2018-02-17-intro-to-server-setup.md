@@ -2,6 +2,7 @@
 date: '2018-02-17'
 title: 'First 5 things to do with a new Ubuntu Server'
 tags: ['servers', 'linux']
+category: 'linux'
 ---
 
 ![ubuntu splash](ubuntu.png)
