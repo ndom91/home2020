@@ -93,4 +93,4 @@ So anyway, other than manually importing the data the Lambda implementation has 
 
 ![Performance 2](performance2.png)
 
-The performance of the Lambda function compared to the EC2 instance is on average even ~ 150ms-200ms better. The workflow via `serverless` also couldn't be easier, props again to them!
+The performance of the Lambda function compared to the EC2 instance is on average even ~ 150ms-200ms better! The workflow via `serverless` also couldn't be any easier, again props to them!
