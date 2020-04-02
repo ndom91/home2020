@@ -45,18 +45,26 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-copy-linked-files',
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images-medium-zoom`, // point!
             options: {
-              linkImagesToOriginal: false,
+              zIndex: 9999,
+              background: 'rgba(0,0,0,0.4)',
+              margin: 100,
             },
           },
-          `gatsby-remark-images-medium-zoom`,
           {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
               rel: 'nofollow noopener noreferrer',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: false,
             },
           },
           'gatsby-remark-prismjs',
@@ -78,10 +86,10 @@ module.exports = {
         },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images/`,
       },

@@ -4,13 +4,13 @@ title: 'First 5 things to do with a new Ubuntu Server'
 tags: ['servers', 'linux']
 ---
 
-![ubuntu splash](/assets/images/blog/ubuntu.png)
+![ubuntu splash](ubuntu.png)
 
 Here’s where one lands directly after the installation of a fresh Ubuntu image. In this case Ubuntu 16.04.
 
 1. SSH into your machine with your favorite client [Win 32/64: [putty](https://www.putty.org/)]
 
-![freshmachine](/assets/images/blog/fresh.png)
+![freshmachine](fresh.png)
 
 So the first thing I like to do is create a new user for myself and add him to the `sudoers` group so he can (with password!) execute commands via `sudo`.
 

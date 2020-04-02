@@ -63,7 +63,7 @@ It was now time for some performance testing.
 
 After the initial query, all Netlify and Lambda requests were served from the same redis cache. I thought since all three services (the "normal" Lambda functions, the Netlify functions, and Redis itself) were actually running on AWS, the performance should be more or less the same. Boy was I wrong.
 
-![Performance screenshot](/assets/images/blog/performance.png)
+![Performance screenshot](performance.png)
 
 The Netlify functions, as you can see in the screenshot above, were often taking over 2! While the EC2 and classic Lambda versions were way more competitive around 200-500ms.
 

@@ -136,7 +136,7 @@ You can use my source here:
 
 And now if you visit your URL that you set in the nginx config above, you should see something like:
 
-![bash](/assets/images/blog/standardfile.png)
+![bash](standardfile.png)
 
 > Remember this is not the Standard Notes frontend web application - this is just the backend server.
 
