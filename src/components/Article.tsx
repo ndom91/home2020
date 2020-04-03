@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase'
 import { Subline } from './Subline'
 import theme from '../../config/Theme'
 import { motion } from 'framer-motion'
-import { media } from '../utils/media'
+import { media, titleCase } from '../utils/media'
 
 const Post = styled.article`
   display: flex;
@@ -113,7 +113,7 @@ export const Article: React.SFC<Props> = props => {
             <>
               <span>&mdash; In </span>
               <Link style={{ color: theme.colors.primary, marginLeft: '5px' }} to={`/categories/${kebabCase(category)}`}>
-                {category}
+                {titleCase(category)}
               </Link>
             </>
           )}

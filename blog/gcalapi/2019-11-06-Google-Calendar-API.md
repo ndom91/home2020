@@ -2,7 +2,7 @@
 date: '2019-11-06'
 title: 'Google Calendar API Sucks'
 tags: ['google calendar', 'api', 'rant']
-category: 'web'
+category: 'Web'
 demo: 'https://github.com/ndom91/next-maintenance'
 ---
 

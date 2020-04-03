@@ -148,7 +148,7 @@ const PostPage: React.SFC<Props> = props => {
                 <Subline>
                   {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
                   <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>
-                    {post.frontmatter.category}
+                    {titleCase(post.frontmatter.category)}
                   </Link>
                 </Subline>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
