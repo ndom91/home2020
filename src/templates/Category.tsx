@@ -1,29 +1,32 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components';
-import config from '../../config/SiteConfig';
-import kebabCase from 'lodash/kebabCase';
-import PageProps from '../models/PageProps';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components'
+import config from '../../config/SiteConfig'
+import kebabCase from 'lodash/kebabCase'
+import PageProps from '../models/PageProps'
+import { titleCase } from '../utils/media'
 
 export default class Category extends React.PureComponent<PageProps> {
   public render() {
-    const { posts, categoryName } = this.props.pathContext;
-    const totalCount = posts ? posts.length : 0;
-    const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${categoryName}"`;
+    const { posts, categoryName } = this.props.pathContext
+    const totalCount = posts ? posts.length : 0
+    const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with #${titleCase(categoryName).replace(/ /g, '')}`
 
     return (
       <Layout>
-        <Helmet title={`${categoryName} | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle>Category &ndash; {categoryName}</SectionTitle>
-          <Subline sectionTitle light={true}>
-            {subline} (See <Link to="/categories">all categories</Link>)
-          </Subline>
-        </Header>
+        <Helmet title={`${titleCase(categoryName)} | ${config.siteTitle}`} />
+        <Header />
         <Wrapper>
           <Content>
+            <SectionTitle>Category &ndash; {titleCase(categoryName)}</SectionTitle>
+            <Subline sectionTitle>
+              {subline} (See{' '}
+              <Link style={{ marginLeft: '5px' }} to="/categories">
+                all categories
+              </Link>
+              )
+            </Subline>
             {posts
               ? posts.map((post: any, index) => (
                   <Article
@@ -40,6 +43,6 @@ export default class Category extends React.PureComponent<PageProps> {
           </Content>
         </Wrapper>
       </Layout>
-    );
+    )
   }
 }

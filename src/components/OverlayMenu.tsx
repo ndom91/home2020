@@ -62,9 +62,6 @@ const Circle = styled.div`
   &.active {
     transform: scale(1.5);
   }
-  /* &.hidden {
-    transform: scale(0);
-  } */
 `
 
 const Navigation = styled.div`
@@ -76,17 +73,12 @@ const Navigation = styled.div`
   width: 60%;
   margin: 0 auto;
   position: relative;
-  /* top: 50%; */
   opacity: 0;
-  /* transform: translateY(-50%); */
   transition: opacity 250ms ease-in-out 500ms;
 
   &.active {
     opacity: 1;
   }
-  /* &.hidden {
-    opacity: 0;
-  } */
 `
 
 const NavigationLink = styled(Link)`
@@ -157,17 +149,17 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
     <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
       <Navigation className={isActive ? 'active' : 'hidden'}>
         <motion.div style={{ x, y }} animate={isActive ? 'visible' : 'hidden'} variants={list}>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
           </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 1.25, rotate: 3 }}>
+          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/about`}>
               <MenuNumber>03</MenuNumber>About
             </NavigationLink>

@@ -85,12 +85,12 @@ It is obviously still fairly new and the ecosystem is still very fluid, with new
 
 After having all three implementations run a few days and experimenting around with them all, I decided to kill the Netlify implementation entirely. So we're left with the EC2 Node / Express based server as well as the Lambda serverless implementation.
 
-I've begun migrating more of the routes over to Lambda functions which has been working well. However, what is still difficult is the data import via serverless functions. The provider offers their output data on the web at [coronadatascraper.com/data.json](https://coronadatascraper.com/data.json), however, I'm not sure when exactly they post it / how often, etc. I thinkkk they post it once daily, so I've been pulling it then.
+I've begun migrating more of the routes over to Lambda functions which has been working well. However there is still one significant part of the project I am having trouble migrating to serverless functions, and that is the daily data import. The upstream repo we used offers their output data on the web at [coronadatascraper.com/data.json](https://coronadatascraper.com/data.json), however, I can never be sure when they update this. I'd like to be able to just fetch this JSON into a function, manipulate it a bit, and push it into DynamoDB.
 
-The other option is to clone the repo and run the node process manually to get the most up-to-date output data. I still haven't figured out how to clone a repo, run npm install, run a node process, and write output data all inside a lambda function.
+The other option is to mimic what we've been doing on the server and clone the repo and run the node process manually to get the most up-to-date output data and then push that into Dynamo. I still haven't figured out how to clone a repo, install node dependencies, run a (somewhat long running) node process, and then write the output DynamoDB - all in a Lambda function.
 
-So anyway, other than manually importing the data the Lambda implementation has been running great.
+So anyway, other than manually importing the data the Lambda implementation has been running great these last few days!
 
 ![Performance 2](performance2.png)
 
-The performance of the Lambda function compared to the EC2 instance is on average even ~ 150ms-200ms better! The workflow via `serverless` also couldn't be any easier, again props to them!
+The performance of the Lambda function, with the Redis cache in front of it, is consistently better than the EC2 instance. On average, almost 200ms better! The workflow via `serverless` also couldn't be any easier, again props to them!
