@@ -93,7 +93,7 @@ export const Article: React.SFC<Props> = props => {
   }
 
   return (
-    <motion.div initial="hidden" variants={variants}>
+    <motion.div variants={variants}>
       <Post>
         <Title>
           <Initiale className="post-initial">{firstChar}</Initiale>
