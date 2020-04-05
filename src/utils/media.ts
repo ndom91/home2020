@@ -13,6 +13,9 @@ export const media = {
 }
 
 export function titleCase(str: string): string {
+  if (!str) {
+    return ''
+  }
   const splitStr = str.toLowerCase().split(' ')
   splitStr.forEach((s, i) => {
     splitStr[i] = s.charAt(0).toUpperCase() + s.substring(1)

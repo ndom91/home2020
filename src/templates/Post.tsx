@@ -9,6 +9,7 @@ import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
 import Post from '../models/Post'
 import { media, titleCase } from '../utils/media'
+import ProgressBar from '../components/Progress'
 
 const Wrapper: any = styled.div`
   display: flex;
@@ -141,6 +142,7 @@ const PostPage: React.SFC<Props> = props => {
             <Link to="/">{config.siteTitle}</Link>
           </Header>
           <Wrapper>
+            <ProgressBar />
             <Content id="content">
               <ContentWrapper>
                 <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
