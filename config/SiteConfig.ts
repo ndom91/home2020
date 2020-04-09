@@ -1,22 +1,22 @@
 export default {
-  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
+  pathPrefix: '/',
 
-  siteTitle: 'Nico Domino', // Navigation and Site Title
-  siteTitleAlt: 'Nico Domino - 2020', // Alternative Site title for SEO
-  siteUrl: 'https://next.ndo.dev', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
-  siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
-  defaultBg: '/assets/dawn.jpg', // default post background header
-  favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'ndom91', // Your site description
-  author: 'Nico Domino', // Author for schemaORGJSONLD
-  siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
+  siteTitle: 'Nico Domino',
+  siteTitleAlt: 'Nico Domino - 2020',
+  siteUrl: 'https://next.ndo.dev',
+  siteLanguage: 'en',
+  siteBanner: '/assets/images/dawn.jpg',
+  defaultBg: '/assets/images/dawn.jpg',
+  favicon: 'src/favicon.png',
+  siteDescription: 'ndom91',
+  author: 'Nico Domino',
+  siteLogo: '/assets/images/logo.png',
 
-  userTwitter: 'ndom91', // Twitter Username - Optional
-  userGithub: 'ndom91', // Github Username - Optional
-  userMail: 'yo@ndo.dev', // Github Username - Optional
-  ogSiteName: 'ndom91', // Facebook Site Name - Optional
-  ogLanguage: 'en_US', // Facebook Language
+  userTwitter: 'ndom91',
+  userGithub: 'ndom91',
+  userMail: 'yo@ndo.dev',
+  ogSiteName: 'ndom91',
+  ogLanguage: 'en_US',
 
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -30,9 +30,5 @@ export default {
   bodyFontFamily: 'Open Sans',
   baseFontSize: '18px',
 
-  // Social media
-  siteFBAppID: '',
-
-  //
   POST_PER_PAGE: 6,
 }

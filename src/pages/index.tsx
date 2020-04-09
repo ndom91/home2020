@@ -233,7 +233,7 @@ export default class IndexPage extends React.Component<PageProps> {
                   <a href="https://twitter.com/ndom91">Twitter</a>.
                 </SubHeader>
               </HomepageContent>
-              <OfficeWorker src="assets/office.svg" alt="Office Worker" />
+              <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />
             </GridRow>
           </Homepage>
         </Wrapper>

@@ -24,7 +24,7 @@ const HeaderWrapper: any = styled.header`
   justify-content: space-between;
   align-items: flex-start;
   ::after {
-    background: transparent url(/assets/mask.svg) no-repeat bottom left;
+    background: transparent url(/assets/images/mask.svg) no-repeat bottom left;
     background-size: 101%;
     bottom: -2px;
     content: '';
