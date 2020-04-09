@@ -1,7 +1,7 @@
 const sizes = {
   large: '1400px',
   medium: '700px',
-  small: '485px',
+  small: '500px',
   xsmall: '350px',
 }
 
