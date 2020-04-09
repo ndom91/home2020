@@ -5,6 +5,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 const Progress = styled.div<{ pos: number }>`
   position: fixed;
+  padding: 0 !important;
   top: 0;
   left: 0;
   background: linear-gradient(to right, ${theme.colors.primary} ${props => props.pos}%, transparent 0);

@@ -59,7 +59,6 @@ const GlobalStyle = createGlobalStyle`
     text-align:right;
   }
   :root {
-    // Colors
    --white: #fff;
    --black: #000;
    --grey: #595959;
@@ -68,7 +67,6 @@ const GlobalStyle = createGlobalStyle`
    --green: #86c023;
    --blue: #017ac7;
 
-    // Transition
    --duration: 400ms;
    --easing: ease;
   }
