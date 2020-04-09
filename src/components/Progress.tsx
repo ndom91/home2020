@@ -14,11 +14,9 @@ const Progress = styled.div<{ pos: number }>`
 `
 
 const ProgressBar: React.SFC<{}> = () => {
-  if (typeof document === 'undefined') {
-    return null
-  }
   const [scrollPos, setScrollPos] = useState(0)
   const pageHeight = document && document.body.scrollHeight - window.innerHeight
+
   useScrollPosition(({ currPos }) => {
     const percentScrolled = Math.abs(currPos.y) / pageHeight
     setScrollPos(percentScrolled * 100)

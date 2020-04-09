@@ -142,7 +142,7 @@ const PostPage: React.SFC<Props> = props => {
             <Link to="/">{config.siteTitle}</Link>
           </Header>
           <Wrapper>
-            <ProgressBar />
+            {typeof document !== 'undefined' && <ProgressBar />}
             <Content id="content">
               <ContentWrapper>
                 <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
