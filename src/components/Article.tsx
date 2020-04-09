@@ -52,7 +52,7 @@ const Initiale = styled.span`
     font-size: 5rem;
   }
   @media ${media.small} {
-    transform: translate(-35%, -40%);
+    transform: translate(-30%, -50%);
   }
 `
 

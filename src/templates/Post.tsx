@@ -96,7 +96,7 @@ const Title = styled.h1`
   }
   @media ${media.small} {
     font-size: 1.8rem;
-    margin: 1em 0em;
+    margin: 1em 0.5em;
   }
 `
 
@@ -116,7 +116,7 @@ const Initiale = styled.span`
     font-size: 5rem;
   }
   @media ${media.small} {
-    transform: translate(-30%, -30%);
+    transform: translate(-10%, -30%);
   }
 `
 
