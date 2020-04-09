@@ -96,13 +96,13 @@ const Footer = () => {
             <FooterSection>
               <div>Social</div>
               <div>
-                <Link target="_blank" rel="noopener noreferrer" to={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
+                <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${data.site.siteMetadata.twitter}`}>
                   Twitter
-                </Link>
+                </a>
                 {' / '}
-                <Link target="_blank" rel="noopener noreferrer" to={`https://github.com/${data.site.siteMetadata.github}`}>
+                <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${data.site.siteMetadata.github}`}>
                   Github
-                </Link>
+                </a>
               </div>
             </FooterSection>
           </FooterContent>
