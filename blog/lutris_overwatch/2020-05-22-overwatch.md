@@ -25,10 +25,11 @@ sudo pacman -Sy lutris wine-staging vulkan-icd-loader lib32-vulkan-icd-loader ze
 
 The last `samba` dependency may seem like a bit much to install just for this, however a few of the ntlm libraries were required and I wasn't able to fulfill them with any other packages.
 
-> Oh and I should mention I had the latest nvidia drivers already installed.
+> I should mention I had the latest nvidia drivers already installed.
 
-Anyway, after getting the dependencies installed you just launch lutris, search for "Overwatch" in the launcher and click **Install**! Lutris takes care of the rest.
+Anyway, after getting the dependencies installed you just launch lutris, search for "Overwatch" in the launcher and click **Install**. Lutris takes care of the rest.
 
 What used to take hours of debugging and googling in 2020 now takes all of 20 minutes!
 
 ![Battle.net](battlenet.png)
+
