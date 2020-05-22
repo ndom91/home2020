@@ -147,7 +147,7 @@ const ProjectLabel = styled.h3`
 
 const ProjectDesc = styled.div`
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
   color: ${theme.colors.grey.default};
   @media ${media.medium} {
     font-size: 0.9rem;
