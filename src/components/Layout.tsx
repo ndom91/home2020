@@ -1,9 +1,11 @@
 import React from 'react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { GoogleFont } from 'react-typography'
 import Footer from './Footer'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
+import typography from '../utils/typography'
 import config from '../../config/SiteConfig'
 
 const GlobalStyle = createGlobalStyle`
@@ -104,6 +106,7 @@ export const Layout: React.SFC = props => {
           <meta name="twitter:url" content={config.siteUrl} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
+          <GoogleFont typography={typography} />
         </Helmet>
         <GlobalStyle />
         {children}
