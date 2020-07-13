@@ -1,7 +1,8 @@
 ---
-date: '2020-06-13'
+date: '2020-07-13'
 title: 'Plex Setup'
 tags: ['servers', 'linux', 'multimedia']
+category: 'Linux'
 ---
 
 This post will be mostly documentation for myself, but I also want to share with the world my setup for my personal media server.
@@ -29,9 +30,9 @@ We need to create a few subdomains for the services we are about to setup, the n
 
 Go to your DNS overview, click "Create" and make the following subdomains:
 
-- dl - for qBittorrent
-- movies - for Couchpotato
-- tv - for Sickchill
+- `dl.domain.tld` - for qBittorrent
+- `movies.domain.tld` - for Couchpotato
+- `tv.domain.tld` - for Sickchill
 
 ## Server 1
 
@@ -69,7 +70,7 @@ sudo chown -R media: /opt/downloads
 
 ### qBittorrent
 
-Now we can begin installing stuff. First up - `qBittorrent`.
+Now we can begin installing stuff. First up - **qBittorrent**.
 
 There is a version of the headless qBittorrent package in the Ubuntu repos, but its pretty old. So we'll be adding the PPA from qbittorrent themselves.
 
@@ -178,11 +179,11 @@ The default login is:
 Username: admin
 Password: adminadmin
 
-You should definitely change that under `Tools` -> `Options` -> `Web UI` as soon as possible.
+You should definitely change that under **Tools** -> **Options** -> **Web UI** as soon as possible.
 
-Then in the `Downloads` tab of the settings, change the `Default Save Path` to: `/opt/media/` and the `Keep incomplete torrents in:` option to: `/opt/downloads`.
+Then in the **Downloads** tab of the settings, change the **Default Save Path** to: `/opt/media/` and the **Keep incomplete torrents in:** option to: `/opt/downloads`.
 
-Next, close the settings window and in the left hand column menu, right click on `Categories` and select `Add new Category`. Here we will add predefined categories for Movies and TV with their respective default save locations, `/opt/media/movies` and `/opt/media/tv`. Our other applications, couchpotato and sickchill, will add them to qbittorrent with the category applied and then qbittorrent will know where to download the file to.
+Next, close the settings window and in the left hand column menu, right click on **Categories** and select **Add new Category**. Here we will add predefined categories for Movies and TV with their respective default save locations, `/opt/media/movies` and `/opt/media/tv`. Our other applications, couchpotato and sickchill, will add them to qbittorrent with the category applied and then qbittorrent will know where to download the file to.
 
 ### Sickchill
 
@@ -280,19 +281,19 @@ Now you should be able to visit your page and login with the default user:
 Username: sickchill
 Password: sickchill
 
-This should immediately be updated in the options (gear icon top right) under `General`.
+This should immediately be updated in the options (gear icon top right) under **General**.
 
-While we're in the settings, go to `Search Settings` and select the tab `Torrent Search`.
+While we're in the settings, go to **Search Settings** and select the tab **Torrent Search**.
 
 Here we have to create the connection to qBittorrent.
 
-So under `Send torrents to:` select `qBittorrent APIv2`.
+So under **Send torrents to:** select `qBittorrent APIv2`.
 
-`Torrent host:port` should be `localhost:8080`.
+**Torrent host:port** should be `localhost:8080`.
 
-`Client username` and `Client password` are the web login credentials you selected when setting up qBittorrent earlier.
+**Client username** and **Client password** are the web login credentials you selected when setting up qBittorrent earlier.
 
-And finally, the `Add label to torrent` is the TV category we created in qBittorrent earlier as well, in my case 'TV'.
+And finally, the **Add label to torrent** is the TV category we created in qBittorrent earlier as well, in my case 'TV'.
 
 After that is all entered, you can select "Test Connection" at the bottom of this form to confirm everything is working.
 
@@ -386,7 +387,7 @@ Once this is in place, we can let nginx check its configs again and reload it, `
 
 Now when we visit our domain, we are greeted with the Couchpotato setup wizard. The most important sections are setting a username / password, and setting up the qBittorrent connection.
 
-Under the section `Downloaders`, enable the select mark by qBittorrent and enter the following details:
+Under the section **Downloaders**, enable the select mark by qBittorrent and enter the following details:
 
 Host: http://127.0.0.1:8080
 Username: selected Username
@@ -398,3 +399,6 @@ Once that is up and running we can finally take a breather, grab a coffee, maybe
 We just need to get the media to our bare-metal server now for long-term storage and playback.
 
 ## Server 2
+
+To be continued...
+
