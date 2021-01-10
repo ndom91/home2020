@@ -2,8 +2,8 @@ export default {
   pathPrefix: '/',
 
   siteTitle: 'Nico Domino',
-  siteTitleAlt: 'Nico Domino - 2020',
-  siteUrl: 'https://next.ndo.dev',
+  siteTitleAlt: 'Nico Domino - 2021',
+  siteUrl: 'https://ndo.dev',
   siteLanguage: 'en',
   siteBanner: '/assets/images/dawn.jpg',
   defaultBg: '/assets/images/dawn.jpg',
@@ -12,18 +12,17 @@ export default {
   author: 'Nico Domino',
   siteLogo: '/assets/images/logo.png',
 
+  // Social
   userTwitter: 'ndom91',
   userGithub: 'ndom91',
   userMail: 'yo@ndo.dev',
   ogSiteName: 'ndom91',
   ogLanguage: 'en_US',
 
-  // Manifest and Progress color
-  // See: https://developers.google.com/web/fundamentals/web-app-manifest/
   themeColor: '#3498DB',
   backgroundColor: '#2b2e3c',
 
-  // Settings for typography.ts
+  // typography.ts
   headerFontFamily: 'Bitter',
   serifFontFamily: 'Playfair Display',
   sanSerifFontFamily: 'Lato',
