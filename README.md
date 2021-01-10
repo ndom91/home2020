@@ -7,11 +7,11 @@
 
 ## 🏷️ Description
 
-This a static Gatsby site built with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), StyleComponents, PWA, Sharp, and Framer-Motion
+This my 2020 homepage built with Gatsby and TypeScript, styled-components, and framer-motion.
 
 ## 🚀 Getting Started
 
-This is a normal Gatsby project, so just install the dependencies and start the dev server to get started!
+This is a relatively standard Gatsby project, so just install the dependencies and start the dev server to get started!
 
 1. `git clone https://github.com/ndom91/home2020`
 2. `cd home2020`
@@ -43,6 +43,6 @@ This is a normal Gatsby project, so just install the dependencies and start the 
 
 Gatsby Starter: [Gatsby-Typescript-Power-Blog](https://github.com/mhadaily/gatsby-starter-typescript-power-blog)
 
-```
+## 📖 License 
 
-```
+MIT
