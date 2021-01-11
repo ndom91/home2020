@@ -39,17 +39,17 @@ const SubHeaderText = styled.div`
   font-display: swap;
   font-weight: 300;
   padding: 0 2em;
+  z-index: 2;
   @media ${media.medium} {
     font-size: 1.1rem;
   }
-  &:before {
+  &:after {
     content: '';
     position: absolute;
     left: 50%;
     top: -10%;
     right: auto;
     bottom: auto;
-    z-index: 1;
     width: 300px;
     height: 420px;
     background-color: ${theme.colors.primary};
@@ -211,9 +211,8 @@ const About = () => {
               />
             </HeaderImage>
             <SubHeaderText>
-              My name is Nico Domino and I am a System Administrator by day, Web Developer by night. I am based in the city of Frankfurt am
-              Main, Germany{` `}
-              and I've been building stuff on the web for the past 2-3 years.
+              My name is Nico Domino and I am a Sys Admin by day, Web Developer by night and have been building stuff for the web for about
+              3-4 years now. I am based in the city of Frankfurt, Germany.
             </SubHeaderText>
           </SubHeader>
           <Projects>

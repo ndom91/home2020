@@ -21,7 +21,7 @@ const ProjectCard = styled.div`
   border: none;
 
   border-radius: 50px;
-  background: #ffffff;
+  background: #eee;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 
   &:hover {
@@ -67,7 +67,7 @@ const ProjectDetails = styled.div`
 
   margin: 20px;
   border-radius: 50px;
-  box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
+  // box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
 
   margin-top: 0px;
   padding-top: 20px;
@@ -188,7 +188,7 @@ interface ProjectProps {
   }
 }
 
-const Project: React.SFC<ProjectProps> = props => {
+const Project: React.SFC<ProjectProps> = (props) => {
   const variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -216,7 +216,7 @@ const Project: React.SFC<ProjectProps> = props => {
           )}
           <ProjectTechWrapper>
             {props.project.node.tech &&
-              props.project.node.tech.map(tech => (
+              props.project.node.tech.map((tech) => (
                 <ProjectTech
                   height="64"
                   className="project__tech"
