@@ -1,5 +1,12 @@
 [
 	{
+		"name": "hessisch-ipsum",
+		"url": "https://github.com/ndom91/hessisch-ipsum",
+		"image": "hessischipsum.png",
+		"desc": "Lorem Ipsum generator, but in hessisch! The local accent in Frankfurt, Germany.",
+		"tech": ["vue-js", "vercel", "tailwindcss"]
+	},
+	{
 		"name": "next-auth",
 		"url": "https://next-auth.js.org",
 		"image": "nextauth.png",
@@ -28,7 +35,14 @@
 		"tech": ["react", "npm"]
 	},
 	{
-		"name": "Newtelco Homepage",
+		"name": "NewTelco Homepage",
+		"url": "https://github.com/newtelco/newtelco-dato",
+		"image": "newtelcodev.png",
+		"desc": "Homepage redesign for NewTelco GmbH (2021).",
+		"tech": ["cloudflareworkers", "gatsby", "framer-motion", "vercel", "dato-cms"]
+	},
+	{
+		"name": "NewTelco Homepage",
 		"url": "https://github.com/newtelco/newtelco-gatsby-netlify",
 		"image": "newtelcohome.png",
 		"desc": "Homepage redesign for NewTelco GmbH (2020).",
@@ -56,17 +70,18 @@
 		"tech": ["react", "cloudflareworkers", "styledcomponents", "netlify"]
 	},
 	{
-		"name": "Newtelco Landing",
+		"name": "NewTelco Landing",
 		"url": "https://github.com/newtelco/gatsby-landing",
 		"image": "homenewtelco.png",
-		"desc": "Browser 'New Tab' page for Employees at Newtelco GmbH.",
+		"desc": "Browser 'New Tab' page for Employees at NewTelco GmbH.",
 		"tech": ["react", "cloudflareworkers", "gatsby", "styledcomponents", "netlify"]
 	},
 	{
 		"name": "NOC Dashboard",
 		"url": "https://github.com/ndom91/nt-noc-dashboard",
 		"image": "nocdashboard.png",
-		"desc": "Network Operations Center Dashboard which is displayed 24/7 on a large display in our office. Includes stats from Netdata as well as Observium and live video feeds transcoded via ffmpeg live for displaying in the browser."
+		"desc": "Network Operations Center Dashboard which is displayed 24/7 on a large display in our office. Includes stats from Netdata as well as Observium and live video feeds transcoded via ffmpeg live for displaying in the browser.",
+		"tech": ["php1", "ffmpeg", "netdata"]
 	},
 	{
 		"name": "PreactTyper",

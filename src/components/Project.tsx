@@ -8,19 +8,14 @@ import Tilt from 'react-parallax-tilt'
 import { motion } from 'framer-motion'
 
 const ProjectCard = styled.div`
-  border: 1px solid ${theme.colors.grey.ultraUltraLight};
-  border-radius: 10px;
   position: relative;
-  background: #fff;
-  margin: 75px 0;
+  margin: 65px 0;
   padding: 10px;
-  width: 370px;
+  width: 380px;
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
   transform-style: preserve-3d;
 
-  border: none;
-
-  border-radius: 50px;
+  border-radius: 20px;
   background: #eee;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 
@@ -47,6 +42,7 @@ const ProjectTechWrapper = styled.div`
 
 const ProjectTech = styled.img`
   width: 48px;
+  margin-bottom: 20px;
 
   @media ${media.medium} {
     width: 48px;
@@ -59,18 +55,11 @@ const ProjectTech = styled.img`
 `
 
 const ProjectDetails = styled.div`
-  padding: 40px;
+  padding: 10px 30px 30px 30px;
   border-radius: 0 0 10px 10px;
   font-family: ${config.sanSerifFontFamily};
-  font-display: swap;
   font-weight: 400;
 
-  margin: 20px;
-  border-radius: 50px;
-  // box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
-
-  margin-top: 0px;
-  padding-top: 20px;
   transform: translateZ(10px);
   transform-style: preserve-3d;
 

@@ -205,7 +205,7 @@ const About = () => {
             <HeaderImage>
               <Img
                 style={{ width: 'auto' }}
-                fluid={images.find((img: ImageGraphQL) => img.node.fluid.originalName === 'ndo2.jpg').node.fluid}
+                fluid={images.find((img: ImageGraphQL) => img.node.fluid.originalName === 'ndo.png').node.fluid}
                 fadeIn
                 alt="ndom91"
               />
