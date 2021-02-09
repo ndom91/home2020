@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import theme from '../../config/Theme'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
-import Post from '../models/Post'
+import { Post } from '../models'
 import { media } from '../utils/media'
 
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: 60px;
   margin-bottom: 20px;
   a {
-    color: ${props => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.primary};
     display: flex;
     align-items: center;
   }
@@ -35,11 +35,11 @@ const Prev = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 2px 10px ${props => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px ${(props) => props.theme.colors.grey.ultraUltraLight};
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${props => props.theme.colors.grey.light};
+    color: ${(props) => props.theme.colors.grey.light};
   }
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
@@ -61,12 +61,12 @@ const Next = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 2px 10px ${props => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px ${(props) => props.theme.colors.grey.ultraUltraLight};
   text-align: right;
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${props => props.theme.colors.grey.light};
+    color: ${(props) => props.theme.colors.grey.light};
   }
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
@@ -111,7 +111,7 @@ interface Props {
   prev: Post
 }
 
-export const PrevNext: React.SFC<Props> = props => {
+export const PrevNext: React.FunctionComponent<Props> = (props) => {
   const { prev, next } = props
   return (
     <Wrapper>

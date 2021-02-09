@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const OverlayWrapper = styled.div`
   width: 100vw;
@@ -129,10 +129,7 @@ type MenuProps = {
   isActive: boolean
 }
 
-const OverlayMenu = ({ isActive }: MenuProps) => {
-  const x = useMotionValue(10)
-  const y = useTransform(x, (value) => value * 2)
-
+export const OverlayMenu: React.FunctionComponent<MenuProps> = ({ isActive }) => {
   const list = {
     hidden: { opacity: 0 },
     show: {
@@ -154,34 +151,18 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
   return (
     <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
       <Navigation className={isActive ? 'active' : 'hidden'}>
-        {/* <motion.ul animate={isActive ? 'active' : 'hidden'} variants={list}> */}
         <motion.ul animate={isActive ? 'show' : 'hidden'} initial="hidden" variants={list}>
-          <motion.li
-            // animate={isActive ? 'show' : 'hidden'}
-            variants={item}
-            whileHover={{ scale: 1.05, rotate: 0.5 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
           </motion.li>
-          <motion.li
-            // animate={isActive ? 'show' : 'hidden'}
-            variants={item}
-            whileHover={{ scale: 1.05, rotate: 0.5 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
           </motion.li>
-          <motion.li
-            // animate={isActive ? 'show' : 'hidden'}
-            variants={item}
-            whileHover={{ scale: 1.05, rotate: 0.5 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
             <NavigationLink activeClassName="active" to={`/about`}>
               <MenuNumber>03</MenuNumber>About
             </NavigationLink>
@@ -189,13 +170,6 @@ const OverlayMenu = ({ isActive }: MenuProps) => {
         </motion.ul>
       </Navigation>
       <Circle className={isActive ? 'active' : 'hidden'} />
-      {/* <S.ShapeOverlays className="shape-overlays" id="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path className="shape-overlays__path" />
-        <path className="shape-overlays__path" />
-        <path className="shape-overlays__path" />
-      </S.ShapeOverlays> */}
     </OverlayWrapper>
   )
 }
-
-export default OverlayMenu

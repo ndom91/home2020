@@ -1,15 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Header, Subline, SEO, PrevNext, Content } from '../components'
 import config from '../../config/SiteConfig'
-import '../utils/prismjs-theme.css'
-import PathContext from '../models/PathContext'
-import Post from '../models/Post'
+import { Post, PathContext } from '../models'
+import { Link, graphql } from 'gatsby'
 import { media, titleCase } from '../utils/media'
-import ProgressBar from '../components/Progress'
+import { Layout, Header, Subline, SEO, PrevNext, Content, ProgressBar } from '../components'
+import '../utils/prismjs-theme.css'
 
 const Wrapper: any = styled.div`
   display: flex;
@@ -127,7 +125,7 @@ interface Props {
   pathContext: PathContext
 }
 
-const PostPage: React.SFC<Props> = props => {
+const PostPage: React.SFC<Props> = (props) => {
   const { prev, next } = props.pathContext
 
   const post = props.data.markdownRemark

@@ -1,15 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Layout, Wrapper, Header, SectionTitle, Content } from '../components'
-import '../utils/prismjs-theme.css'
-import config from '../../config/SiteConfig'
-import theme from '../../config/Theme'
-import Project from '../components/Project'
 import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from 'gatsby'
+import { Layout, Wrapper, Header, SectionTitle, Content, Project } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
+import config from '../../config/SiteConfig'
+import theme from '../../config/Theme'
+import '../utils/prismjs-theme.css'
 
 const AboutHeader = styled.h1`
   text-align: center;

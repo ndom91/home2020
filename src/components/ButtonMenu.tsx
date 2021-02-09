@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'
-import OverlayMenu from './OverlayMenu'
+import { OverlayMenu } from './OverlayMenu'
 
 const Wrapper = styled.div`
   display: none;
   margin: 6rem auto 0 auto;
   a {
-    color: ${props => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.primary};
     display: flex;
     align-items: center;
   }
@@ -87,7 +87,7 @@ const ButtonHamburger = styled.button`
   }
 `
 
-const ButtonMenu = () => {
+export const ButtonMenu: React.FunctionComponent = () => {
   const [active, setActive] = useState(false)
 
   return (
@@ -99,5 +99,3 @@ const ButtonMenu = () => {
     </Wrapper>
   )
 }
-
-export default ButtonMenu

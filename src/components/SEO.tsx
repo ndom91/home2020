@@ -2,16 +2,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
-import Post from '../models/Post'
+import { Post } from '../models'
 
-interface SEO {
+interface SEOProps {
   postNode: Post
   postPath: string
   postSEO: boolean
 }
 
-export const SEO = (props: SEO) => {
-  const { postNode, postPath, postSEO } = props
+export const SEO: React.FunctionComponent<SEOProps> = ({ postNode, postPath, postSEO }) => {
   let title
   let description
   let image
@@ -93,7 +92,6 @@ export const SEO = (props: SEO) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
       <meta name="twitter:title" content={title} />

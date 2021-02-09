@@ -8,13 +8,13 @@ const Progress = styled.div<{ pos: number }>`
   padding: 0 !important;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, ${theme.colors.primary} ${props => props.pos}%, transparent 0);
+  background: linear-gradient(to right, ${theme.colors.primary} ${(props) => props.pos}%, transparent 0);
   width: 100%;
   height: 6px;
   z-index: 99999;
 `
 
-const ProgressBar: React.SFC<{}> = () => {
+export const ProgressBar: React.FunctionComponent<{}> = () => {
   const [scrollPos, setScrollPos] = useState(0)
   const pageHeight = document && document.body.scrollHeight - window.innerHeight
 
@@ -25,5 +25,3 @@ const ProgressBar: React.SFC<{}> = () => {
 
   return <Progress pos={scrollPos} />
 }
-
-export default ProgressBar

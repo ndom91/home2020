@@ -14,152 +14,151 @@ export const PaginationContainer = styled.div`
 `
 
 export const PaginationContent = styled.div`
-    display: inline-flex;
-    justify-content: space-between;
-    padding: 0 2.5rem;
-    border-radius: 3.5rem;
-    background-color: #eee;
-    
-     @media ${media.medium} {
-      padding: 0 1rem;
-      width: 130%;
-      transform: translateX(-12.5%);
-     }
-     @media ${media.small} {
-      padding: 0 1rem;
-      width: 90%;
-      transform: none;
-     }
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  border-radius: 3.5rem;
+  background-color: #eee;
 
-    .page-numbers {
-      display: block;
-      float:left;
-      transition: 400ms ease;
-      color: ${theme.colors.grey.light};
-      letter-spacing: 0.1em;
-      padding: 1rem;
+  @media ${media.medium} {
+    padding: 0 1rem;
+    width: 130%;
+    transform: translateX(-12.5%);
+  }
+  @media ${media.small} {
+    padding: 0 1rem;
+    width: 90%;
+    transform: none;
+  }
 
-      &:hover,
-      &.current {
-        /* background-color: ${curriedDarken(0.1, theme.colors.primary)}; */
-        background-color:  ${theme.colors.primary};
-        color: ${theme.colors.white};
-      }
-      
-      &.prev {
-        margin-left: -1.5rem;
-      }
-      
-      &.next {
-        margin-right: -1.5rem;
-      }
+  .page-numbers {
+    display: block;
+    float: left;
+    transition: 400ms ease;
+    color: ${theme.colors.grey.light};
+    letter-spacing: 0.1em;
+    padding: 1rem;
 
-      &.prev:hover,
-      &.next:hover {
-        background-color: transparent;
-        color: ${curriedDarken(0.2, theme.colors.primary)};
-      }
-      
+    &:hover,
+    &.current {
+      /* background-color: ${curriedDarken(0.1, theme.colors.primary)}; */
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
+    }
 
-      @media ${media.large} {
-        padding: 0 1.4rem;
+    &.prev {
+      margin-left: -1.5rem;
+    }
+
+    &.next {
+      margin-right: -1.5rem;
+    }
+
+    &.prev:hover,
+    &.next:hover {
+      background-color: transparent;
+      color: ${curriedDarken(0.2, theme.colors.primary)};
+    }
+
+    @media ${media.large} {
+      padding: 0 1.4rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      display: none;
+
+      &:nth-of-type(2) {
+        position: relative;
+        padding-right: 5rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        display: none;
 
-        &:nth-of-type(2) {
-          position: relative;
-          padding-right: 5rem;
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-
-          &::after {
-            content: '...';
-            position: absolute;
-            top: 0;
-            left: 4.5rem;
-            padding-top: 0.8rem;
-            padding-bottom: 1.2rem;
-          }
-        }
-
-        &:nth-child(-n + 3),
-        &:nth-last-child(-n + 3) {
-          display: block;
-        }
-
-        &:nth-last-child(-n + 4) {
-          padding-right: 1.4rem;
-
-          &::after {
-            content: none;
-          }
+        &::after {
+          content: '...';
+          position: absolute;
+          top: 0;
+          left: 4.5rem;
+          padding-top: 0.8rem;
+          padding-bottom: 1.2rem;
         }
       }
-      @media ${media.medium} {
-        padding: 0.5rem 0.8rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        display: none;
 
-        &:nth-of-type(2) {
-          position: relative;
-          padding-right: 2.5rem;
-
-          &::after {
-            content: '...';
-            position: absolute;
-            top: 0;
-            left: 2.5rem;
-          }
-        }
-
-        &:nth-child(-n + 3),
-        &:nth-last-child(-n + 3) {
-          display: block;
-        }
-
-        &:nth-last-child(-n + 4) {
-          padding-right: 0.8rem;
-
-          &::after {
-            content: none;
-          }
-        }
+      &:nth-child(-n + 3),
+      &:nth-last-child(-n + 3) {
+        display: block;
       }
-      @media ${media.small} {
-        padding: 0.2rem 0.4rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        display: none;
 
-        &:nth-of-type(2) {
-          position: relative;
-          padding-right: 1.5rem;
+      &:nth-last-child(-n + 4) {
+        padding-right: 1.4rem;
 
-          &::after {
-            content: '...';
-            position: absolute;
-            top: 0;
-            left: 2.5rem;
-          }
-        }
-
-        &:nth-child(-n + 3),
-        &:nth-last-child(-n + 3) {
-          display: block;
-        }
-
-        &:nth-last-child(-n + 4) {
-          padding-right: 0.8rem;
-
-          &::after {
-            content: none;
-          }
+        &::after {
+          content: none;
         }
       }
     }
-  `
+    @media ${media.medium} {
+      padding: 0.5rem 0.8rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      display: none;
+
+      &:nth-of-type(2) {
+        position: relative;
+        padding-right: 2.5rem;
+
+        &::after {
+          content: '...';
+          position: absolute;
+          top: 0;
+          left: 2.5rem;
+        }
+      }
+
+      &:nth-child(-n + 3),
+      &:nth-last-child(-n + 3) {
+        display: block;
+      }
+
+      &:nth-last-child(-n + 4) {
+        padding-right: 0.8rem;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+    @media ${media.small} {
+      padding: 0.2rem 0.4rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      display: none;
+
+      &:nth-of-type(2) {
+        position: relative;
+        padding-right: 1.5rem;
+
+        &::after {
+          content: '...';
+          position: absolute;
+          top: 0;
+          left: 2.5rem;
+        }
+      }
+
+      &:nth-child(-n + 3),
+      &:nth-last-child(-n + 3) {
+        display: block;
+      }
+
+      &:nth-last-child(-n + 4) {
+        padding-right: 0.8rem;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+`
 
 const PageNumberWrapper = styled.div`
   display: flex;
@@ -178,7 +177,7 @@ interface Props {
   url: string
 }
 
-export const Pagination: React.SFC<Props> = props => {
+export const Pagination: React.FunctionComponent<Props> = (props) => {
   const { currentPage, totalPages, url } = props
   const isFirst = currentPage === 1
   const isLast = currentPage === totalPages

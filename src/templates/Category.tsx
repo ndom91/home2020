@@ -1,11 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components'
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
-import PageProps from '../models/PageProps'
+import { PageProps } from '../models'
 import { titleCase } from '../utils/media'
+import { Link } from 'gatsby'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components'
 
 export default class Category extends React.PureComponent<PageProps> {
   public render() {

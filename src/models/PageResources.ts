@@ -1,7 +1,4 @@
-import * as React from 'react'
-
-interface PageResources {
+export interface PageResources {
   component: React.PureComponent
   path: string
 }
-export default PageResources

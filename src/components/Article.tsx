@@ -7,6 +7,15 @@ import theme from '../../config/Theme'
 import { motion } from 'framer-motion'
 import { media, titleCase } from '../utils/media'
 
+interface Props {
+  title: string
+  date: string
+  excerpt: string
+  slug: string
+  timeToRead: number
+  category: string
+}
+
 const Post = styled.article`
   display: flex;
   flex-direction: column;
@@ -34,6 +43,7 @@ const Title = styled.h2`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
+  color: ${theme.colors.grey.default};
   @media ${media.medium} {
     font-size: 1.2rem;
   }
@@ -65,16 +75,7 @@ const Excerpt = styled.p`
   }
 `
 
-interface Props {
-  title: string
-  date: string
-  excerpt: string
-  slug: string
-  timeToRead: number
-  category: string
-}
-
-export const Article: React.SFC<Props> = (props) => {
+export const Article: React.FunctionComponent<Props> = (props) => {
   const { title, date, excerpt, slug, timeToRead, category } = props
   const firstChar = title.charAt(0)
 

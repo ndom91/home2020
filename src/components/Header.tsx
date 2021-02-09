@@ -6,14 +6,18 @@ import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
-import ButtonMenu from './ButtonMenu'
+import { ButtonMenu } from './ButtonMenu'
+
+interface Props {
+  banner?: string
+}
 
 const HeaderWrapper: any = styled.header`
   position: relative;
   background: linear-gradient(
       -185deg,
-      ${props => rgba(darken(0.1, props.theme.colors.primary), 0.6)},
-      ${props => rgba(lighten(0.1, props.theme.colors.grey.dark), 0.8)}
+      ${(props) => rgba(darken(0.1, props.theme.colors.primary), 0.6)},
+      ${(props) => rgba(lighten(0.1, props.theme.colors.grey.dark), 0.8)}
     ),
     url(${(props: any) => props.banner}) no-repeat;
   background-size: cover;
@@ -138,16 +142,9 @@ const MenuNumber = styled.span`
 const HeaderImage = styled.img`
   height: 110px;
   z-index: 99;
-
-  /* &:hover {
-    cursor: pointer;
-  } */
 `
 
-interface Props {
-  banner?: string
-}
-export const Header: React.SFC<Props> = props => {
+export const Header: React.FunctionComponent<Props> = (props) => {
   return (
     <HeaderWrapper banner={props.banner || config.defaultBg}>
       <ContentWrapper>

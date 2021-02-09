@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Layout, Wrapper } from '../components'
-import PageProps from '../models/PageProps'
+import { PageProps } from '../models'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
@@ -213,34 +213,33 @@ const OfficeWorker = styled.img`
   }
 `
 
-export default class IndexPage extends React.Component<PageProps> {
-  public render() {
-    return (
-      <Layout>
-        <Header />
-        <Wrapper fullWidth={true}>
-          <Helmet title={`Homepage | ${config.siteTitle}`} />
-          <Homepage>
-            <GridRow>
-              <HomepageContent center={true}>
-                <PreHeader>Hi, I'm Nico Domino</PreHeader>
-                <HeaderText>I make shit for the web</HeaderText>
-                <SubHeader>
-                  During the week you can find me doing Sys Admin work as well as a lot of Web Development at{' '}
-                  <a href="https://newtelco.dev">Newtelco</a>, a global managed services company specializing in datacenter management based
-                  in Frankfurt, Germany. I occasionally write about my thoughts on tech and other happenings here on my{' '}
-                  <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
-                  <a href="https://twitter.com/ndom91">Twitter</a>.
-                </SubHeader>
-              </HomepageContent>
-              <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />
-            </GridRow>
-          </Homepage>
-        </Wrapper>
-      </Layout>
-    )
-  }
+const IndexPage: React.FunctionComponent<PageProps> = () => {
+  return (
+    <Layout>
+      <Header />
+      <Wrapper fullWidth={true}>
+        <Helmet title={`Homepage | ${config.siteTitle}`} />
+        <Homepage>
+          <GridRow>
+            <HomepageContent center={true}>
+              <PreHeader>Hi, I'm Nico Domino</PreHeader>
+              <HeaderText>I make shit for the web</HeaderText>
+              <SubHeader>
+                During the week you can find me doing Sys Admin work as well as a lot of Web Development at{' '}
+                <a href="https://newtelco.dev">Newtelco</a>, a global managed services company specializing in datacenter management based
+                in Frankfurt, Germany. I occasionally write about my thoughts on tech and other happenings here on my{' '}
+                <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
+                <a href="https://twitter.com/ndom91">Twitter</a>.
+              </SubHeader>
+            </HomepageContent>
+            <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />
+          </GridRow>
+        </Homepage>
+      </Wrapper>
+    </Layout>
+  )
 }
+
 export const IndexQuery = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
@@ -261,3 +260,5 @@ export const IndexQuery = graphql`
     }
   }
 `
+
+export default IndexPage

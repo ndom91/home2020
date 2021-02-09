@@ -67,7 +67,7 @@ const FooterSection = styled.div`
   }
 `
 
-const Footer = () => {
+const Footer: React.FunctionComponent = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -82,7 +82,7 @@ const Footer = () => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <FooterWrapper>
           <FooterContent>
             <FooterSection>

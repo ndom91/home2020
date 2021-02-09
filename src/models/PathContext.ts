@@ -1,6 +1,6 @@
-import Post from './Post'
+import { Post } from './Post'
 
-interface PathContext {
+export interface PathContext {
   tags?: string[]
   categories?: string[]
   categoryName: string
@@ -9,5 +9,3 @@ interface PathContext {
   next: any
   prev: any
 }
-
-export default PathContext

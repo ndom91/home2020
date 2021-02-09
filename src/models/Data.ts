@@ -1,7 +1,5 @@
-import AllMarkdownRemark from './AllMarkdownRemark'
+import { AllMarkdownRemark } from './AllMarkdownRemark'
 
-interface Data {
+export interface Data {
   allMarkdownRemark: AllMarkdownRemark
 }
-
-export default Data

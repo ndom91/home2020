@@ -1,6 +1,6 @@
-import Frontmatter from './Frontmatter'
+import { Frontmatter } from './Frontmatter'
 
-interface Post {
+export interface Post {
   id: number
   excerpt: string
   html: string
@@ -10,5 +10,3 @@ interface Post {
   }
   timeToRead: number
 }
-
-export default Post

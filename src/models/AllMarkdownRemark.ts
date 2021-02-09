@@ -1,8 +1,6 @@
-import Post from './Post'
+import { Post } from './Post'
 
-interface AllMarkdownRemark {
+export interface AllMarkdownRemark {
   totalCount: number
   edges: { node: Post }[]
 }
-
-export default AllMarkdownRemark

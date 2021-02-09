@@ -1,12 +1,8 @@
-import PathContext from './PathContext'
-import PageResources from './PageResources'
-import Data from './Data'
+import { Data, PathContext, PageResources } from './index'
 
-interface PageProps {
+export interface PageProps {
   data: Data
   location: Location
   pageResources?: PageResources
   pathContext: PathContext
 }
-
-export default PageProps

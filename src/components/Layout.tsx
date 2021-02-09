@@ -80,7 +80,7 @@ const PrimaryWrapper = styled.div`
   height: 100vh;
 `
 
-export const Layout: React.SFC = props => {
+export const Layout: React.FunctionComponent = (props) => {
   const { children } = props
 
   const title = config.siteTitle

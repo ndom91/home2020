@@ -177,7 +177,7 @@ interface ProjectProps {
   }
 }
 
-const Project: React.SFC<ProjectProps> = (props) => {
+export const Project: React.FunctionComponent<ProjectProps> = (props) => {
   const variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -227,5 +227,3 @@ const Project: React.SFC<ProjectProps> = (props) => {
     </motion.div>
   )
 }
-
-export default Project
