@@ -3,7 +3,7 @@ import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
 
 export const SectionTitle: any = styled.div`
-  font-size: ${props => props.theme.fontSize.big};
+  font-size: ${(props) => props.theme.fontSize.big};
   text-transform: ${(props: any) => (props.uppercase ? 'uppercase' : 'normal')};
   font-family: ${config.serifFontFamily};
   color: ${theme.colors.grey.dark};
@@ -20,6 +20,6 @@ export const SectionTitle: any = styled.div`
     bottom: 0;
     left: 50%;
     margin-left: -25px;
-    background: ${props => props.theme.colors.white};
+    background: ${(props) => props.theme.colors.white};
   }
 `
