@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import config from '../../config/SiteConfig'
-import { Post, PathContext } from '../models'
+import { DefaultPageProps } from '../models'
 import { Link, graphql } from 'gatsby'
 import { media, titleCase } from '../utils/media'
 import { Layout, Header, Subline, SEO, PrevNext, Content, ProgressBar } from '../components'
@@ -118,17 +118,10 @@ const Initiale = styled.span`
   }
 `
 
-interface Props {
-  data: {
-    markdownRemark: Post
-  }
-  pathContext: PathContext
-}
+const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data }) => {
+  const { prev, next } = pathContext
 
-const PostPage: React.SFC<Props> = (props) => {
-  const { prev, next } = props.pathContext
-
-  const post = props.data.markdownRemark
+  const post = data.markdownRemark
 
   return (
     <Layout>

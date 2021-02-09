@@ -1,8 +1,11 @@
-import { Data, PathContext, PageResources } from './index'
+import { PageProps } from 'gatsby'
+import { Data, PathContext } from './index'
 
-export interface PageProps {
+export interface DefaultPageProps extends PageProps {
   data: Data
-  location: Location
-  pageResources?: PageResources
   pathContext: PathContext
+  pageContext: {
+    currentPage: number
+    totalPages: number
+  }
 }

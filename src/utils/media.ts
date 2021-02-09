@@ -1,9 +1,4 @@
-const sizes = {
-  large: '1400px',
-  medium: '700px',
-  small: '500px',
-  xsmall: '350px',
-}
+import sizes from '../../config/Theme'
 
 export const media = {
   large: `(max-width: ${sizes.large})`,

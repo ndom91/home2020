@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import theme from '../../config/Theme'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useWindowScroll } from 'react-use'
 
 const Progress = styled.div<{ pos: number }>`
   position: fixed;
@@ -15,13 +15,14 @@ const Progress = styled.div<{ pos: number }>`
 `
 
 export const ProgressBar: React.FunctionComponent<{}> = () => {
+  const { y } = useWindowScroll()
   const [scrollPos, setScrollPos] = useState(0)
   const pageHeight = document && document.body.scrollHeight - window.innerHeight
 
-  useScrollPosition(({ currPos }) => {
-    const percentScrolled = Math.abs(currPos.y) / pageHeight
+  useEffect(() => {
+    const percentScrolled = Math.abs(y) / pageHeight
     setScrollPos(percentScrolled * 100)
-  })
+  }, [y])
 
   return <Progress pos={scrollPos} />
 }

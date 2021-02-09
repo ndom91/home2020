@@ -40,7 +40,7 @@ const FooterSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: ${config.bodyFontFamily};
+  font-family: ${config.sanSerifFontFamily};
   font-display: swap;
   justify-content: center;
   margin: 20px;

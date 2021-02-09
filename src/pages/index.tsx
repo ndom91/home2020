@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Layout, Wrapper } from '../components'
-import { PageProps } from '../models'
+import { DefaultPageProps } from '../models'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
@@ -213,7 +213,7 @@ const OfficeWorker = styled.img`
   }
 `
 
-const IndexPage: React.FunctionComponent<PageProps> = () => {
+const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
   return (
     <Layout>
       <Header />

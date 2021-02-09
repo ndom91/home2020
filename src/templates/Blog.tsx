@@ -3,18 +3,10 @@ import styled from 'styled-components'
 import theme from '../../config/Theme'
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
-import { Data } from '../models'
+import { DefaultPageProps } from '../models'
 import { motion } from 'framer-motion'
 import { Link, graphql } from 'gatsby'
 import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components'
-
-interface Props {
-  data: Data
-  pageContext: {
-    currentPage: number
-    totalPages: number
-  }
-}
 
 const BlogHeader = styled.h1`
   font-family: ${config.serifFontFamily};
@@ -26,7 +18,7 @@ const BlogHeader = styled.h1`
   padding-bottom: 50px;
 `
 
-const BlogPage: React.FunctionComponent<Props> = ({ pageContext, data }) => {
+const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data }) => {
   const { currentPage, totalPages } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
 

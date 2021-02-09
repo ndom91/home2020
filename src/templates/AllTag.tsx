@@ -2,11 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
 import config from '../../config/SiteConfig'
-import { PageProps } from '../models'
+import { DefaultPageProps } from '../models'
 import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Content, Title } from '../components'
 
-export default class AllTagTemplate extends React.PureComponent<PageProps> {
+export default class AllTagTemplate extends React.PureComponent<DefaultPageProps> {
   public render() {
     const { tags } = this.props.pathContext
     if (tags) {

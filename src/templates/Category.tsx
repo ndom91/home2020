@@ -2,12 +2,12 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
-import { PageProps } from '../models'
+import { DefaultPageProps } from '../models'
 import { titleCase } from '../utils/media'
 import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components'
 
-export default class Category extends React.PureComponent<PageProps> {
+export default class Category extends React.PureComponent<DefaultPageProps> {
   public render() {
     const { posts, categoryName } = this.props.pathContext
     const totalCount = posts ? posts.length : 0

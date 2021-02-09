@@ -19,14 +19,13 @@ export default {
   ogSiteName: 'ndom91',
   ogLanguage: 'en_US',
 
+  // Theme
   themeColor: '#3498DB',
   backgroundColor: '#2b2e3c',
 
-  // typography.ts
-  headerFontFamily: 'Bitter',
+  // typography
   serifFontFamily: 'Playfair Display',
   sanSerifFontFamily: 'Lato',
-  bodyFontFamily: 'Open Sans',
   baseFontSize: '18px',
 
   POST_PER_PAGE: 6,

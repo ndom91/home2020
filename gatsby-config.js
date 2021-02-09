@@ -1,11 +1,3 @@
-require('source-map-support').install()
-require('ts-node').register({
-  compilerOptions: {
-    module: 'commonjs',
-    target: 'es2017',
-  },
-})
-
 const config = require('./config/SiteConfig').default
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -91,12 +83,6 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-autolink-headers',
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography.ts',
       },
     },
     {

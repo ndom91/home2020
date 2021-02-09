@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { PageProps } from '../models'
+import { DefaultPageProps } from '../models'
 import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
 
-const TagTemplate: React.FunctionComponent<PageProps> = ({ pathContext }) => {
+const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {
   const { posts, tagName } = pathContext
   const totalCount = posts ? posts.length : 0
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tagName}"`

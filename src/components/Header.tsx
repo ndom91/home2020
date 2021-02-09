@@ -144,9 +144,9 @@ const HeaderImage = styled.img`
   z-index: 99;
 `
 
-export const Header: React.FunctionComponent<Props> = (props) => {
+export const Header: React.FunctionComponent<Props> = ({ banner }) => {
   return (
-    <HeaderWrapper banner={props.banner || config.defaultBg}>
+    <HeaderWrapper banner={banner || config.defaultBg}>
       <ContentWrapper>
         <Link to="/" style={{ zIndex: 99 }}>
           <HeaderImage height="110" src={config.siteLogo} alt="Logo" />
