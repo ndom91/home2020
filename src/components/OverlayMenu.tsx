@@ -76,6 +76,10 @@ const Navigation = styled.div`
   opacity: 0;
   transition: opacity 250ms ease-in-out 500ms;
 
+  ul {
+    list-style: none;
+  }
+
   &.active {
     opacity: 1;
   }
@@ -127,44 +131,62 @@ type MenuProps = {
 
 const OverlayMenu = ({ isActive }: MenuProps) => {
   const x = useMotionValue(10)
-  const y = useTransform(x, value => value * 2)
+  const y = useTransform(x, (value) => value * 2)
 
   const list = {
-    visible: {
-      opacity: [0, 1],
-      transition: { staggerChildren: 0.15, delayChildren: 0.35, type: 'inertia' },
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+        when: 'beforeChildren',
+      },
     },
   }
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      x: [-50, 0],
-      opacity: [0, 1],
-      transition: {
-        duration: 0.3,
-      },
+  const item = {
+    hidden: { x: -50, opacity: 0 },
+    show: {
+      x: 0,
+      opacity: 1,
     },
   }
   return (
     <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
       <Navigation className={isActive ? 'active' : 'hidden'}>
-        <motion.div style={{ x, y }} animate={isActive ? 'visible' : 'hidden'} variants={list}>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+        {/* <motion.ul animate={isActive ? 'active' : 'hidden'} variants={list}> */}
+        <motion.ul animate={isActive ? 'show' : 'hidden'} initial="hidden" variants={list}>
+          <motion.li
+            // animate={isActive ? 'show' : 'hidden'}
+            variants={item}
+            whileHover={{ scale: 1.05, rotate: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <NavigationLink activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
-          </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+          </motion.li>
+          <motion.li
+            // animate={isActive ? 'show' : 'hidden'}
+            variants={item}
+            whileHover={{ scale: 1.05, rotate: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <NavigationLink activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
-          </motion.div>
-          <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+          </motion.li>
+          <motion.li
+            // animate={isActive ? 'show' : 'hidden'}
+            variants={item}
+            whileHover={{ scale: 1.05, rotate: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <NavigationLink activeClassName="active" to={`/about`}>
               <MenuNumber>03</MenuNumber>About
             </NavigationLink>
-          </motion.div>
-        </motion.div>
+          </motion.li>
+        </motion.ul>
       </Navigation>
       <Circle className={isActive ? 'active' : 'hidden'} />
       {/* <S.ShapeOverlays className="shape-overlays" id="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">

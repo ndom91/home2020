@@ -7,7 +7,7 @@ export default {
   siteLanguage: 'en',
   siteBanner: '/assets/images/dawn.jpg',
   defaultBg: '/assets/images/dawn.jpg',
-  favicon: 'src/favicon.png',
+  favicon: 'static/favicon.png',
   siteDescription: 'ndom91',
   author: 'Nico Domino',
   siteLogo: '/assets/images/logo.png',

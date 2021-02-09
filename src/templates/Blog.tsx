@@ -49,9 +49,9 @@ export default class BlogPage extends React.Component<Props> {
         <Wrapper>
           <Content>
             <BlogHeader>Blog</BlogHeader>
-            <motion.div initial animate="visible" variants={list}>
+            <motion.div animate="visible" variants={list}>
               {edges.map(
-                post =>
+                (post) =>
                   post.node.frontmatter.title !== '' && (
                     <Article
                       title={post.node.frontmatter.title}

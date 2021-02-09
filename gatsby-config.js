@@ -31,16 +31,16 @@ module.exports = {
         short_name: config.siteTitleAlt,
         description: config.siteDescription,
         start_url: config.pathPrefix,
-				lang: 'en_US',
-				icon: 'src/favicon.png',
-				icons: [
-				  {
-					  // src: config.favicon,
-					  src: 'src/favicon.png',
-						sizes: '128x128',
-						type: 'image/png',
-					}
-				],
+        lang: 'en_US',
+        icon: config.favicon,
+        icons: [
+          {
+            src: config.favicon,
+            // src: 'src/favicon.png',
+            sizes: '128x128',
+            type: 'image/png',
+          },
+        ],
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',

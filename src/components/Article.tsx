@@ -74,26 +74,22 @@ interface Props {
   category: string
 }
 
-export const Article: React.SFC<Props> = props => {
+export const Article: React.SFC<Props> = (props) => {
   const { title, date, excerpt, slug, timeToRead, category } = props
   const firstChar = title.charAt(0)
 
-  const variants = {
-    hidden: { opacity: 0 },
-
+  const list = {
     visible: {
-      x: [-50, 0],
       opacity: [0, 1],
       transition: {
-        type: 'inertia',
-        damping: 10,
-        duration: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.15,
       },
     },
   }
 
   return (
-    <motion.div variants={variants}>
+    <motion.div animate="visible" variants={list}>
       <Post>
         <Title>
           <Initiale className="post-initial">{firstChar}</Initiale>
