@@ -1,4 +1,4 @@
-const config = require('./config/SiteConfig').default
+const config = require('./config/SiteConfig.ts')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {

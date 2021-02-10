@@ -1,6 +1,5 @@
 const path = require('path')
 const _ = require('lodash')
-const config = require('./config/SiteConfig').default
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -16,7 +15,7 @@ const getPostsByType = (posts, classificationType) => {
     const nodeClassificationType = node.frontmatter[classificationType]
     if (nodeClassificationType) {
       if (_.isArray(nodeClassificationType)) {
-        nodeClassificationType.forEach(name => {
+        nodeClassificationType.forEach((name) => {
           if (!_.has(postsByType, name)) {
             postsByType[name] = []
           }
@@ -56,7 +55,7 @@ const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }
     },
   ]
 
-  classifications.forEach(classification => {
+  classifications.forEach((classification) => {
     const names = Object.keys(classification.postsByClassificationNames)
 
     createPage({
@@ -67,7 +66,7 @@ const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }
       },
     })
 
-    names.forEach(name => {
+    names.forEach((name) => {
       const postsByName = classification.postsByClassificationNames[name]
       createPage({
         path: `/${classification.pluralName}/${_.kebabCase(name)}`,
@@ -122,12 +121,12 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
     const posts = result.data.allMarkdownRemark.edges
-    const postsPerPage = config.POST_PER_PAGE
+    const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, i) => {

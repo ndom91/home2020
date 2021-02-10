@@ -1,4 +1,4 @@
-export default {
+const config = {
   pathPrefix: '/',
 
   siteTitle: 'Nico Domino',
@@ -27,6 +27,6 @@ export default {
   serifFontFamily: 'Playfair Display',
   sanSerifFontFamily: 'Lato',
   baseFontSize: '18px',
-
-  POST_PER_PAGE: 6,
 }
+
+module.exports = config
