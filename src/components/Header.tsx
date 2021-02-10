@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { darken, lighten } from 'polished'
-import rgba from 'polished/lib/color/rgba'
 import { media } from '../utils/media'
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
@@ -14,11 +12,7 @@ interface Props {
 
 const HeaderWrapper: any = styled.header`
   position: relative;
-  background: linear-gradient(
-      -185deg,
-      ${(props) => rgba(darken(0.1, props.theme.colors.primary), 0.6)},
-      ${(props) => rgba(lighten(0.1, props.theme.colors.grey.dark), 0.8)}
-    ),
+  background: linear-gradient(-185deg, ${(props) => '#c13838'}, ${(props) => props.theme.colors.grey.default}),
     url(${(props: any) => props.banner}) no-repeat;
   background-size: cover;
   background-position-y: 40%;

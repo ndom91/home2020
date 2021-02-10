@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 import theme from '../../config/Theme'
-import curriedDarken from 'polished/lib/color/darken'
 
 export const PaginationContainer = styled.div`
   text-align: center;
@@ -41,7 +40,6 @@ export const PaginationContent = styled.div`
 
     &:hover,
     &.current {
-      /* background-color: ${curriedDarken(0.1, theme.colors.primary)}; */
       background-color: ${theme.colors.primary};
       color: ${theme.colors.white};
     }
@@ -57,7 +55,7 @@ export const PaginationContent = styled.div`
     &.prev:hover,
     &.next:hover {
       background-color: transparent;
-      color: ${curriedDarken(0.2, theme.colors.primary)};
+      color: #f80505;
     }
 
     @media ${media.large} {
