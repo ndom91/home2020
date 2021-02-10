@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Content, Project } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
 import '../utils/prismjs-theme.css'

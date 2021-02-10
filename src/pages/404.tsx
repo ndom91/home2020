@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { Content, Header, Layout, Wrapper, SectionTitle } from '../components'

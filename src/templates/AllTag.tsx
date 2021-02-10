@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link } from 'gatsby'

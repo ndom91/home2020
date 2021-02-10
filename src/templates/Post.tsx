@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link, graphql } from 'gatsby'

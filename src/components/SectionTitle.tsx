@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import theme from '../../config/Theme'
 

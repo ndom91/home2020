@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'

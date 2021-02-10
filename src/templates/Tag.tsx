@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import { DefaultPageProps } from '../models'
 import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 import Helmet from 'react-helmet'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
 

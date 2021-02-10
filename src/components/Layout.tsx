@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 
 const GlobalStyle = createGlobalStyle`

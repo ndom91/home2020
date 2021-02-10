@@ -1,6 +1,6 @@
-/* eslint-disable react/require-default-props */
 import React from 'react'
 import Helmet from 'react-helmet'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import { Post } from '../models'
 
@@ -50,6 +50,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({ postNode, postPath, pos
         url: postURL,
         name: title,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+        // @ts-ignore
         headline: title,
         image: {
           '@type': 'ImageObject',

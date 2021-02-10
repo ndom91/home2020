@@ -5,6 +5,7 @@ import { Layout, Wrapper } from '../components'
 import { DefaultPageProps } from '../models'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
