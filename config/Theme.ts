@@ -36,11 +36,11 @@ const typography: Typography = {
   googleFonts: [
     {
       name: config.sanSerifFontFamily,
-      styles: ['100', '300', '400'],
+      styles: ['200', '300', '400'],
     },
     {
       name: config.serifFontFamily,
-      styles: ['100', '300', '500', '600'],
+      styles: ['400', '500', '600'],
     },
   ],
 }

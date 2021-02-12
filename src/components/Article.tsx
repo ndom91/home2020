@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+// @ts-ignore
+import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
 import { Subline } from './Subline'
 import theme from '../../config/Theme'
@@ -41,9 +43,10 @@ const Post = styled.article`
 
 const Title = styled.h2`
   position: relative;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  font-family: ${config.serifFontFamily};
   margin-bottom: 0.75rem;
   color: ${theme.colors.grey.default};
+  font-size: 2rem;
   @media ${media.medium} {
     font-size: 1.2rem;
   }
@@ -54,6 +57,7 @@ const Initiale = styled.span`
   font-size: 7rem;
   transform: translate(-50%, -50%);
   opacity: 0.08;
+  font-family: ${config.serifFontFamily};
   user-select: none;
   z-index: -1;
   transition: transform 250ms ease-in-out;

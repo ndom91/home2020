@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Helmet from 'react-helmet'
 import theme from '../../config/Theme'
 import { media } from '../utils/media'
+import Typography from './Typography'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${theme.colors.bg};
     color: ${theme.colors.grey.default};
+    margin: 0;
     @media ${media.small} {
       font-size: 14px;
     }
@@ -106,6 +108,7 @@ export const Layout: React.FunctionComponent = (props) => {
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
         </Helmet>
+        <Typography />
         <GlobalStyle />
         {children}
         <Footer />

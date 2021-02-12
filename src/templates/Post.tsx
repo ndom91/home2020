@@ -50,7 +50,6 @@ const ContentWrapper = styled.div`
 const TagWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  margin-top: 20px;
   @media ${media.medium} {
     flex-wrap: wrap;
   }
@@ -59,10 +58,10 @@ const TagWrapper = styled.div`
   }
 `
 const Tag = styled.div`
-  padding: 10px 15px;
+  padding: 10px;
   border: 2px solid rgba(252, 103, 103, 0.2);
-  border-radius: 15px;
-  margin-right: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
   width: auto;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -75,12 +74,6 @@ const Tag = styled.div`
   font-display: swap;
   font-weight: 600;
 
-  &:hover,
-  &:focus,
-  &:active {
-    box-shadow: 0 1px 15px rgba(252, 103, 103, 0.3);
-  }
-
   &:hover:before,
   &:focus:before,
   &:active:before {
@@ -90,6 +83,7 @@ const Tag = styled.div`
 
 const Title = styled.h1`
   font-weight: 600;
+  font-family: ${config.serifFontFamily};
   @media ${media.medium} {
     font-size: 2.2rem;
   }
@@ -106,9 +100,8 @@ const Initiale = styled.span`
   opacity: 0.08;
   user-select: none;
   z-index: -1;
+  font-family: ${config.serifFontFamily};
   transition: transform 250ms ease-in-out;
-  font-family: 'Bitter', sans-serif;
-  font-display: swap;
   font-weight: 700;
 
   @media ${media.medium} {

@@ -55,7 +55,7 @@ const FooterSection = styled.div`
     margin-bottom: 0rem;
   }
   & a {
-    font-weight: 100;
+    font-weight: 400;
     color: ${theme.colors.grey.light};
     display: inline;
     letter-spacing: -0.2px;
