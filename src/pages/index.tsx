@@ -13,19 +13,11 @@ import { Header } from '../components/Header'
 const Homepage = styled.main`
   display: flex;
   height: 60vh;
-  flex-direction: row;
   width: 100%;
   max-width: 1200px;
-  flex: 1;
-  margin: 0 auto;
-  @media ${media.large} {
-    height: 100%;
-    flex-direction: column;
-  }
   @media ${media.small} {
     height: 100%;
-    flex-direction: column;
-    margin-bottom: 100px;
+    padding-bottom: 150px;
   }
 `
 
@@ -37,20 +29,8 @@ const HomepageContent: any = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 100%;
-
-  & h3 {
-    font-size: 2rem;
-  }
-
   @media ${media.large} {
-    font-size: 90%;
-  }
-  @media ${media.medium} {
-    font-size: 80%;
-  }
-  @media ${media.small} {
-    font-size: 70%;
-    justify-content: flex-start;
+    padding: 2rem;
   }
 `
 
@@ -61,11 +41,11 @@ const PreHeader: any = styled.div`
   color: ${theme.colors.primary};
 `
 const HeaderText: any = styled.h3`
-  font-size: 3rem !important;
+  font-size: 3rem;
   font-weight: 600;
   font-family: ${config.serifFontFamily};
-  font-display: swap;
   color: ${theme.colors.grey.default};
+
   @media ${media.large} {
     font-size: 2.8rem !important;
   }
@@ -79,60 +59,26 @@ const HeaderText: any = styled.h3`
 const SubHeader: any = styled.div`
   font-weight: 300;
   font-family: ${config.sanSerifFontFamily};
-  font-display: swap;
   color: ${theme.colors.grey.light};
-  z-index: 2;
+  display: inline-block;
+  line-height: 2.7rem;
 
   @media ${media.large} {
     font-size: 1.5rem;
-    line-height: 2.7rem;
   }
   @media ${media.medium} {
     font-size: 1.3rem;
-    line-height: 2.3rem;
   }
   @media ${media.small} {
     font-size: 1.3rem;
-    line-height: 2.2rem;
   }
 
   a {
-    display: inline-block;
-    vertical-align: middle;
     color: ${theme.colors.grey.light};
-    transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
     height: 50px;
-
-    @media ${media.large} {
-      height: 47px;
-      &:before {
-        bottom: 9px !important;
-      }
-      &:after {
-        bottom: 9px !important;
-      }
-    }
-    @media ${media.medium} {
-      height: 43px;
-      &:before {
-        bottom: 9px !important;
-      }
-      &:after {
-        bottom: 9px !important;
-      }
-    }
-    @media ${media.small} {
-      height: 40px;
-      &:before {
-        bottom: 7px !important;
-      }
-      &:after {
-        bottom: 7px !important;
-      }
-    }
 
     &:before {
       content: '';
@@ -141,7 +87,7 @@ const SubHeader: any = styled.div`
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 11px;
+      bottom: -3px;
       z-index: -1;
       background-color: rgba(0, 0, 0, 0.05);
     }
@@ -151,11 +97,9 @@ const SubHeader: any = styled.div`
       z-index: -1;
       left: 0;
       right: 100%;
-      bottom: 11px;
+      bottom: -3px;
       height: 0.5em;
-      transition-property: right;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-out;
+      transition: right 250ms ease-in-out;
     }
     &:nth-child(1):after {
       background: #44acf5;
@@ -182,11 +126,11 @@ const OfficeWorker = styled.img`
   right: 10%;
   transform: rotate(12deg);
   max-width: 700px;
+  pointer-events: none;
   @media ${media.large} {
     top: 20%;
     right: 5%;
     width: 60vw;
-    transform: rotate(12deg);
   }
   @media ${media.medium} {
     display: none;
@@ -204,10 +148,10 @@ const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
             <PreHeader>Hi, I'm Nico Domino 👋</PreHeader>
             <HeaderText>I like to make shit for the web</HeaderText>
             <SubHeader>
-              I'm a Fullstack Javascript Developer at <a href="https://checklyhq.com">Checkly</a>, opensourcerer, and I'm based in
-              Frankfurt, Germany and occasionally write about my thoughts on tech and other happenings here on my{' '}
-              <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
-              <a href="https://twitter.com/ndom91">Twitter</a>.
+              During the day, I'm a full-stack javascript developer at <a href="https://checklyhq.com">Checkly</a>. In the evenings you can
+              find me working on open source software or catching up on the latest Netflix series. I'm based in Frankfurt, Germany where I
+              occasionally write about my adventures in tech on my <Link to="/blog">blog</Link> and if you like memes, movies, and web
+              development you might also enjoy following me on <a href="https://twitter.com/ndom91">Twitter</a>.
             </SubHeader>
           </HomepageContent>
           <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />

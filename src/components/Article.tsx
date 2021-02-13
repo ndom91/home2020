@@ -23,6 +23,7 @@ const Post = styled.article`
   flex-direction: column;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+  max-width: 600px;
 
   &:hover {
     & .post-initial {

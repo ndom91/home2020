@@ -11,11 +11,11 @@ const FooterWrapper = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100%;
+  background-color: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-top: 1px solid ${theme.colors.grey.ultraUltraLight};
-  text-align: center;
   padding: 0.5rem 0;
   span {
     font-size: 0.75rem;
@@ -31,6 +31,7 @@ const FooterContent = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
+
   @media ${media.medium} {
     margin: 15px;
     width: 90%;
@@ -42,7 +43,6 @@ const FooterSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   font-family: ${config.sanSerifFontFamily};
-  font-display: swap;
   justify-content: center;
   margin: 20px;
   min-width: 6rem;
