@@ -39,6 +39,7 @@ const SubHeaderText = styled.div`
   font-display: swap;
   font-weight: 300;
   padding: 0 2em;
+  line-height: 2.3rem;
   z-index: 2;
   @media ${media.medium} {
     font-size: 1.1rem;
@@ -56,6 +57,7 @@ const SubHeaderText = styled.div`
     transform: translate(24px, 19px) rotate(-72deg);
     border-radius: 0px 80px;
     opacity: 0.1;
+    pointer-events: none;
     @media ${media.medium} {
       left: 21%;
       top: 65%;
@@ -211,8 +213,9 @@ const About = () => {
               />
             </HeaderImage>
             <SubHeaderText>
-              My name is Nico Domino and I am a Sys Admin by day, Web Developer by night and have been building stuff for the web for about
-              3-4 years now. I am based in the city of Frankfurt, Germany.
+              My name is Nico Domino and I am full stack web developer, improving the web one PR at a time! I am based in the city of
+              Frankfurt, Germany. Below you can find some of my side projects / public work. I'm currently working at{' '}
+              <a href="https://checklyhq.com">Checkly</a> making API and end to end application testing kick ass!
             </SubHeaderText>
           </SubHeader>
           <Projects>
