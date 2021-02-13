@@ -13,6 +13,8 @@ export const Content = styled.div`
   font-family: ${config.sanSerifFontFamily};
   font-weight: 400;
   margin-bottom: 5rem;
+  width: 900px;
+
   @media ${media.large} {
     margin-top: -35px;
     padding: 3rem 5rem;

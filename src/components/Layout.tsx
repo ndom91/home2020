@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.bg};
     background: ${theme.colors.primary};
   }
+  html,
+  body {
+    height: 100%;
+  }
   body {
     background: ${theme.colors.bg};
     color: ${theme.colors.grey.default};
@@ -58,27 +62,14 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
-  .textRight {
-    text-align:right;
-  }
-  :root {
-   --white: #fff;
-   --black: #000;
-   --grey: #595959;
-   --grey-dark: #2b2b2b;
-   --grey-light: #eee;
-   --green: #86c023;
-   --blue: #017ac7;
-
-   --duration: 400ms;
-   --easing: ease;
-  }
 `
 
 const PrimaryWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: space-around;
+  min-height: 100vh;
+  overflow: hidden;
 `
 
 export const Layout: React.FunctionComponent = (props) => {

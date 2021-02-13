@@ -41,6 +41,7 @@ const PostContent = styled.div`
 `
 
 const ContentWrapper = styled.div`
+  line-height: 1.8rem;
   padding: 5em 4em;
   @media ${media.medium} {
     padding: 1em 1.5em;

@@ -21,9 +21,8 @@ interface Props {
 const Post = styled.article`
   display: flex;
   flex-direction: column;
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
-  max-width: 600px;
+  max-width: 700px;
+  margin: 3.5rem auto;
 
   &:hover {
     & .post-initial {

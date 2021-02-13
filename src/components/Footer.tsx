@@ -8,8 +8,6 @@ import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 
 const FooterWrapper = styled.footer`
-  position: fixed;
-  bottom: 0;
   width: 100%;
   background-color: #fff;
   display: flex;

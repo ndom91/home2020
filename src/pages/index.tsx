@@ -10,25 +10,28 @@ import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
 import { Header } from '../components/Header'
 
-const Homepage = styled.main`
+const Homepage = styled.div`
   display: flex;
-  height: 60vh;
-  width: 100%;
+  justify-content: center;
   max-width: 1200px;
+  flex-grow: 1;
+  position: relative;
+
   @media ${media.small} {
     height: 100%;
-    padding-bottom: 150px;
+    padding: 100px 0;
   }
 `
 
 const HomepageContent: any = styled.div`
-  max-width: 60rem;
-  font-size: 1.5rem;
   display: flex;
+  max-width: 60rem;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
-  align-items: flex-start;
-  height: 100%;
+  align-items: space-around;
+  font-size: 1.5rem;
+
   @media ${media.large} {
     padding: 2rem;
   }
@@ -40,6 +43,7 @@ const PreHeader: any = styled.div`
   font-weight: 100;
   color: ${theme.colors.primary};
 `
+
 const HeaderText: any = styled.h3`
   font-size: 3rem;
   font-weight: 600;
@@ -122,14 +126,14 @@ const OfficeWorker = styled.img`
   position: absolute;
   width: 40vw;
   opacity: 0.08;
-  top: 20%;
-  right: 10%;
+  top: -20%;
+  right: -30%;
   transform: rotate(12deg);
   max-width: 700px;
   pointer-events: none;
   @media ${media.large} {
-    top: 20%;
-    right: 5%;
+    top: -10%;
+    right: -5%;
     width: 60vw;
   }
   @media ${media.medium} {
