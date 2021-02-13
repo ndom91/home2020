@@ -8,7 +8,7 @@ import theme from '../../config/Theme'
 import config from '../../config/SiteConfig'
 
 const FooterWrapper = styled.footer`
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -52,7 +52,7 @@ const FooterSection = styled.div`
     color: ${theme.colors.grey.dark};
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0rem;
+    margin-bottom: 3px;
   }
   & a {
     font-weight: 400;

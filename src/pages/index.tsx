@@ -29,35 +29,14 @@ const Homepage = styled.main`
   }
 `
 
-const GridRow: any = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 5rem 6rem;
-  color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
-  h1 {
-    color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
-  }
-  @media ${media.large} {
-    padding: 4rem 5rem;
-  }
-  @media ${media.medium} {
-    padding: 3rem 3rem;
-  }
-  @media ${media.small} {
-    padding: 2rem 1.5rem;
-  }
-`
-
 const HomepageContent: any = styled.div`
   max-width: 60rem;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
-  height: 450px;
+  height: 100%;
 
   & h3 {
     font-size: 2rem;
@@ -77,10 +56,9 @@ const HomepageContent: any = styled.div`
 
 const PreHeader: any = styled.div`
   font-size: 1.4rem;
-  font-family: ${config.serifFontFamily};
-  font-display: swap;
+  font-family: ${config.sanSerifFontFamily};
+  font-weight: 100;
   color: ${theme.colors.primary};
-  margin-bottom: 20px;
 `
 const HeaderText: any = styled.h3`
   font-size: 3rem !important;
@@ -88,7 +66,6 @@ const HeaderText: any = styled.h3`
   font-family: ${config.serifFontFamily};
   font-display: swap;
   color: ${theme.colors.grey.default};
-  margin-bottom: 20px;
   @media ${media.large} {
     font-size: 2.8rem !important;
   }
@@ -104,17 +81,19 @@ const SubHeader: any = styled.div`
   font-family: ${config.sanSerifFontFamily};
   font-display: swap;
   color: ${theme.colors.grey.light};
-  margin-bottom: 20px;
   z-index: 2;
 
   @media ${media.large} {
     font-size: 1.5rem;
+    line-height: 2.7rem;
   }
   @media ${media.medium} {
     font-size: 1.3rem;
+    line-height: 2.3rem;
   }
   @media ${media.small} {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
   }
 
   a {
@@ -128,7 +107,7 @@ const SubHeader: any = styled.div`
     height: 50px;
 
     @media ${media.large} {
-      height: 52px;
+      height: 47px;
       &:before {
         bottom: 9px !important;
       }
@@ -146,7 +125,7 @@ const SubHeader: any = styled.div`
       }
     }
     @media ${media.small} {
-      height: 33px;
+      height: 40px;
       &:before {
         bottom: 7px !important;
       }
@@ -179,7 +158,7 @@ const SubHeader: any = styled.div`
       transition-timing-function: ease-out;
     }
     &:nth-child(1):after {
-      background: #67b246;
+      background: #44acf5;
     }
     &:nth-child(2):after {
       background: ${theme.colors.primary};
@@ -218,23 +197,20 @@ const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
   return (
     <Layout>
       <Header />
+      <Helmet title={`Homepage | ${config.siteTitle}`} />
       <Wrapper fullWidth={true}>
-        <Helmet title={`Homepage | ${config.siteTitle}`} />
         <Homepage>
-          <GridRow>
-            <HomepageContent center={true}>
-              <PreHeader>Hi, I'm Nico Domino</PreHeader>
-              <HeaderText>I make shit for the web</HeaderText>
-              <SubHeader>
-                During the week you can find me doing Sys Admin work as well as a lot of Web Development at{' '}
-                <a href="https://newtelco.dev">Newtelco</a>, a global managed services company specializing in datacenter management based
-                in Frankfurt, Germany. I occasionally write about my thoughts on tech and other happenings here on my{' '}
-                <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
-                <a href="https://twitter.com/ndom91">Twitter</a>.
-              </SubHeader>
-            </HomepageContent>
-            <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />
-          </GridRow>
+          <HomepageContent>
+            <PreHeader>Hi, I'm Nico Domino 👋</PreHeader>
+            <HeaderText>I like to make shit for the web</HeaderText>
+            <SubHeader>
+              I'm a Fullstack Javascript Developer at <a href="https://checklyhq.com">Checkly</a>, opensourcerer, and I'm based in
+              Frankfurt, Germany and occasionally write about my thoughts on tech and other happenings here on my{' '}
+              <Link to="/blog">blog</Link> and you can find some of my (much less) serious stuff on{' '}
+              <a href="https://twitter.com/ndom91">Twitter</a>.
+            </SubHeader>
+          </HomepageContent>
+          <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />
         </Homepage>
       </Wrapper>
     </Layout>

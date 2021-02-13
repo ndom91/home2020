@@ -1,10 +1,10 @@
-import sizes from '../../config/Theme'
+import theme from '../../config/Theme'
 
 export const media = {
-  large: `(max-width: ${sizes.large})`,
-  medium: `(max-width: ${sizes.medium})`,
-  small: `(max-width: ${sizes.small})`,
-  xsmall: `(max-width: ${sizes.xsmall})`,
+  large: `(max-width: ${theme.sizes.large})`,
+  medium: `(max-width: ${theme.sizes.medium})`,
+  small: `(max-width: ${theme.sizes.small})`,
+  xsmall: `(max-width: ${theme.sizes.xsmall})`,
 }
 
 export function titleCase(str: string): string {

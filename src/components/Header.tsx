@@ -17,7 +17,7 @@ const HeaderWrapper: any = styled.header`
     url(${(props: any) => props.banner}) no-repeat;
   background-size: cover;
   background-position-y: 40%;
-  padding: 2rem 2rem 3rem;
+  padding: 2rem 2rem 4rem;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -34,13 +34,13 @@ const HeaderWrapper: any = styled.header`
     width: 100%;
   }
   @media ${media.large} {
-    padding: 1rem 2rem 2.5rem;
+    padding: 1rem 2rem 3.5rem;
   }
   @media ${media.medium} {
-    padding: 0.5rem 1rem 0.5rem;
+    padding: 0.5rem 1rem 2rem;
   }
   @media ${media.small} {
-    padding: 1rem 0.5rem 0rem;
+    padding: 1rem 0.5rem 2rem;
   }
 `
 
@@ -76,7 +76,7 @@ const LinkWrapper = styled(Link)`
   display: flex;
   justify-content: flex-start;
   margin: 5px 20px;
-  height: 39px;
+  height: 30px;
   display: inline-block;
   vertical-align: middle;
   transform: perspective(1px) translateZ(0);

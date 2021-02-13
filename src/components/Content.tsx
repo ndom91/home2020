@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../utils/media'
+// @ts-ignore
 import config from '../../config/SiteConfig'
 
 export const Content = styled.div`
