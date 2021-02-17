@@ -9,7 +9,7 @@ export const Content = styled.div`
   padding: 2rem 8rem;
   background-color: ${(props) => props.theme.colors.bg};
   z-index: 9000;
-  margin-top: -4rem;
+  margin-top: 4rem;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 400;
   margin-bottom: 5rem;

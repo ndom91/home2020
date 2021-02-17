@@ -33,18 +33,30 @@ const Wrapper: any = styled.div`
 
 const PostContent = styled.div`
   max-width: 55vw;
-  margin-top: 4rem;
-  @media ${media.small} {
+  margin: 4rem auto 0 auto;
+  @media ${media.large} {
+    max-width: 65vw;
+  }
+  @media ${media.medium} {
     max-width: 75vw;
-    margin: 0 auto;
+  }
+  @media ${media.small} {
+    max-width: 85vw;
   }
 `
 
 const ContentWrapper = styled.div`
   line-height: 1.8rem;
   padding: 5em 4em;
+  margin: 0 auto;
+  @media ${media.large} {
+    max-width: 65vw;
+  }
   @media ${media.medium} {
-    padding: 1em 1.5em;
+    max-width: 75vw;
+  }
+  @media ${media.small} {
+    max-width: 85vw;
   }
 `
 
@@ -82,18 +94,6 @@ const Tag = styled.div`
   }
 `
 
-const Title = styled.h1`
-  font-weight: 600;
-  font-family: ${config.serifFontFamily};
-  @media ${media.medium} {
-    font-size: 2.2rem;
-  }
-  @media ${media.small} {
-    font-size: 1.8rem;
-    margin: 1em 0.5em;
-  }
-`
-
 const Initiale = styled.span`
   position: absolute;
   font-size: 8rem;
@@ -104,13 +104,13 @@ const Initiale = styled.span`
   font-family: ${config.serifFontFamily};
   transition: transform 250ms ease-in-out;
   font-weight: 700;
+`
 
-  @media ${media.medium} {
-    font-size: 5rem;
-  }
-  @media ${media.small} {
-    transform: translate(-10%, -30%);
-  }
+const Title = styled.h1`
+  font-weight: 600;
+  font-family: ${config.serifFontFamily};
+  font-size: calc(48px + 1vw);
+  line-height: 3rem;
 `
 
 const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data }) => {
@@ -122,8 +122,6 @@ const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data
     <Layout>
       {post ? (
         <>
-          <SEO postPath={post.fields.slug} postNode={post} postSEO />
-          <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
           <Header banner={post.frontmatter.banner}>
             <Link to="/">{config.siteTitle}</Link>
           </Header>

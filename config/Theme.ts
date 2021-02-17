@@ -16,6 +16,7 @@ interface Sizes {
   small: string
   medium: string
   large: string
+  xlarge: string
 }
 
 const colors = {
@@ -62,8 +63,9 @@ const space = {
 }
 
 const sizes: Sizes = {
-  large: '1400px',
-  medium: '700px',
+  xlarge: '1400px',
+  large: '1024px',
+  medium: '800px',
   small: '500px',
   xsmall: '350px',
 }
