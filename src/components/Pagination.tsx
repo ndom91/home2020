@@ -7,9 +7,15 @@ import theme from '../../config/Theme'
 export const PaginationContainer = styled.div`
   text-align: center;
   margin: 2rem;
-  @media ${media.medium} {
-    margin: 0rem;
+  margin: 2rem auto;
+  @media ${media.large} {
+    max-width: 65vw;
   }
+  @media ${media.medium} {
+    max-width: 75vw;
+  }
+  @media ${media.small} {
+    max-width: 85vw;
 `
 
 export const PaginationContent = styled.div`

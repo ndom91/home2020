@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
-import { Subline } from './Subline'
 import theme from '../../config/Theme'
 import { motion } from 'framer-motion'
 import { media, titleCase } from '../utils/media'
@@ -23,20 +22,23 @@ const Post = styled.article`
   flex-direction: column;
   max-width: 700px;
   margin: 3.5rem auto;
-
-  &:hover {
-    & .post-initial {
-      transform: scale(1.1) translate(-50%, -50%);
-    }
+  @media ${media.large} {
+    max-width: 65vw;
+  }
+  @media ${media.medium} {
+    max-width: 75vw;
   }
   @media ${media.small} {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    max-width: 85vw;
     &:hover {
       & .post-initial {
         transform: scale(1.05) translate(-40%, -50%);
       }
+    }
+  }
+  &:hover {
+    & .post-initial {
+      transform: scale(1.1) translate(-50%, -50%);
     }
   }
 `
@@ -45,10 +47,10 @@ const Title = styled.h2`
   position: relative;
   font-family: ${config.serifFontFamily};
   margin-bottom: 0.75rem;
-  color: ${theme.colors.grey.default};
   font-size: 2rem;
+  color: ${theme.colors.grey.default};
   @media ${media.medium} {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 `
 
@@ -74,8 +76,8 @@ const Excerpt = styled.p`
   grid-column: -1 / 1;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  line-height: 1.8rem;
   @media ${media.medium} {
-    font-size: 1rem;
   }
 `
 
@@ -100,7 +102,7 @@ export const Article: React.FunctionComponent<Props> = (props) => {
           <Initiale className="post-initial">{firstChar}</Initiale>
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
-        <Subline>
+        <div>
           {date && <span>{date} &mdash;</span>}
           {timeToRead && (
             <span>
@@ -118,7 +120,7 @@ export const Article: React.FunctionComponent<Props> = (props) => {
               </Link>
             </>
           )}
-        </Subline>
+        </div>
         <Excerpt>{excerpt}</Excerpt>
       </Post>
     </motion.div>

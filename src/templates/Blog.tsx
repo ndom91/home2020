@@ -16,7 +16,6 @@ const BlogHeader = styled.h1`
   font-display: swap;
   color: ${theme.colors.grey.default};
   text-align: center;
-  padding-bottom: 50px;
 `
 
 const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data }) => {
