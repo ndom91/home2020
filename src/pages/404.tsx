@@ -15,13 +15,12 @@ const HeaderText = styled.h1`
 `
 
 const Image = styled.img`
-  max-width: 600px;
+  max-width: 900px;
 `
 
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 75px 0;
 `
 
 const Subtitle = styled.h3`
@@ -36,18 +35,17 @@ const Subtitle = styled.h3`
 const NotFoundPage: React.FunctionComponent = () => {
   return (
     <Layout>
-      <Helmet title={`404 not found | ${config.siteTitle}`} />
+      <Helmet title={`Page Not Found | ${config.siteTitle}`} />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
         <SectionTitle>NOT FOUND</SectionTitle>
       </Header>
       <Wrapper>
         <Content>
-          <HeaderText>404</HeaderText>
           <ImageWrapper>
-            <Image src="assets/images/404.svg" alt="404 - Not Found" />
+            <Image src="assets/images/404_1.png" alt="404 - Not Found" />
           </ImageWrapper>
-          <Subtitle>You just hit a route that doesn&#39;t exist... the sadness.</Subtitle>
+          <Subtitle>You just hit a route that doesn't exist.. the sadness.</Subtitle>
         </Content>
       </Wrapper>
     </Layout>
