@@ -1,6 +1,7 @@
 import theme from '../../config/Theme'
 
 export const media = {
+  xlarge: `(max-width: ${theme.sizes.xlarge})`,
   large: `(max-width: ${theme.sizes.large})`,
   medium: `(max-width: ${theme.sizes.medium})`,
   small: `(max-width: ${theme.sizes.small})`,

@@ -126,14 +126,19 @@ const OfficeWorker = styled.img`
   position: absolute;
   width: 40vw;
   opacity: 0.08;
-  top: -20%;
-  right: -30%;
+  top: calc(25% - 13rem);
+  right: -14rem;
   transform: rotate(12deg);
   max-width: 700px;
   pointer-events: none;
+  @media ${media.xlarge} {
+    top: calc(25% - 12rem);
+    right: -4rem;
+    width: 60vw;
+  }
   @media ${media.large} {
-    top: -10%;
-    right: -5%;
+    top: calc(25% - 10rem);
+    right: -3rem;
     width: 60vw;
   }
   @media ${media.medium} {
