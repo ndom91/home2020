@@ -40,14 +40,14 @@ export const PaginationContent = styled.div`
     display: block;
     float: left;
     transition: 400ms ease;
-    color: ${theme.colors.grey.light};
+    color: var(--grey-light);
     letter-spacing: 0.1em;
     padding: 1rem;
 
     &:hover,
     &.current {
-      background-color: ${theme.colors.primary};
-      color: ${theme.colors.white};
+      background-color: var(--primary);
+      color: var(--white);
     }
 
     &.prev {

@@ -106,7 +106,7 @@ const ProjectLabel = styled.h3`
     left: 0;
     right: 0px;
     bottom: 0;
-    background: ${theme.colors.primary};
+    background: var(--primary);
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;
@@ -138,7 +138,7 @@ const ProjectLabel = styled.h3`
 const ProjectDesc = styled.div`
   font-size: 1rem;
   font-weight: 300;
-  color: ${theme.colors.grey.default};
+  color: var(--grey-default);
   @media ${media.medium} {
     font-size: 0.9rem;
   }

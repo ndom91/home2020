@@ -10,6 +10,7 @@ import config from '../../config/SiteConfig'
 const FooterWrapper = styled.footer`
   width: 100%;
   background-color: #fff;
+  z-index: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -47,14 +48,14 @@ const FooterSection = styled.div`
   font-size: 0.85rem;
 
   & div:nth-child(1) {
-    color: ${theme.colors.grey.dark};
+    color: var(--grey-dark);
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 3px;
   }
   & a {
     font-weight: 400;
-    color: ${theme.colors.grey.light};
+    color: var(--grey-light);
     display: inline;
     letter-spacing: -0.2px;
   }

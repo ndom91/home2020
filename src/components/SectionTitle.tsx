@@ -7,7 +7,7 @@ export const SectionTitle: any = styled.div`
   font-size: ${(props) => props.theme.fontSize.big};
   text-transform: ${(props: any) => (props.uppercase ? 'uppercase' : 'normal')};
   font-family: ${config.serifFontFamily};
-  color: ${theme.colors.grey.dark};
+  color: var(--grey-dark);
   font-display: swap;
   text-align: center;
   position: relative;

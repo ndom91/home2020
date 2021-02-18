@@ -97,7 +97,7 @@ const Tag = styled.div`
 const Initiale = styled.span`
   position: absolute;
   font-size: 8rem;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, 50%);
   opacity: 0.08;
   user-select: none;
   z-index: -1;

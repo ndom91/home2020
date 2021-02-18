@@ -14,7 +14,7 @@ const BlogHeader = styled.h1`
   font-display: swap;
   font-size: 4rem;
   font-display: swap;
-  color: ${theme.colors.grey.default};
+  color: var(--grey-default);
   text-align: center;
 `
 

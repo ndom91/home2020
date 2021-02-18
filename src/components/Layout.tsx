@@ -10,31 +10,31 @@ import config from '../../config/SiteConfig'
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
-    color: ${theme.colors.bg};
-    background: ${theme.colors.primary};
+    color: var(--bg);
+    background: var(--primary);
   }
   html,
   body {
     height: 100%;
   }
   body {
-    background: ${theme.colors.bg};
-    color: ${theme.colors.grey.default};
+    background: var(--bg);
+    color: var(--grey-default);
     margin: 0;
     @media ${media.small} {
       font-size: 14px;
     }
   }
   a {
-    color: ${theme.colors.grey.dark};
+    color: var(--grey-dark);
     text-decoration: none;
     transition: all ${theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.colors.primary};
+    color: var(--primary);
   }
   h1, h2, h3, h4 {
-    color: ${theme.colors.grey.dark};
+    color: var(--grey-dark);
   }
   blockquote {
     font-style: italic;
@@ -44,14 +44,14 @@ const GlobalStyle = createGlobalStyle`
   blockquote:before {
     content: "";
     position: absolute;
-    background: ${theme.colors.primary};
+    background: var(--primary);
     height: 100%;
     width: 6px;
     margin-left: -1.6rem;
   }
   label {
     margin-bottom: .5rem;
-    color: ${theme.colors.grey.dark};
+    color: var(--grey-dark);
   }
   input, textarea {
     border-radius: .5rem;
@@ -61,6 +61,16 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       outline: none;
     }
+  }
+  :root {
+    --primary: #fc6767;
+    --bg: #fff;
+    --white: #fff;
+    --grey-dark: rgba(0, 0, 0, 0.9);
+    --grey-default: rgba(0, 0, 0, 0.7);
+    --grey-light: rgba(0, 0, 0, 0.5);
+    --grey-ultraLight: rgba(0, 0, 0, 0.25);
+    --grey-ultraUltraLight: rgba(0, 0, 0, 0.1);
   }
 `
 

@@ -52,7 +52,7 @@ const Circle = styled.div`
 
   border-radius: 50%;
   backface-visibility: hidden;
-  background-color: ${theme.colors.primary};
+  background-color: var(--primary);
 
   transform: scale(0);
   transform-origin: 50% 50%;
@@ -119,7 +119,7 @@ const NavigationLink = styled(Link)`
 
 const MenuNumber = styled.div`
   display: inline-block;
-  color: ${theme.colors.grey.ultraLight};
+  color: var(--grey-ultraLight);
   font-family: 'Playfair Display', 'serif';
   font-display: swap;
   margin-right: 10px;

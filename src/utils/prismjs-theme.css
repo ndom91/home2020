@@ -21,20 +21,32 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: 1em;
+  padding: 1.5em;
   margin: 0.5em 0;
+  /* 
+  Bleed out code blocks - unsure if I like yet..
+  margin-left: -50px;
+  margin-right: -50px; 
+  */
   overflow: auto;
   border-radius: 0.3em;
+  border: 1px solid var(--primary);
+}
+pre > code[class*='language-'] {
+  display: block;
+  max-width: 55vw;
+  margin: 0 auto;
 }
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: #272822;
+  background-color: #1d1f21;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em;
+  border: 1px solid var(--primary);
+  padding: 0.3em;
   border-radius: 0.3em;
   white-space: normal;
 }

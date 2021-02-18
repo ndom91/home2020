@@ -8,7 +8,7 @@ const Progress = styled.div<{ pos: number }>`
   padding: 0 !important;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, ${theme.colors.primary} ${(props) => props.pos}%, transparent 0);
+  background: linear-gradient(to right, var(--primary) ${(props) => props.pos}%, transparent 0);
   width: 100%;
   height: 6px;
   z-index: 99999;

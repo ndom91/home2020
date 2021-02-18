@@ -97,7 +97,7 @@ const LinkWrapper = styled(Link)`
       left: 0;
       right: 0;
       bottom: 0;
-      background: ${theme.colors.grey.ultraLight};
+      background: var(--grey-ultraLight);
       height: 4px;
       transition-property: left, background-color;
       transition-duration: 400ms;
@@ -112,7 +112,7 @@ const LinkWrapper = styled(Link)`
     left: 100%;
     right: 0;
     bottom: 0;
-    background-color: ${theme.colors.primary};
+    background-color: var(--primary);
     height: 4px;
     transition: left 200ms ease-in-out, background-color 250ms ease-in-out;
   }
@@ -120,13 +120,13 @@ const LinkWrapper = styled(Link)`
   &:hover:before,
   &:focus:before,
   &:active:before {
-    background-color: ${theme.colors.primary};
+    background-color: var(--primary);
     left: 0;
   }
 `
 
 const MenuNumber = styled.span`
-  color: ${theme.colors.grey.light};
+  color: var(--grey-light);
   font-size: 1rem;
   font-weight: 600;
   font-family: ${config.sanSerifFontFamily};

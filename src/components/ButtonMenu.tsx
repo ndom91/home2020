@@ -54,7 +54,7 @@ const ButtonHamburger = styled.button`
     }
   }
   span {
-    background: ${theme.colors.bg};
+    background: var(--bg);
     border-radius: 10px;
     display: inline-block;
     height: 3px;
@@ -67,7 +67,7 @@ const ButtonHamburger = styled.button`
     &:before,
     &:after {
       content: '';
-      background: ${theme.colors.bg};
+      background: var(--bg);
       border-radius: 10px;
       display: inline-block;
       height: 3px;

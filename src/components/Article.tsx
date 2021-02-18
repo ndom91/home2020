@@ -48,7 +48,7 @@ const Title = styled.h2`
   font-family: ${config.serifFontFamily};
   margin-bottom: 0.75rem;
   font-size: 2rem;
-  color: ${theme.colors.grey.default};
+  color: var(--grey-default);
   @media ${media.medium} {
     font-size: 2rem;
   }

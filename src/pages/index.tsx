@@ -41,14 +41,14 @@ const PreHeader: any = styled.div`
   font-size: 1.4rem;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 100;
-  color: ${theme.colors.primary};
+  color: var(--primary);
 `
 
 const HeaderText: any = styled.h3`
   font-size: 3rem;
   font-weight: 600;
   font-family: ${config.serifFontFamily};
-  color: ${theme.colors.grey.default};
+  color: var(--grey-default);
 
   @media ${media.large} {
     font-size: 2.8rem !important;
@@ -63,7 +63,7 @@ const HeaderText: any = styled.h3`
 const SubHeader: any = styled.div`
   font-weight: 300;
   font-family: ${config.sanSerifFontFamily};
-  color: ${theme.colors.grey.light};
+  color: var(--grey-light);
   display: inline-block;
   line-height: 2.7rem;
 
@@ -78,7 +78,7 @@ const SubHeader: any = styled.div`
   }
 
   a {
-    color: ${theme.colors.grey.light};
+    color: var(--grey-light);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
@@ -109,7 +109,7 @@ const SubHeader: any = styled.div`
       background: #44acf5;
     }
     &:nth-child(2):after {
-      background: ${theme.colors.primary};
+      background: var(--primary);
     }
     &:nth-child(3):after {
       background: #44acf5;
@@ -117,6 +117,7 @@ const SubHeader: any = styled.div`
     &:hover:after,
     &:focus:after,
     &:active:after {
+      color: default;
       right: 0;
     }
   }

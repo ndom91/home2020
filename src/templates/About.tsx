@@ -53,7 +53,7 @@ const SubHeaderText = styled.div`
     bottom: auto;
     width: 300px;
     height: 420px;
-    background-color: ${theme.colors.primary};
+    background-color: var(--primary);
     transform: translate(24px, 19px) rotate(-72deg);
     border-radius: 0px 80px;
     opacity: 0.1;
@@ -75,7 +75,7 @@ const SubHeaderText = styled.div`
 
 const HeaderImage = styled.div`
   min-width: 350px;
-  border: 15px solid ${theme.colors.primary};
+  border: 15px solid var(--primary);
   border-radius: 10px;
   transform: translateX(-10%);
   transition-property: transform scale rotate;
