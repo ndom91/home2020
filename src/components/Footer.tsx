@@ -14,7 +14,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-top: 1px solid ${theme.colors.grey.ultraUltraLight};
+  border-top: 1px solid var(--grey-ultraUltraLight);
   padding: 0.5rem 0;
   span {
     font-size: 0.75rem;

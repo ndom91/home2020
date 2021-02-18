@@ -13,8 +13,7 @@ interface Props {
 
 const HeaderWrapper: any = styled.header`
   position: relative;
-  background: linear-gradient(-185deg, ${(props) => '#c13838'}, ${(props) => props.theme.colors.grey.default}),
-    url(${(props: any) => props.banner}) no-repeat;
+  background: linear-gradient(-185deg, #c13838, var(--grey-default)), url(${(props: any) => props.banner}) no-repeat;
   background-size: cover;
   background-position-y: 40%;
   padding: 2rem 2rem 4rem;
@@ -154,8 +153,11 @@ export const Header: React.FunctionComponent<Props> = ({ banner }) => {
           <LinkWrapper to={`/blog`} partiallyActive activeClassName="active">
             <MenuNumber>02</MenuNumber>blog
           </LinkWrapper>
+          <LinkWrapper to={`/uses`} activeClassName="active">
+            <MenuNumber>03</MenuNumber>uses
+          </LinkWrapper>
           <LinkWrapper to={`/about`} activeClassName="active">
-            <MenuNumber>03</MenuNumber>about
+            <MenuNumber>04</MenuNumber>about
           </LinkWrapper>
         </Content>
       </ContentWrapper>

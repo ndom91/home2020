@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Button: any = styled.button`
-  background: ${(props) => props.theme.colors.primary};
+  background: var(--primary);
   border: none;
   display: inline-flex;
   align-items: center;

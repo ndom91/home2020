@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   }
 
   a {
-    color: ${(props) => props.theme.colors.primary};
+    color: var(--primary);
     display: flex;
     align-items: center;
   }
@@ -41,7 +41,7 @@ const Prev = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 2px 10px ${(props) => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
@@ -55,7 +55,7 @@ const Prev = styled.div`
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${(props) => props.theme.colors.grey.light};
+    color: var(--grey-light);
   }
 `
 
@@ -68,7 +68,7 @@ const Next = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 10px 30px;
-  box-shadow: 0 2px 10px ${(props) => props.theme.colors.grey.ultraUltraLight};
+  box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
@@ -83,7 +83,7 @@ const Next = styled.div`
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${(props) => props.theme.colors.grey.light};
+    color: var(--grey-light);
   }
 `
 

@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: none;
   margin: 6rem auto 0 auto;
   a {
-    color: ${(props) => props.theme.colors.primary};
+    color: var(--primary);
     display: flex;
     align-items: center;
   }
