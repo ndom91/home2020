@@ -152,7 +152,7 @@ const Uses = () => {
             </SubHeaderText>
           </SubHeader>
           <UsesItems>
-            <UsesHeader>Uses</UsesHeader>
+            <UsesHeader>Under Construction..</UsesHeader>
           </UsesItems>
         </Content>
       </Wrapper>
