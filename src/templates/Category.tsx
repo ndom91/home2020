@@ -6,7 +6,7 @@ import kebabCase from 'lodash/kebabCase'
 import { DefaultPageProps } from '../models'
 import { titleCase } from '../utils/media'
 import { Link } from 'gatsby'
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from '../components'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
 
 export default class Category extends React.PureComponent<DefaultPageProps> {
   public render() {
@@ -19,29 +19,27 @@ export default class Category extends React.PureComponent<DefaultPageProps> {
         <Helmet title={`${titleCase(categoryName)} | ${config.siteTitle}`} />
         <Header />
         <Wrapper>
-          <Content>
-            <SectionTitle>Category &ndash; {titleCase(categoryName)}</SectionTitle>
-            <Subline sectionTitle>
-              {subline} (See{' '}
-              <Link style={{ marginLeft: '5px' }} to="/categories">
-                all categories
-              </Link>
-              )
-            </Subline>
-            {posts
-              ? posts.map((post: any, index) => (
-                  <Article
-                    title={post.frontmatter.title}
-                    date={post.frontmatter.date}
-                    excerpt={post.excerpt}
-                    slug={kebabCase(post.frontmatter.title)}
-                    timeToRead={post.timeToRead}
-                    category={post.frontmatter.category}
-                    key={index}
-                  />
-                ))
-              : null}
-          </Content>
+          <SectionTitle>Category &ndash; {titleCase(categoryName)}</SectionTitle>
+          <Subline sectionTitle>
+            {subline} (See{' '}
+            <Link style={{ marginLeft: '5px' }} to="/categories">
+              all categories
+            </Link>
+            )
+          </Subline>
+          {posts
+            ? posts.map((post: any, index) => (
+                <Article
+                  title={post.frontmatter.title}
+                  date={post.frontmatter.date}
+                  excerpt={post.excerpt}
+                  slug={kebabCase(post.frontmatter.title)}
+                  timeToRead={post.timeToRead}
+                  category={post.frontmatter.category}
+                  key={index}
+                />
+              ))
+            : null}
         </Wrapper>
       </Layout>
     )

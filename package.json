@@ -86,8 +86,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,css,json,md}": [
-      "npm run format:fix",
-      "git add"
+      "npm run format:fix"
     ]
   },
   "commitlint": {

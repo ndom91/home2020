@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Layout, Wrapper, Header, SectionTitle, Content, Project } from '../components'
+import { Layout, Wrapper, Header, SectionTitle, Project } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
 // @ts-ignore
@@ -18,6 +18,7 @@ const AboutHeader = styled.h1`
   font-size: 4rem;
   font-weight: 500;
   padding-bottom: 50px;
+  max-width: 1400px;
   @media ${media.medium} {
     font-size: 3rem;
   }
@@ -27,6 +28,8 @@ const SubHeader = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  max-width: 1400px;
+  padding: 0 5em;
   @media ${media.medium} {
     flex-direction: column;
     align-items: center;
@@ -113,6 +116,7 @@ const Projects = styled.div`
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 1400px;
   @media ${media.small} {
     flex-direction: column;
     align-items: center;
@@ -137,6 +141,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 2em;
   @media ${media.small} {
     flex-direction: column;
     align-items: center;
@@ -206,40 +211,38 @@ const About = () => {
         <SectionTitle>About</SectionTitle>
       </Header>
       <Wrapper fullWidth>
-        <Content>
-          <AboutHeader>Hey there.</AboutHeader>
-          <SubHeader>
-            <HeaderImage>
-              <Img
-                style={{ width: 'auto' }}
-                fluid={images.find((img: ImageGraphQL) => img.node.fluid.originalName === 'ndo.png').node.fluid}
-                fadeIn
-                alt="ndom91"
-              />
-            </HeaderImage>
-            <SubHeaderText>
-              My name is Nico Domino and I am full stack web developer, improving the web one PR at a time! I am based in the city of
-              Frankfurt, Germany. Below you can find some of my side projects / public work. I'm currently working at{' '}
-              <a href="https://checklyhq.com">Checkly</a> making API and end to end application testing kick ass!
-            </SubHeaderText>
-          </SubHeader>
-          <Projects>
-            <ProjectsHeader>Projects</ProjectsHeader>
-            <motion.div initial animate="visible" variants={list}>
-              <ProjectsWrapper>
-                {projects.map((project: Project, index: number) => {
-                  return (
-                    <Project
-                      project={project}
-                      image={images.find((img: ImageGraphQL) => img.node.fluid.originalName === project.node.image)}
-                      key={index}
-                    />
-                  )
-                })}
-              </ProjectsWrapper>
-            </motion.div>
-          </Projects>
-        </Content>
+        <AboutHeader>Hey there.</AboutHeader>
+        <SubHeader>
+          <HeaderImage>
+            <Img
+              style={{ width: 'auto' }}
+              fluid={images.find((img: ImageGraphQL) => img.node.fluid.originalName === 'ndo.png').node.fluid}
+              fadeIn
+              alt="ndom91"
+            />
+          </HeaderImage>
+          <SubHeaderText>
+            My name is Nico Domino and I am full stack web developer, improving the web one PR at a time! I am based in the city of
+            Frankfurt, Germany. Below you can find some of my side projects / public work. I'm currently working at{' '}
+            <a href="https://checklyhq.com">Checkly</a> making API and end to end application testing kick ass!
+          </SubHeaderText>
+        </SubHeader>
+        <Projects>
+          <ProjectsHeader>Projects</ProjectsHeader>
+          <motion.div initial animate="visible" variants={list}>
+            <ProjectsWrapper>
+              {projects.map((project: Project, index: number) => {
+                return (
+                  <Project
+                    project={project}
+                    image={images.find((img: ImageGraphQL) => img.node.fluid.originalName === project.node.image)}
+                    key={index}
+                  />
+                )
+              })}
+            </ProjectsWrapper>
+          </motion.div>
+        </Projects>
       </Wrapper>
     </Layout>
   )

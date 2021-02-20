@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { Layout, Wrapper, Header, SectionTitle, Content } from '../components'
+import { Layout, Wrapper, Header, SectionTitle } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
 // @ts-ignore
@@ -141,20 +141,18 @@ const Uses = () => {
         <SectionTitle>Uses</SectionTitle>
       </Header>
       <Wrapper>
-        <Content>
-          <UsingHeader>Here's what I'm using..</UsingHeader>
-          <SubHeader>
-            {/* <SubHeaderText>
+        <UsingHeader>Here's what I'm using..</UsingHeader>
+        <SubHeader>
+          {/* <SubHeaderText>
               Inspired by{' '}
               <a target="_blank" rel="noopener noreferer" href="https://uses.tech/">
                 uses.tech
               </a>
             </SubHeaderText> */}
-          </SubHeader>
-          <UsesItems>
-            <UsesHeader>🚧 Under Construction..</UsesHeader>
-          </UsesItems>
-        </Content>
+        </SubHeader>
+        <UsesItems>
+          <UsesHeader>🚧 Under Construction..</UsesHeader>
+        </UsesItems>
       </Wrapper>
     </Layout>
   )

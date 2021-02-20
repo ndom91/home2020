@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 // @ts-ignore
@@ -7,7 +6,7 @@ import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link, graphql } from 'gatsby'
 import { media, titleCase } from '../utils/media'
-import { Layout, Header, Subline, SEO, PrevNext, Content, ProgressBar } from '../components'
+import { Layout, Header, Subline, SEO, PrevNext, ProgressBar } from '../components'
 import '../utils/prismjs-theme.css'
 
 const Wrapper: any = styled.div`
@@ -15,8 +14,9 @@ const Wrapper: any = styled.div`
   flex-direction: column;
   flex: 1;
   align-self: center;
-  max-width: ${(props: any) => (props.fullWidth ? '100%' : '100rem')};
+  max-width: 1000px;
   padding: ${(props: any) => (props.fullWidth ? '0' : '0 10rem')};
+  margin-bottom: 100px;
   @media ${media.large} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 8rem')};
   }
@@ -25,9 +25,7 @@ const Wrapper: any = styled.div`
   }
   @media ${media.small} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
-    & > div {
-      padding: 1rem 1rem;
-    }
+    margin-bottom: 50px;
   }
 `
 
@@ -49,15 +47,6 @@ const ContentWrapper = styled.div`
   line-height: 1.8rem;
   padding: 5em 4em;
   margin: 0 auto;
-  @media ${media.large} {
-    max-width: 65vw;
-  }
-  @media ${media.medium} {
-    max-width: 75vw;
-  }
-  @media ${media.small} {
-    max-width: 85vw;
-  }
 `
 
 const TagWrapper = styled.div`
@@ -104,6 +93,10 @@ const Initiale = styled.span`
   font-family: ${config.serifFontFamily};
   transition: transform 250ms ease-in-out;
   font-weight: 700;
+  @media ${media.small} {
+    font-size: 6rem;
+    transform: translate(-40%, 50%);
+  }
 `
 
 const Title = styled.h1`
@@ -114,50 +107,49 @@ const Title = styled.h1`
 `
 
 const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data }) => {
-  const { prev, next } = pathContext
+  const { prev, next, slug } = pathContext
 
   const post = data.markdownRemark
 
+  if (!post) {
+    return null
+  }
+
   return (
     <Layout>
-      {post ? (
-        <>
-          <Header banner={post.frontmatter.banner}>
-            <Link to="/">{config.siteTitle}</Link>
-          </Header>
-          <Wrapper>
-            {typeof document !== 'undefined' && <ProgressBar />}
-            <Content id="content">
-              <ContentWrapper>
-                <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
-                <Title>{titleCase(post.frontmatter.title)}</Title>
-                <Subline>
-                  {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
-                  <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>
-                    {titleCase(post.frontmatter.category)}
-                  </Link>
-                </Subline>
-                <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-              </ContentWrapper>
-              {post.frontmatter.tags ? (
-                <Subline>
-                  Tags: &#160;
-                  <TagWrapper>
-                    {post.frontmatter.tags.map((tag, i) => (
-                      <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                        <Tag>
-                          <strong>{tag}</strong>
-                        </Tag>
-                      </Link>
-                    ))}
-                  </TagWrapper>
-                </Subline>
-              ) : null}
-              <PrevNext prev={prev} next={next} />
-            </Content>
-          </Wrapper>
-        </>
-      ) : null}
+      <Header banner={post.frontmatter.banner}>
+        <Link to="/">{config.siteTitle}</Link>
+      </Header>
+      <SEO postNode={post} postSEO postPath={`/blog/${slug}`} />
+      <Wrapper>
+        {typeof document !== 'undefined' && <ProgressBar />}
+        <ContentWrapper>
+          <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
+          <Title>{titleCase(post.frontmatter.title)}</Title>
+          <Subline>
+            {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
+            <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>
+              {titleCase(post.frontmatter.category)}
+            </Link>
+          </Subline>
+          <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        </ContentWrapper>
+        {post.frontmatter.tags ? (
+          <Subline>
+            Tags: &#160;
+            <TagWrapper>
+              {post.frontmatter.tags.map((tag, i) => (
+                <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                  <Tag>
+                    <strong>{tag}</strong>
+                  </Tag>
+                </Link>
+              ))}
+            </TagWrapper>
+          </Subline>
+        ) : null}
+        <PrevNext prev={prev} next={next} />
+      </Wrapper>
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase'
 import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link } from 'gatsby'
-import { Layout, Wrapper, Header, SectionTitle, Content, Title } from '../components'
+import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'
 
 export default class AllTagTemplate extends React.PureComponent<DefaultPageProps> {
   public render() {
@@ -16,16 +16,14 @@ export default class AllTagTemplate extends React.PureComponent<DefaultPageProps
           <Helmet title={`Tags | ${config.siteTitle}`} />
           <Header>
             <Link to="/">{config.siteTitle}</Link>
-            <SectionTitle>Tags</SectionTitle>
           </Header>
           <Wrapper>
-            <Content>
-              {tags.map((tag, index: number) => (
-                <Title key={index}>
-                  <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
-                </Title>
-              ))}
-            </Content>
+            <SectionTitle>Tags</SectionTitle>
+            {tags.map((tag, index: number) => (
+              <Title key={index}>
+                <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
+              </Title>
+            ))}
           </Wrapper>
         </Layout>
       )

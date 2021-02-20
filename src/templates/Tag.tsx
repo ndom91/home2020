@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
-import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
+import { Article, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
@@ -17,27 +17,29 @@ const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext })
       <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
-        <SectionTitle>Tag &ndash; {tagName}</SectionTitle>
-        <Subline sectionTitle>
-          {subline} (See <Link to="/tags">all tags</Link>)
-        </Subline>
       </Header>
       <Wrapper>
-        <Content>
-          {posts
-            ? posts.map((post: any, index) => (
-                <Article
-                  title={post.frontmatter.title}
-                  date={post.frontmatter.date}
-                  excerpt={post.excerpt}
-                  slug={kebabCase(post.frontmatter.title)}
-                  timeToRead={post.timeToRead}
-                  category={post.frontmatter.category}
-                  key={index}
-                />
-              ))
-            : null}
-        </Content>
+        <SectionTitle>Tag - {tagName}</SectionTitle>
+        <Subline sectionTitle>
+          {subline} (See{' '}
+          <Link style={{ marginLeft: '5px' }} to="/tags">
+            all tags
+          </Link>
+          )
+        </Subline>
+        {posts
+          ? posts.map((post: any, index) => (
+              <Article
+                title={post.frontmatter.title}
+                date={post.frontmatter.date}
+                excerpt={post.excerpt}
+                slug={kebabCase(post.frontmatter.title)}
+                timeToRead={post.timeToRead}
+                category={post.frontmatter.category}
+                key={index}
+              />
+            ))
+          : null}
       </Wrapper>
     </Layout>
   )

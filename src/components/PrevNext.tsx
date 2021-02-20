@@ -8,22 +8,15 @@ import { media } from '../utils/media'
 
 const Wrapper = styled.div`
   display: flex;
+  width: 100%;
   height: 60px;
   position: relative;
   justify-content: space-between;
-  padding: 0 2rem;
   margin: 6rem auto 20px auto;
 
-  @media ${media.large} {
-    max-width: 65vw;
-  }
-  @media ${media.medium} {
-    max-width: 75vw;
+  @media ${media.small} {
     flex-direction: column;
     transform: translateY(-4rem);
-  }
-  @media ${media.small} {
-    max-width: 85vw;
   }
 
   a {
@@ -40,13 +33,12 @@ const Prev = styled.div`
   z-index: 3;
   background-color: white;
   border-radius: 15px;
-  padding: 10px 30px;
+  padding: 20px 30px;
   box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
     width: 100%;
-    padding: 10px 20px;
   }
   &:hover {
     transform: translateY(-5px);
@@ -54,7 +46,7 @@ const Prev = styled.div`
   }
   span {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--grey-light);
   }
 `
@@ -67,14 +59,13 @@ const Next = styled.div`
   z-index: 3;
   background-color: white;
   border-radius: 15px;
-  padding: 10px 30px;
+  padding: 20px 30px;
   box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
     width: 100%;
     margin-top: 10px;
-    padding: 10px 20px;
   }
   &:hover {
     transform: translateY(-5px);
@@ -82,7 +73,7 @@ const Next = styled.div`
   }
   span {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--grey-light);
   }
 `
@@ -95,7 +86,7 @@ const ArrowPrev = styled.svg`
   width: 128px;
   z-index: -1;
   @media ${media.medium} {
-    top: -5px;
+    top: 15px;
     left: -55px;
   }
 `
@@ -107,7 +98,7 @@ const ArrowNext = styled.svg`
   width: 128px;
   z-index: -1;
   @media ${media.medium} {
-    top: -5px;
+    top: 15px;
     right: -55px;
   }
 `
@@ -123,7 +114,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
     <Wrapper>
       {prev && (
         <>
-          <Link to={`/blog/${kebabCase(prev.frontmatter.title)}`}>
+          <Link to={`/blog/${kebabCase(prev.frontmatter.title)}`} style={{ padding: '0 2em' }}>
             <Prev>
               <span>Previous</span>
               {prev.frontmatter.title}
@@ -141,7 +132,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
       )}
       {next && (
         <>
-          <Link to={`/blog/${kebabCase(next.frontmatter.title)}`}>
+          <Link to={`/blog/${kebabCase(next.frontmatter.title)}`} style={{ padding: '0 2em' }}>
             <Next>
               <span>Next</span>
               {next.frontmatter.title}

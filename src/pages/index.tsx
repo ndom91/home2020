@@ -156,7 +156,7 @@ const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
         <Homepage>
           <HomepageContent>
             <PreHeader>Hi, I'm Nico Domino 👋</PreHeader>
-            <HeaderText>I like to make shit for the web</HeaderText>
+            <HeaderText>I make shit for the web</HeaderText>
             <SubHeader>
               During the day, I'm a full-stack javascript developer at <a href="https://checklyhq.com">Checkly</a>. In the evenings you can
               find me working on open source software or catching up on the latest Netflix series. I'm based in Frankfurt, Germany where I

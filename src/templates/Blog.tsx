@@ -7,7 +7,7 @@ import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { motion } from 'framer-motion'
 import { Link, graphql } from 'gatsby'
-import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components'
+import { Layout, Article, Wrapper, SectionTitle, Header, Pagination } from '../components'
 
 const BlogHeader = styled.h1`
   font-family: ${config.serifFontFamily};
@@ -40,7 +40,6 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
         <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
       </Header>
       <Wrapper>
-        {/* <Content> */}
         <BlogHeader>Blog</BlogHeader>
         <motion.div animate="visible" variants={list}>
           {edges.map(
@@ -59,7 +58,6 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
           )}
         </motion.div>
         <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
-        {/* </Content> */}
       </Wrapper>
     </Layout>
   )

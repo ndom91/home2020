@@ -8,4 +8,5 @@ export interface PathContext {
   posts?: Post[]
   next: any
   prev: any
+  slug: string
 }

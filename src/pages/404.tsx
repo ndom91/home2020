@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
-import { Content, Header, Layout, Wrapper, SectionTitle } from '../components'
+import { Header, Layout, Wrapper, SectionTitle } from '../components'
 
 const HeaderText = styled.h1`
   text-align: center;
@@ -15,6 +15,7 @@ const HeaderText = styled.h1`
 `
 
 const Image = styled.img`
+  width: 100%;
   max-width: 900px;
 `
 
@@ -41,12 +42,10 @@ const NotFoundPage: React.FunctionComponent = () => {
         <SectionTitle>NOT FOUND</SectionTitle>
       </Header>
       <Wrapper>
-        <Content>
-          <ImageWrapper>
-            <Image src="assets/images/404_1.png" alt="404 - Not Found" />
-          </ImageWrapper>
-          <Subtitle>You just hit a route that doesn't exist.. the sadness.</Subtitle>
-        </Content>
+        <ImageWrapper>
+          <Image src="assets/images/404_1.png" alt="404 - Not Found" />
+        </ImageWrapper>
+        <Subtitle>You just hit a route that doesn't exist.. the sadness.</Subtitle>
       </Wrapper>
     </Layout>
   )

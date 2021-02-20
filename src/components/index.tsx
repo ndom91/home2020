@@ -1,7 +1,6 @@
 export * from './Article'
 export * from './Button'
 export * from './ButtonMenu'
-export * from './Content'
 export * from './Footer'
 export * from './Header'
 export * from './Layout'
