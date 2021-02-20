@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { media } from '../utils/media'
+import FocusLock from 'react-focus-lock'
 import theme from '../../config/Theme'
+import { media } from '../utils/media'
 import { OverlayMenu } from './OverlayMenu'
 
 const Wrapper = styled.div`
@@ -92,10 +93,12 @@ export const ButtonMenu: React.FunctionComponent = () => {
 
   return (
     <Wrapper>
-      <ButtonHamburger aria-label="Toggle Menu" onClick={() => setActive(!active)} className={active ? 'active' : ''}>
-        <span />
-      </ButtonHamburger>
-      <OverlayMenu isActive={active} />
+      <FocusLock disabled={!active}>
+        <ButtonHamburger aria-label="Toggle Menu" onClick={() => setActive(!active)} className={active ? 'active' : ''}>
+          <span />
+        </ButtonHamburger>
+        <OverlayMenu isActive={active} />
+      </FocusLock>
     </Wrapper>
   )
 }
