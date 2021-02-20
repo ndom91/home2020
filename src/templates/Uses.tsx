@@ -42,7 +42,7 @@ const SubHeaderText = styled.div`
   @media ${media.medium} {
     font-size: 1.1rem;
   }
-  &:after {
+  /* &:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -68,7 +68,7 @@ const SubHeaderText = styled.div`
       width: 300px;
       height: 150px;
     }
-  }
+  } */
 `
 
 const HeaderImage = styled.div`
@@ -144,15 +144,15 @@ const Uses = () => {
         <Content>
           <UsingHeader>Here's what I'm using..</UsingHeader>
           <SubHeader>
-            <SubHeaderText>
+            {/* <SubHeaderText>
               Inspired by{' '}
               <a target="_blank" rel="noopener noreferer" href="https://uses.tech/">
                 uses.tech
               </a>
-            </SubHeaderText>
+            </SubHeaderText> */}
           </SubHeader>
           <UsesItems>
-            <UsesHeader>Under Construction..</UsesHeader>
+            <UsesHeader>🚧 Under Construction..</UsesHeader>
           </UsesItems>
         </Content>
       </Wrapper>

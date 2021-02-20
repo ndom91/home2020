@@ -56,18 +56,20 @@ const SubHeaderText = styled.div`
     background-color: var(--primary);
     transform: translate(24px, 19px) rotate(-72deg);
     border-radius: 0px 80px;
-    opacity: 0.1;
+    opacity: 0.08;
     pointer-events: none;
     @media ${media.medium} {
-      left: 21%;
-      top: 65%;
-      width: 200px;
+      /* left: 21%; */
+      left: calc(50% - 150px);
+      top: 63%;
+      width: 280px;
       height: 300px;
     }
     @media ${media.small} {
-      left: -5%;
+      /* left: -5%; */
+      left: calc(50% - 185px);
       top: 65%;
-      width: 300px;
+      width: 350px;
       height: 150px;
     }
   }
@@ -81,10 +83,12 @@ const HeaderImage = styled.div`
   transition-property: transform scale rotate;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
+  z-index: 3;
   &:hover {
     transform: translateX(-10%) scale(1.05) rotate(-7deg);
   }
   @media ${media.medium} {
+    max-width: 350px;
     min-width: unset;
     width: 100%;
     transform: none;
@@ -94,6 +98,7 @@ const HeaderImage = styled.div`
     }
   }
   @media ${media.small} {
+    max-width: 250px;
     width: 90%;
     transform: none;
     margin-bottom: 50px;
@@ -200,7 +205,7 @@ const About = () => {
       <Header>
         <SectionTitle>About</SectionTitle>
       </Header>
-      <Wrapper>
+      <Wrapper fullWidth>
         <Content>
           <AboutHeader>Hey there.</AboutHeader>
           <SubHeader>

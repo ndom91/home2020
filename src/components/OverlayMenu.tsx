@@ -153,18 +153,23 @@ export const OverlayMenu: React.FunctionComponent<MenuProps> = ({ isActive }) =>
       <Navigation className={isActive ? 'active' : 'hidden'}>
         <motion.ul animate={isActive ? 'show' : 'hidden'} initial="hidden" variants={list}>
           <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
-            <NavigationLink activeClassName="active" to={`/`}>
+            <NavigationLink tabIndex={isActive ? 0 : -1} activeClassName="active" to={`/`}>
               <MenuNumber>01</MenuNumber>Home
             </NavigationLink>
           </motion.li>
           <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
-            <NavigationLink activeClassName="active" to={`/blog`}>
+            <NavigationLink tabIndex={isActive ? 0 : -1} activeClassName="active" to={`/blog`}>
               <MenuNumber>02</MenuNumber> Blog
             </NavigationLink>
           </motion.li>
           <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
-            <NavigationLink activeClassName="active" to={`/about`}>
-              <MenuNumber>03</MenuNumber>About
+            <NavigationLink tabIndex={isActive ? 0 : -1} activeClassName="active" to={`/uses`}>
+              <MenuNumber>03</MenuNumber>Uses
+            </NavigationLink>
+          </motion.li>
+          <motion.li variants={item} whileHover={{ scale: 1.05, rotate: 0.5 }} whileTap={{ scale: 0.9 }}>
+            <NavigationLink tabIndex={isActive ? 0 : -1} activeClassName="active" to={`/about`}>
+              <MenuNumber>04</MenuNumber>About
             </NavigationLink>
           </motion.li>
         </motion.ul>

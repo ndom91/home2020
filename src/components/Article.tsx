@@ -29,7 +29,7 @@ const Post = styled.article`
     max-width: 75vw;
   }
   @media ${media.small} {
-    max-width: 85vw;
+    max-width: 70vw;
     &:hover {
       & .post-initial {
         transform: scale(1.05) translate(-40%, -50%);
@@ -68,7 +68,7 @@ const Initiale = styled.span`
     font-size: 5rem;
   }
   @media ${media.small} {
-    transform: translate(-30%, -50%);
+    transform: translate(-45%, -50%);
   }
 `
 

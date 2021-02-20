@@ -8,12 +8,10 @@ export const Content = styled.div`
   border-radius: 1rem;
   padding: 2rem 8rem;
   background-color: var(--bg);
-  z-index: 9000;
-  margin-top: 4rem;
   font-family: ${config.sanSerifFontFamily};
   font-weight: 400;
-  margin-bottom: 5rem;
-  width: 900px;
+  margin: 4rem 1rem 5rem 1rem;
+  max-width: 1400px;
 
   @media ${media.large} {
     margin-top: -35px;

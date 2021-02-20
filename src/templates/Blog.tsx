@@ -40,26 +40,26 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
         <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
       </Header>
       <Wrapper>
-        <Content>
-          <BlogHeader>Blog</BlogHeader>
-          <motion.div animate="visible" variants={list}>
-            {edges.map(
-              (post) =>
-                post.node.frontmatter.title !== '' && (
-                  <Article
-                    title={post.node.frontmatter.title}
-                    date={post.node.frontmatter.date}
-                    excerpt={post.node.excerpt}
-                    timeToRead={post.node.timeToRead}
-                    slug={post.node.fields.slug}
-                    category={post.node.frontmatter.category}
-                    key={post.node.fields.slug}
-                  />
-                ),
-            )}
-          </motion.div>
-          <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
-        </Content>
+        {/* <Content> */}
+        <BlogHeader>Blog</BlogHeader>
+        <motion.div animate="visible" variants={list}>
+          {edges.map(
+            (post) =>
+              post.node.frontmatter.title !== '' && (
+                <Article
+                  title={post.node.frontmatter.title}
+                  date={post.node.frontmatter.date}
+                  excerpt={post.node.excerpt}
+                  timeToRead={post.node.timeToRead}
+                  slug={post.node.fields.slug}
+                  category={post.node.frontmatter.category}
+                  key={post.node.fields.slug}
+                />
+              ),
+          )}
+        </motion.div>
+        <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
+        {/* </Content> */}
       </Wrapper>
     </Layout>
   )
