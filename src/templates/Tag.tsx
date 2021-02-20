@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
 import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 import Helmet from 'react-helmet'

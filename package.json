@@ -1,7 +1,7 @@
 {
   "name": "ndom91-home-2020",
   "description": "ndom91 homepage 2020",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Nico Domino <yo@ndo.dev>",
   "keywords": [
     "gatsby",
@@ -9,42 +9,53 @@
     "blog"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndom91/home2020.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndom91/home2020/issues"
+  },
+  "homepage": "https://github.com/ndom91/home2020#readme",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
     "dev": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier 'src/**/*.{ts,tsx,css,md}'",
     "format:fix": "prettier --write 'src/**/*.{ts,tsx,css,md}'"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/lodash": "^4.14.168",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.7",
-    "@types/typography": "^0.16.3",
-    "gatsby": "^2.32.3",
+    "gatsby": "^2.32.4",
     "gatsby-plugin-catch-links": "^2.10.0",
     "gatsby-plugin-lodash": "^3.10.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-offline": "^3.10.0",
     "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-sitemap": "^2.12.0",
     "gatsby-plugin-styled-components": "^3.10.0",
     "gatsby-plugin-typescript": "^2.12.0",
-    "gatsby-remark-autolink-headers": "^2.11.0",
     "gatsby-remark-copy-linked-files": "^2.10.0",
     "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "^3.11.0",
+    "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-transformer-json": "^2.11.0",
     "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-sharp": "^2.12.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "lodash": "^4.17.20",
     "prettier": "^2.2.1",
     "prismjs": "^1.23.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.1.3"
@@ -52,15 +63,13 @@
   "dependencies": {
     "framer-motion": "^3.3.0",
     "gatsby-image": "^2.11.0",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.14.1",
-    "gatsby-remark-images": "^3.11.0",
-    "gatsby-remark-images-medium-zoom": "^1.7.0",
-    "gatsby-transformer-json": "^2.11.0",
-    "gatsby-transformer-sharp": "^2.12.0",
     "react-focus-lock": "^2.5.0",
-    "react-parallax-tilt": "^1.4.81",
+    "react-parallax-tilt": "^1.4.86",
     "react-use": "^17.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "prettier": {
     "semi": false,
@@ -71,6 +80,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -78,6 +88,11 @@
     "*.{ts,tsx,css,json,md}": [
       "npm run format:fix",
       "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }

@@ -60,7 +60,7 @@ module.exports = {
         plugins: [
           'gatsby-remark-copy-linked-files',
           {
-            resolve: `gatsby-remark-images-medium-zoom`, // point!
+            resolve: `gatsby-remark-images-medium-zoom`,
             options: {
               zIndex: 9999,
               background: 'rgba(0,0,0,0.4)',
@@ -81,7 +81,6 @@ module.exports = {
             },
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-autolink-headers',
         ],
       },
     },
