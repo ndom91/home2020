@@ -25,15 +25,13 @@ This is a relatively standard Gatsby project, so just install the dependencies a
 
 - Offline support
 - Framer-Motion
-- Category and Tag for post
 - Typescript
 - Prismjs Syntaxhighlighting
-- Automatic RSS generation.
-- Automatic Sitemap generation.
+- Sitemap generation.
 
 ## 📸 Screenshot
 
-![screenshot](https://imgur.com/m0DmDtF.png)
+![screenshot](https://imgur.com/0IX5cYW.png)
 
 ## 📖 License
 
