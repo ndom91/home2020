@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../config/Theme'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'

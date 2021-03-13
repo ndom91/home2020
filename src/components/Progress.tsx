@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import theme from '../../config/Theme'
 import { useWindowScroll } from 'react-use'
 
 const Progress = styled.div<{ pos: number }>`
@@ -14,7 +13,7 @@ const Progress = styled.div<{ pos: number }>`
   z-index: 99999;
 `
 
-export const ProgressBar: React.FunctionComponent<{}> = () => {
+export const ProgressBar: React.FunctionComponent<[]> = () => {
   const { y } = useWindowScroll()
   const [scrollPos, setScrollPos] = useState(0)
   const pageHeight = document && document.body.scrollHeight - window.innerHeight

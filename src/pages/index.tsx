@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Layout, Wrapper } from '../components'
 import { DefaultPageProps } from '../models'
 import Helmet from 'react-helmet'
-import theme from '../../config/Theme'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { media } from '../utils/media'
@@ -25,12 +24,13 @@ const Homepage = styled.div`
 
 const HomepageContent: any = styled.div`
   display: flex;
-  max-width: 60rem;
+  max-width: 55rem;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   align-items: space-around;
   font-size: 1.5rem;
+  z-index: 20;
 
   @media ${media.large} {
     padding: 2rem;
@@ -132,6 +132,8 @@ const OfficeWorker = styled.img`
   transform: rotate(12deg);
   max-width: 700px;
   pointer-events: none;
+  z-index: 10;
+
   @media ${media.xlarge} {
     top: calc(25% - 12rem);
     right: -4rem;
@@ -158,10 +160,10 @@ const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
             <PreHeader>Hi, I'm Nico Domino 👋</PreHeader>
             <HeaderText>I make shit for the web</HeaderText>
             <SubHeader>
-              During the day, I'm a full-stack javascript developer at <a href="https://checklyhq.com">Checkly</a>. In the evenings you can
-              find me working on open source software or catching up on the latest Netflix series. I'm based in Frankfurt, Germany where I
-              occasionally write about my adventures in tech on my <Link to="/blog">blog</Link> and if you like memes, movies, and web
-              development you might also enjoy following me on <a href="https://twitter.com/ndom91">Twitter</a>.
+              During the day, I'm a full-stack javascript developer at <a href="https://checklyhq.com">Checkly</a> 🦝. In the evenings you
+              can find me working on open source software or catching up on the latest Netflix series. I'm based in Frankfurt, Germany where
+              I occasionally write about my adventures in tech on my <Link to="/blog">blog</Link> 📓 and if you like memes, movies, and web
+              development you might also enjoy following me on <a href="https://twitter.com/ndom91">Twitter</a> 🐦.
             </SubHeader>
           </HomepageContent>
           <OfficeWorker src="assets/images/office.svg" alt="Office Worker" />

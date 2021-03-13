@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import theme from '../../config/Theme'
 
 export const SectionTitle: any = styled.div`
   font-size: ${(props) => props.theme.fontSize.big};

@@ -6,14 +6,6 @@ import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { Header, Layout, Wrapper, SectionTitle } from '../components'
 
-const HeaderText = styled.h1`
-  text-align: center;
-  font-size: 6rem;
-  font-family: ${config.serifFontFamily};
-  font-display: swap;
-  margin-bottom: 20px;
-`
-
 const Image = styled.img`
   width: 100%;
   max-width: 900px;

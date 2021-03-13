@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import { media } from '../utils/media'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import theme from '../../config/Theme'
 import { ButtonMenu } from './ButtonMenu'
 
 interface Props {

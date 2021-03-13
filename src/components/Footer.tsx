@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import split from 'lodash/split'
 import { media } from '../utils/media'
-import theme from '../../config/Theme'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 

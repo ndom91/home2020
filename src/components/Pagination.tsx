@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
-import theme from '../../config/Theme'
 
 export const PaginationContainer = styled.div`
   text-align: center;

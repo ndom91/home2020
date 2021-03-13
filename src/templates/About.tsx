@@ -8,7 +8,6 @@ import { motion } from 'framer-motion'
 import { media } from '../utils/media'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import theme from '../../config/Theme'
 import '../utils/prismjs-theme.css'
 
 const AboutHeader = styled.h1`
@@ -166,7 +165,7 @@ interface ImageGraphQL {
   }
 }
 
-const About = () => {
+const About: React.FunctionComponent = () => {
   const { allProjectsJson, allImageSharp } = useStaticQuery(
     graphql`
       query allProjectsQuery {
