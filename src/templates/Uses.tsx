@@ -1,12 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-// import Img from 'gatsby-image'
-import { Layout, Wrapper, Header, SectionTitle } from '../components'
-// import { motion } from 'framer-motion'
 import { media } from '../utils/media'
-import '../utils/prismjs-theme.css'
 import { DefaultPageProps } from '../models'
+import { Layout, Wrapper, Header, SectionTitle } from '../components'
+// import Img from 'gatsby-image'
+// import { motion } from 'framer-motion'
+import '../utils/prismjs-theme.css'
 
 const UsingHeader = styled.h1`
   text-align: center;
@@ -85,7 +85,7 @@ const UsesItems = styled.div`
   }
 `
 
-const UsesHeader = styled.h1`
+const UsesHeader = styled.h3`
   margin-top: 80px;
   text-align: center;
   font-family: var(--font-serif);
@@ -113,7 +113,7 @@ const Uses: React.FunctionComponent<DefaultPageProps> = () => {
         <SectionTitle>Uses</SectionTitle>
       </Header>
       <Wrapper>
-        <UsingHeader>Here's what I'm using..</UsingHeader>
+        <UsingHeader className="js-darkmode-flicker">Using</UsingHeader>
         <SubHeader>
           {/* <SubHeaderText>
               Inspired by{' '}

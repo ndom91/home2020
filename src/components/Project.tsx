@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '../utils/media'
 import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'
+import { media } from '../utils/media'
 import { motion } from 'framer-motion'
 
 const ProjectCard = styled.div`
@@ -14,8 +14,8 @@ const ProjectCard = styled.div`
   transform-style: preserve-3d;
 
   border-radius: 20px;
-  background: #eee;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  background: var(--secondary-bg);
+  box-shadow: 20px 20px 60px var(--secondary-bg), -20px -20px 60px var(--bg);
 
   &:hover {
     box-shadow: 0 3px 40px rgba(0, 0, 0, 0.2);

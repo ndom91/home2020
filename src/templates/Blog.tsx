@@ -3,10 +3,9 @@ import styled from 'styled-components'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import { DefaultPageProps } from '../models'
 import { motion } from 'framer-motion'
-import { Link, graphql } from 'gatsby'
-import { Layout, Article, Wrapper, SectionTitle, Header, Pagination } from '../components'
+import { DefaultPageProps } from '../models'
+import { Layout, Article, Wrapper, Header, Pagination } from '../components'
 
 const BlogHeader = styled.h1`
   font-family: var(--font-serif);
@@ -17,7 +16,7 @@ const BlogHeader = styled.h1`
 
 const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data }) => {
   const { currentPage, totalPages } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark
 
   const list = {
     visible: {
@@ -32,12 +31,9 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
-      <Header>
-        <Link to="/">{config.siteTitle}</Link>
-        <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
-      </Header>
+      <Header />
       <Wrapper>
-        <BlogHeader>Blog</BlogHeader>
+        <BlogHeader className="js-darkmode-flicker">Blog</BlogHeader>
         <motion.div animate="visible" variants={list}>
           {edges.map(
             (post) =>
@@ -62,7 +58,6 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
 export const BlogQuery = graphql`
   query($skip: Int!, $limit: Int!) {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
-      totalCount
       edges {
         node {
           fields {

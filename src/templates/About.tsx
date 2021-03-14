@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Layout, Wrapper, Header, SectionTitle, Project } from '../components'
+import { Layout, Wrapper, Header, Project } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
 import '../utils/prismjs-theme.css'
@@ -204,11 +204,9 @@ const About: React.FunctionComponent = () => {
   return (
     <Layout>
       <Helmet title={'About'} />
-      <Header>
-        <SectionTitle>About</SectionTitle>
-      </Header>
+      <Header />
       <Wrapper fullWidth>
-        <AboutHeader>Hey there.</AboutHeader>
+        <AboutHeader className="js-darkmode-flicker">Hey there.</AboutHeader>
         <SubHeader>
           <HeaderImage>
             <Img
@@ -225,7 +223,7 @@ const About: React.FunctionComponent = () => {
           </SubHeaderText>
         </SubHeader>
         <Projects>
-          <ProjectsHeader>Projects</ProjectsHeader>
+          <ProjectsHeader className="js-darkmode-flicker">Projects</ProjectsHeader>
           <motion.div initial animate="visible" variants={list}>
             <ProjectsWrapper>
               {projects.map((project: Project, index: number) => {

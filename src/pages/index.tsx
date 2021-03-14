@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
-import { Layout, Wrapper } from '../components'
-import { DefaultPageProps } from '../models'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import { media } from '../utils/media'
+import { Link, graphql } from 'gatsby'
+import { DefaultPageProps } from '../models'
+import { Header, Layout, Wrapper } from '../components'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import { media } from '../utils/media'
-import { Header } from '../components/Header'
 
 const Homepage = styled.div`
   display: flex;
@@ -44,7 +43,7 @@ const PreHeader: any = styled.div`
   color: var(--primary);
 `
 
-const HeaderText: any = styled.h3`
+const HeaderText: any = styled.h2`
   font-size: 3rem;
   font-weight: 600;
   font-family: var(--font-serif);
@@ -161,7 +160,7 @@ const IndexPage: React.FunctionComponent<DefaultPageProps> = () => {
         <Homepage>
           <HomepageContent>
             <PreHeader>Hi, I'm Nico Domino 👋</PreHeader>
-            <HeaderText>I make shit for the web</HeaderText>
+            <HeaderText className="js-darkmode-flicker">I make shit for the web</HeaderText>
             <SubHeader>
               During the day, I'm a full-stack javascript developer at <a href="https://checklyhq.com">Checkly</a> 🦝. In the evenings you
               can find me working on open source software or catching up on the latest Netflix series. I'm based in Frankfurt, Germany where

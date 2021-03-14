@@ -40,7 +40,7 @@ const Post = styled.article`
   }
 `
 
-const Title = styled.h2`
+const Title = styled.h3`
   position: relative;
   font-family: var(--font-serif);
   margin-bottom: 0.75rem;
