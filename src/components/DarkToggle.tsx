@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
+import { motion } from 'framer-motion'
 
-const ToggleButton = styled.button`
+const ToggleButton = styled(motion.button)`
+  display: block;
   background-color: transparent;
   border: none;
   border-radius: 5px;
@@ -39,7 +41,7 @@ export const DarkToggle: React.FunctionComponent = () => {
 
   return (
     <>
-      <ToggleButton onClick={() => changeColorMode()}>
+      <ToggleButton whileHover={{ scale: 1.2 }} onClick={() => changeColorMode()}>
         {colorMode === 'light' ? (
           // Star
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
