@@ -17,6 +17,8 @@ const ToggleButton = styled(motion.button)`
 `
 
 export const DarkToggle: React.FunctionComponent = () => {
+  if (typeof window === 'undefined') return <></>
+
   const themeContext = useContext(ThemeContext)
   const { colorMode, setColorMode } = themeContext
   document.documentElement.setAttribute('data-theme', colorMode)
