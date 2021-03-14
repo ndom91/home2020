@@ -5,6 +5,7 @@ import { media } from '../utils/media'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { ButtonMenu } from './ButtonMenu'
+import { DarkToggle } from './DarkToggle'
 
 interface Props {
   banner?: string
@@ -20,17 +21,6 @@ const HeaderWrapper: any = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  ::after {
-    background: transparent url(/assets/images/mask.svg) no-repeat bottom left;
-    background-size: 101%;
-    bottom: -2px;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
   @media ${media.large} {
     padding: 1rem 2rem 3.5rem;
   }
@@ -39,6 +29,16 @@ const HeaderWrapper: any = styled.header`
   }
   @media ${media.small} {
     padding: 1rem 0.5rem 2rem;
+  }
+`
+
+const HeaderMask = styled.div`
+  width: 101%;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  & svg path {
+    fill: var(--bg) !important;
   }
 `
 
@@ -55,17 +55,17 @@ const Content = styled.div`
   position: relative;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
   z-index: 99;
   @media ${media.medium} {
     display: none;
   }
 
   a {
-    color: white;
+    color: var(--white);
     &:hover {
       opacity: 0.85;
-      color: white;
+      color: var(--white);
     }
   }
 `
@@ -158,8 +158,14 @@ export const Header: React.FunctionComponent<Props> = ({ banner }) => {
           <LinkWrapper to={`/about`} activeClassName="active">
             <MenuNumber>04</MenuNumber>about
           </LinkWrapper>
+          <DarkToggle />
         </Content>
       </ContentWrapper>
+      <HeaderMask>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1417 152">
+          <path fill="currentColor" d="M1416.281-.014v151.336H-.288C935.129 111.722 1401.807 3.39 1416.282-.014z" />
+        </svg>
+      </HeaderMask>
     </HeaderWrapper>
   )
 }

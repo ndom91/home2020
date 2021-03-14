@@ -1,6 +1,7 @@
 export * from './Article'
 export * from './Button'
 export * from './ButtonMenu'
+export * from './DarkToggle'
 export * from './Footer'
 export * from './Header'
 export * from './Layout'

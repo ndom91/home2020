@@ -5,7 +5,8 @@ import { media } from '../utils/media'
 
 const FooterWrapper = styled.footer`
   width: 100%;
-  background-color: #fff;
+  background-color: var(--bg);
+  color: var(--white);
   z-index: 1;
   display: flex;
   justify-content: flex-start;

@@ -73,6 +73,16 @@ const GlobalStyle = createGlobalStyle`
     --font-sansSerif: Lato, Ubuntu, Helvetica, "sans-serif";
     --font-serif: Playfair Display, Merriweather, Impact, "serif";
   }
+  :root[data-theme='dark'] {
+    --primary: #fc6767;
+    --bg: #181616;
+    --white: #4b4b4b;
+    --grey-dark: rgba(255,255,255, 0.9);
+    --grey-default: rgba(255,255,255, 0.7);
+    --grey-light: rgba(255,255,255, 0.5);
+    --grey-lighter: rgba(255,255,255, 0.25);
+    --grey-lightest: rgba(255,255,255, 0.1);
+  }
 `
 
 const PrimaryWrapper = styled.div`
@@ -83,15 +93,40 @@ const PrimaryWrapper = styled.div`
   overflow: hidden;
 `
 
-export const Layout: React.FunctionComponent = (props) => {
-  const { children } = props
+const getInitialColorMode = (): string => {
+  const persistedColorPreference = window.localStorage.getItem('color-mode')
+  // If the user has explicitly chosen light or dark,
+  // let's use it. Otherwise, this value will be null.
+  if (typeof persistedColorPreference === 'string') {
+    return persistedColorPreference
+  }
+  // If they haven't been explicit, let's check the media
+  // query
+  const mql = window.matchMedia('(prefers-color-scheme: dark)')
+  const hasMediaQueryPreference = typeof mql.matches === 'boolean'
+  if (hasMediaQueryPreference) {
+    return mql.matches ? 'dark' : 'light'
+  }
+  // If they are using a browser/OS that doesn't support
+  // color themes, let's default to 'light'.
+  return 'light'
+}
+
+export const Layout: React.FunctionComponent = ({ children }) => {
+  const [colorMode, rawSetColorMode] = React.useState(getInitialColorMode)
+
+  const setColorMode = (value: string) => {
+    rawSetColorMode(value)
+    // Persist it on update
+    window.localStorage.setItem('color-mode', value)
+  }
 
   const title = config.siteTitle
   const description = config.siteDescription
   const image = config.siteBanner
 
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={{ colorMode, setColorMode }}>
       <PrimaryWrapper>
         <Helmet>
           <html lang={config.siteLanguage} />
@@ -117,6 +152,8 @@ export const Layout: React.FunctionComponent = (props) => {
             as="style"
           /> */}
         </Helmet>
+        <audio src="/assets/toggle-off.mp3" id="js-sound-off" preload="auto" hidden></audio>
+        <audio src="/assets/toggle-on.mp3" id="js-sound-on" preload="auto" hidden></audio>
         <Typography />
         <GlobalStyle />
         {children}
