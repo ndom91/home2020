@@ -44,7 +44,7 @@ const Title = styled.h2`
   position: relative;
   font-family: var(--font-serif);
   margin-bottom: 0.75rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   @media ${media.medium} {
     font-size: 2rem;
   }
@@ -83,7 +83,6 @@ const Excerpt = styled.p`
 
 export const Article: React.FunctionComponent<Props> = (props) => {
   const { title, date, excerpt, slug, timeToRead, category } = props
-  console.log(category)
   const firstChar = title.charAt(0)
 
   const list = {
