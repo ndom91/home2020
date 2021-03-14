@@ -13,9 +13,7 @@ const AllTagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext
     return (
       <Layout>
         <Helmet title={`Tags | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-        </Header>
+        <Header />
         <Wrapper>
           <SectionTitle>Tags</SectionTitle>
           {tags.map((tag, index: number) => (

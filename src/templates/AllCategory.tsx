@@ -13,9 +13,7 @@ const AllCategoryTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathCo
     return (
       <Layout>
         <Helmet title={`Categories | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-        </Header>
+        <Header />
         <Wrapper>
           <SectionTitle>Categories</SectionTitle>
           {categories.map((category, index: number) => (

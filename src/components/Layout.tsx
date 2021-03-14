@@ -140,27 +140,22 @@ const PrimaryWrapper = styled.div`
 `
 
 function setFlickerAnimation() {
-  // get all elements that should be animated
   const animatedElements = Array.from(document.querySelectorAll('.js-darkmode-flicker'))
 
   if (!animatedElements.length) {
     return false
   }
 
-  // helper function to wrap random letters in <span>
   const wrapRandomChars = (str: string, iterations = 1) => {
     const chars = str.split('')
     const excludedChars = [' ', '-', ',', ';', ':', '(', ')']
     const excludedIndexes: number[] = []
     let i = 0
 
-    // run for the number of letters we want to wrap
     while (i < iterations) {
       const randIndex = Math.floor(Math.random() * chars.length)
       const c = chars[randIndex]
 
-      // make sure we don't wrap a space or punctuation char
-      // or hit the same letter twice
       if (!excludedIndexes.includes(randIndex) && !excludedChars.includes(c)) {
         chars[randIndex] = `<span class="flicker">${c}</span>`
         excludedIndexes.push(randIndex)
@@ -171,32 +166,27 @@ function setFlickerAnimation() {
     return chars.join('')
   }
 
-  // replace the plain text content in each element
   animatedElements.forEach((el) => {
     if (!el) return
     const text = el.textContent?.trim() || ''
-    const count = el.dataset.flickerChars ? parseInt(el.dataset.flickerChars) : undefined
-    el.innerHTML = wrapRandomChars(text, count)
+    el.innerHTML = wrapRandomChars(text, 1)
   })
 }
 
 const getInitialColorMode = (): string => {
   if (typeof window === 'undefined') return 'light'
   const persistedColorPreference = window?.localStorage.getItem('color-mode')
-  // If the user has explicitly chosen light or dark,
-  // let's use it. Otherwise, this value will be null.
+
   if (typeof persistedColorPreference === 'string') {
     return persistedColorPreference
   }
-  // If they haven't been explicit, let's check the media
-  // query
+
   const mql = window.matchMedia('(prefers-color-scheme: dark)')
   const hasMediaQueryPreference = typeof mql.matches === 'boolean'
   if (hasMediaQueryPreference) {
     return mql.matches ? 'dark' : 'light'
   }
-  // If they are using a browser/OS that doesn't support
-  // color themes, let's default to 'light'.
+
   return 'light'
 }
 
@@ -205,7 +195,6 @@ export const Layout: React.FunctionComponent = ({ children }) => {
 
   const setColorMode = (value: string) => {
     rawSetColorMode(value)
-    // Persist it on update
     window.localStorage.setItem('color-mode', value)
   }
 

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { DefaultPageProps } from '../models'
-import { Article, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
+import { Link } from 'gatsby'
 import { kebabCase } from '../utils/helpers'
+import { DefaultPageProps } from '../models'
+import { Article, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 
 const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {
   const { posts, tagName } = pathContext
@@ -15,9 +15,7 @@ const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext })
   return (
     <Layout>
       <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
-      <Header>
-        <Link to="/">{config.siteTitle}</Link>
-      </Header>
+      <Header />
       <Wrapper>
         <SectionTitle>Tag - {tagName}</SectionTitle>
         <Subline sectionTitle>

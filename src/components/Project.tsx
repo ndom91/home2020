@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '../utils/media'
 import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'
+import { media } from '../utils/media'
 import { motion } from 'framer-motion'
 
 const ProjectCard = styled.div`

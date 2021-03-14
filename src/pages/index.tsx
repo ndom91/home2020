@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
-import { Layout, Wrapper } from '../components'
-import { DefaultPageProps } from '../models'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import { media } from '../utils/media'
+import { Link, graphql } from 'gatsby'
+import { DefaultPageProps } from '../models'
+import { Header, Layout, Wrapper } from '../components'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import { media } from '../utils/media'
-import { Header } from '../components/Header'
 
 const Homepage = styled.div`
   display: flex;

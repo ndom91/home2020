@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
+import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
 import { titleCase, kebabCase } from '../utils/helpers'
-import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
 
 const Category: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {

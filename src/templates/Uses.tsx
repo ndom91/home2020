@@ -1,12 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-// import Img from 'gatsby-image'
-import { Layout, Wrapper, Header, SectionTitle } from '../components'
-// import { motion } from 'framer-motion'
 import { media } from '../utils/media'
-import '../utils/prismjs-theme.css'
 import { DefaultPageProps } from '../models'
+import { Layout, Wrapper, Header, SectionTitle } from '../components'
+// import Img from 'gatsby-image'
+// import { motion } from 'framer-motion'
+import '../utils/prismjs-theme.css'
 
 const UsingHeader = styled.h1`
   text-align: center;

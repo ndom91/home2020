@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, StaticQuery, graphql } from 'gatsby'
 import { media } from '../utils/media'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 const FooterWrapper = styled.footer`
   width: 100%;

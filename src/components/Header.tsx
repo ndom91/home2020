@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { media } from '../utils/media'
 // @ts-ignore
 import config from '../../config/SiteConfig'
+import { Link } from 'gatsby'
+import { media } from '../utils/media'
 import { ButtonMenu } from './ButtonMenu'
 import { DarkToggle } from './DarkToggle'
 
