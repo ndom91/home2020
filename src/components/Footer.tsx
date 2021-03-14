@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, StaticQuery, graphql } from 'gatsby'
 import { media } from '../utils/media'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 const FooterWrapper = styled.footer`
   width: 100%;
-  background-color: #fff;
+  background-color: var(--bg);
+  color: var(--white);
   z-index: 1;
   display: flex;
   justify-content: flex-start;

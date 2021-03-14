@@ -30,18 +30,20 @@ const Prev = styled.div`
   flex-direction: column;
   align-items: flex-start;
   z-index: 3;
-  background-color: white;
+  background-color: var(--secondary-bg);
   border-radius: 15px;
   padding: 20px 30px;
-  box-shadow: 0 2px 10px var(--grey-lightest);
-  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  /* box-shadow: 0 2px 10px var(--grey-lightest); */
+  transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
+  font-family: var(--font-serif);
+  font-weight: 600;
 
   @media ${media.medium} {
     width: 100%;
   }
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   }
   span {
     text-transform: uppercase;
@@ -56,11 +58,12 @@ const Next = styled.div`
   flex-direction: column;
   align-items: flex-end;
   z-index: 3;
-  background-color: white;
+  background-color: var(--secondary-bg);
   border-radius: 15px;
   padding: 20px 30px;
-  box-shadow: 0 2px 10px var(--grey-lightest);
-  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
+  font-family: var(--font-serif);
+  font-weight: 600;
 
   @media ${media.medium} {
     width: 100%;
@@ -68,7 +71,7 @@ const Next = styled.div`
   }
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 2px 20px rgba(252, 103, 103, 0.15);
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   }
   span {
     text-transform: uppercase;

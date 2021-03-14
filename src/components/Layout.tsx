@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Footer from './Footer'
 import Helmet from 'react-helmet'
@@ -65,6 +65,9 @@ const GlobalStyle = createGlobalStyle`
     --primary: #fc6767;
     --bg: #fff;
     --white: #fff;
+    --header-bg: rgba(14, 11, 17, 0.5);
+    --code-bg: rgba(32, 29, 34);
+    --secondary-bg: #eee;
     --grey-dark: rgba(0, 0, 0, 0.9);
     --grey-default: rgba(0, 0, 0, 0.7);
     --grey-light: rgba(0, 0, 0, 0.5);
@@ -72,6 +75,59 @@ const GlobalStyle = createGlobalStyle`
     --grey-lightest: rgba(0, 0, 0, 0.1);
     --font-sansSerif: Lato, Ubuntu, Helvetica, "sans-serif";
     --font-serif: Playfair Display, Merriweather, Impact, "serif";
+  }
+  :root[data-theme='dark'] {
+    --primary: #fc6767;
+    --bg: #0e0b11;
+    --white: #fff;
+    --header-bg: rgba(14, 11, 17, 0.5);
+    --code-bg: #070508;
+    --secondary-bg: #232027;
+    --grey-dark: rgba(255,255,255, 0.9);
+    --grey-default: rgba(255,255,255, 0.7);
+    --grey-light: rgba(255,255,255, 0.5);
+    --grey-lighter: rgba(255,255,255, 0.25);
+    --grey-lightest: rgba(255,255,255, 0.1);
+
+    h1, h2 {
+      color: #fff;
+      text-shadow: 
+        0 0 0.033em #fff, 
+        0 0 0.08em #fff,
+        0 0 0.1em var(--primary), 
+        0 0 0.2em var(--primary), 
+        0 0 0.3em var(--primary), 
+        0 0 1em var(--primary),
+        0 0 1.5em var(--primary);
+    }
+    .flicker {
+      animation: flicker 3s linear forwards alternate infinite;
+
+      &:nth-child(even) {
+        animation-delay: 0.3s;
+        animation-direction: alternate-reverse;
+      }
+    }
+  }
+  @keyframes flicker {
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    72%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    71.999% {
+      opacity: 0.33;
+    }
   }
 `
 
@@ -83,15 +139,75 @@ const PrimaryWrapper = styled.div`
   overflow: hidden;
 `
 
-export const Layout: React.FunctionComponent = (props) => {
-  const { children } = props
+function setFlickerAnimation() {
+  const animatedElements = Array.from(document.querySelectorAll('.js-darkmode-flicker'))
+
+  if (!animatedElements.length) {
+    return false
+  }
+
+  const wrapRandomChars = (str: string, iterations = 1) => {
+    const chars = str.split('')
+    const excludedChars = [' ', '-', ',', ';', ':', '(', ')']
+    const excludedIndexes: number[] = []
+    let i = 0
+
+    while (i < iterations) {
+      const randIndex = Math.floor(Math.random() * chars.length)
+      const c = chars[randIndex]
+
+      if (!excludedIndexes.includes(randIndex) && !excludedChars.includes(c)) {
+        chars[randIndex] = `<span class="flicker">${c}</span>`
+        excludedIndexes.push(randIndex)
+        i++
+      }
+    }
+
+    return chars.join('')
+  }
+
+  animatedElements.forEach((el) => {
+    if (!el) return
+    const text = el.textContent?.trim() || ''
+    el.innerHTML = wrapRandomChars(text, 1)
+  })
+}
+
+const getInitialColorMode = (): string => {
+  if (typeof window === 'undefined') return 'light'
+  const persistedColorPreference = window?.localStorage.getItem('color-mode')
+
+  if (typeof persistedColorPreference === 'string') {
+    return persistedColorPreference
+  }
+
+  const mql = window.matchMedia('(prefers-color-scheme: dark)')
+  const hasMediaQueryPreference = typeof mql.matches === 'boolean'
+  if (hasMediaQueryPreference) {
+    return mql.matches ? 'dark' : 'light'
+  }
+
+  return 'light'
+}
+
+export const Layout: React.FunctionComponent = ({ children }) => {
+  const [colorMode, rawSetColorMode] = React.useState(getInitialColorMode)
+
+  const setColorMode = (value: string) => {
+    rawSetColorMode(value)
+    window.localStorage.setItem('color-mode', value)
+  }
+
+  useEffect(() => {
+    setFlickerAnimation()
+  }, [])
 
   const title = config.siteTitle
   const description = config.siteDescription
   const image = config.siteBanner
 
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={{ colorMode, setColorMode }}>
       <PrimaryWrapper>
         <Helmet>
           <html lang={config.siteLanguage} />
@@ -109,14 +225,9 @@ export const Layout: React.FunctionComponent = (props) => {
           <meta name="twitter:url" content={config.siteUrl} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
-          {/* <link rel="prefetch" href="https://fonts.googleapis.com" />
-          <link
-            rel="preload"
-            href={`https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&family=Playfair+Display:wght@400;500;600&display=swap`}
-            crossOrigin="crossorigin"
-            as="style"
-          /> */}
         </Helmet>
+        <audio src="/assets/toggle-off.mp3" id="js-sound-off" preload="auto" hidden></audio>
+        <audio src="/assets/toggle-on.mp3" id="js-sound-on" preload="auto" hidden></audio>
         <Typography />
         <GlobalStyle />
         {children}

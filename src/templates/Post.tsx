@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-// @ts-ignore
-import config from '../../config/SiteConfig'
-import { DefaultPageProps } from '../models'
-import { Link, graphql } from 'gatsby'
 import { media } from '../utils/media'
+import { Link, graphql } from 'gatsby'
+import { DefaultPageProps } from '../models'
 import { titleCase, kebabCase } from '../utils/helpers'
 import { Layout, Header, Subline, SEO, PrevNext, ProgressBar } from '../components'
 import '../utils/prismjs-theme.css'
@@ -119,15 +117,13 @@ const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data
 
   return (
     <Layout>
-      <Header banner={post.frontmatter.banner}>
-        <Link to="/">{config.siteTitle}</Link>
-      </Header>
+      <Header banner={post.frontmatter.banner} />
       <SEO postNode={post} postSEO postPath={`/blog/${slug}`} />
       <Wrapper>
         <ProgressBar />
         <ContentWrapper>
           <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
-          <Title>{titleCase(post.frontmatter.title)}</Title>
+          <Title className="js-darkmode-flicker">{titleCase(post.frontmatter.title)}</Title>
           <Subline>
             {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
             <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>
