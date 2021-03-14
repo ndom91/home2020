@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import kebabCase from 'lodash/kebabCase'
 import { DefaultPageProps } from '../models'
-import { titleCase } from '../utils/media'
+import { titleCase } from '../utils/helpers'
 import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
 

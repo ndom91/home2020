@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase'
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
-import { titleCase } from '../utils/media'
+import { titleCase } from '../utils/helpers'
 import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'
 
 const AllCategoryTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {

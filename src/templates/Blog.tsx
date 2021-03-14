@@ -9,11 +9,9 @@ import { Link, graphql } from 'gatsby'
 import { Layout, Article, Wrapper, SectionTitle, Header, Pagination } from '../components'
 
 const BlogHeader = styled.h1`
-  font-family: ${config.serifFontFamily};
-  font-display: swap;
-  font-size: 4rem;
-  font-display: swap;
+  font-family: var(--font-serif);
   color: var(--grey-default);
+  font-size: 4rem;
   text-align: center;
 `
 

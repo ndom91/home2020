@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../config/Theme'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import { Post } from '../models'
@@ -34,7 +33,7 @@ const Prev = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 20px 30px;
-  box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
+  box-shadow: 0 2px 10px var(--grey-lightest);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
@@ -60,7 +59,7 @@ const Next = styled.div`
   background-color: white;
   border-radius: 15px;
   padding: 20px 30px;
-  box-shadow: 0 2px 10px var(--grey-ultraUltraLight);
+  box-shadow: 0 2px 10px var(--grey-lightest);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 
   @media ${media.medium} {
@@ -120,7 +119,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
               {prev.frontmatter.title}
             </Prev>
           </Link>
-          <ArrowPrev viewBox="0 0 20 20" fill={theme.colors.grey.ultraUltraLight}>
+          <ArrowPrev viewBox="0 0 20 20" fill={'var(--grey-lightest)'}>
             <path
               fillRule="evenodd"
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
@@ -138,7 +137,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
               {next.frontmatter.title}
             </Next>
           </Link>
-          <ArrowNext viewBox="0 0 20 20" fill={theme.colors.grey.ultraUltraLight}>
+          <ArrowNext viewBox="0 0 20 20" fill={'var(--grey-lightest)'}>
             <path
               fillRule="evenodd"
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"

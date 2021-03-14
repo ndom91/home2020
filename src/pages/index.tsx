@@ -39,7 +39,7 @@ const HomepageContent: any = styled.div`
 
 const PreHeader: any = styled.div`
   font-size: 1.4rem;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   font-weight: 100;
   color: var(--primary);
 `
@@ -47,7 +47,7 @@ const PreHeader: any = styled.div`
 const HeaderText: any = styled.h3`
   font-size: 3rem;
   font-weight: 600;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   color: var(--grey-default);
 
   @media ${media.large} {
@@ -62,7 +62,7 @@ const HeaderText: any = styled.h3`
 `
 const SubHeader: any = styled.div`
   font-weight: 300;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   color: var(--grey-light);
   display: inline-block;
   line-height: 2.7rem;
@@ -105,6 +105,9 @@ const SubHeader: any = styled.div`
       height: 0.5em;
       transition: right 250ms ease-in-out;
     }
+    &:hover {
+      color: var(--grey-light);
+    }
     &:nth-child(1):after {
       background: #44acf5;
     }
@@ -117,7 +120,7 @@ const SubHeader: any = styled.div`
     &:hover:after,
     &:focus:after,
     &:active:after {
-      color: default;
+      color: var(--grey-light);
       right: 0;
     }
   }

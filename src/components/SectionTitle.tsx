@@ -1,11 +1,9 @@
 import styled from 'styled-components'
-// @ts-ignore
-import config from '../../config/SiteConfig'
 
 export const SectionTitle: any = styled.div`
-  font-size: ${(props) => props.theme.fontSize.big};
+  font-size: 2.9rem;
   text-transform: ${(props: any) => (props.uppercase ? 'uppercase' : 'normal')};
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   color: var(--grey-dark);
   font-display: swap;
   text-align: center;

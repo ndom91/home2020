@@ -6,18 +6,17 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Project } from '../components'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
-// @ts-ignore
-import config from '../../config/SiteConfig'
 import '../utils/prismjs-theme.css'
 
 const AboutHeader = styled.h1`
   text-align: center;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-size: 4rem;
   font-weight: 500;
   padding-bottom: 50px;
   max-width: 1400px;
+  color: var(--gray-default);
   @media ${media.medium} {
     font-size: 3rem;
   }
@@ -37,7 +36,7 @@ const SubHeader = styled.div`
 
 const SubHeaderText = styled.div`
   font-size: 1.4rem;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   font-display: swap;
   font-weight: 300;
   padding: 0 2em;
@@ -61,14 +60,12 @@ const SubHeaderText = styled.div`
     opacity: 0.08;
     pointer-events: none;
     @media ${media.medium} {
-      /* left: 21%; */
       left: calc(50% - 150px);
       top: 63%;
       width: 280px;
       height: 300px;
     }
     @media ${media.small} {
-      /* left: -5%; */
       left: calc(50% - 185px);
       top: 65%;
       width: 350px;
@@ -126,10 +123,11 @@ const Projects = styled.div`
 const ProjectsHeader = styled.h1`
   margin-top: 80px;
   text-align: center;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-size: 3.5rem;
   font-weight: 500;
+  color: var(--grey-default);
   padding-bottom: 50px;
   @media ${media.medium} {
     font-size: 3rem;

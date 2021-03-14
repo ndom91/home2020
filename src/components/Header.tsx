@@ -84,7 +84,7 @@ const LinkWrapper = styled(Link)`
 
   font-weight: 400;
   letter-spacing: 1px;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   font-display: swap;
 
   &.active {
@@ -95,7 +95,7 @@ const LinkWrapper = styled(Link)`
       left: 0;
       right: 0;
       bottom: 0;
-      background: var(--grey-ultraLight);
+      background: var(--grey-lighter);
       height: 4px;
       transition-property: left, background-color;
       transition-duration: 400ms;
@@ -127,7 +127,7 @@ const MenuNumber = styled.span`
   color: var(--grey-light);
   font-size: 1rem;
   font-weight: 600;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   font-display: swap;
   margin-right: 8px;
 `

@@ -13,7 +13,7 @@ const Progress = styled.div<{ pos: number }>`
   z-index: 99999;
 `
 
-export const ProgressBar: React.FunctionComponent<[]> = () => {
+export const ProgressBar: React.FunctionComponent = () => {
   const { y } = useWindowScroll()
   const [scrollPos, setScrollPos] = useState(0)
   const pageHeight = document && document.body.scrollHeight - window.innerHeight

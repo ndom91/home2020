@@ -1,12 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-// @ts-ignore
-import config from '../../config/SiteConfig'
-import kebabCase from 'lodash/kebabCase'
-import theme from '../../config/Theme'
 import { motion } from 'framer-motion'
-import { media, titleCase } from '../utils/media'
+import { media } from '../utils/media'
+import { titleCase, kebabCase } from '../utils/helpers'
 
 interface Props {
   title: string
@@ -45,12 +42,14 @@ const Post = styled.article`
 
 const Title = styled.h2`
   position: relative;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   margin-bottom: 0.75rem;
   font-size: 2rem;
-  color: var(--grey-default);
   @media ${media.medium} {
     font-size: 2rem;
+  }
+  a {
+    color: var(--grey-default);
   }
 `
 
@@ -59,7 +58,7 @@ const Initiale = styled.span`
   font-size: 7rem;
   transform: translate(-50%, -50%);
   opacity: 0.08;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   user-select: none;
   z-index: -1;
   transition: transform 250ms ease-in-out;
@@ -76,6 +75,7 @@ const Excerpt = styled.p`
   grid-column: -1 / 1;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: var(--font-sansSerif);
   line-height: 1.8rem;
   @media ${media.medium} {
   }
@@ -83,6 +83,7 @@ const Excerpt = styled.p`
 
 export const Article: React.FunctionComponent<Props> = (props) => {
   const { title, date, excerpt, slug, timeToRead, category } = props
+  console.log(category)
   const firstChar = title.charAt(0)
 
   const list = {
@@ -103,19 +104,12 @@ export const Article: React.FunctionComponent<Props> = (props) => {
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <div>
-          {date && <span>{date} &mdash;</span>}
-          {timeToRead && (
-            <span>
-              {' '}
-              {` `}
-              {timeToRead} Min Read
-            </span>
-          )}
-
+          {date && <span>{date}</span>}
+          {timeToRead && <span> &mdash; {timeToRead} Min Read</span>}
           {category && (
             <>
-              <span>&mdash; In </span>
-              <Link style={{ color: theme.colors.primary, marginLeft: '5px' }} to={`/categories/${kebabCase(category)}`}>
+              <span> &mdash; In</span>
+              <Link style={{ color: 'var(--primary)', marginLeft: '5px' }} to={`/categories/${kebabCase(category)}`}>
                 {titleCase(category)}
               </Link>
             </>

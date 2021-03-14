@@ -18,15 +18,6 @@ const config = {
   userMail: 'yo@ndo.dev',
   ogSiteName: 'ndom91',
   ogLanguage: 'en_US',
-
-  // Theme
-  themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c',
-
-  // typography
-  serifFontFamily: 'Playfair Display',
-  sanSerifFontFamily: 'Lato',
-  baseFontSize: '18px',
 }
 
 module.exports = config

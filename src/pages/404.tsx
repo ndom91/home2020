@@ -20,7 +20,7 @@ const Subtitle = styled.h3`
   text-align: center;
   font-size: 2rem;
   font-weight: 100;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   margin-bottom: 50px;
 `

@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import split from 'lodash/split'
 import { media } from '../utils/media'
-// @ts-ignore
-import config from '../../config/SiteConfig'
 
 const FooterWrapper = styled.footer`
   width: 100%;
@@ -13,7 +11,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-top: 1px solid var(--grey-ultraUltraLight);
+  border-top: 1px solid var(--grey-lightest);
   padding: 0.5rem 0;
   span {
     font-size: 0.75rem;
@@ -40,7 +38,7 @@ const FooterSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   justify-content: center;
   margin: 20px;
   min-width: 6rem;

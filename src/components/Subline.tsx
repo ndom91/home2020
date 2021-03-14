@@ -22,7 +22,7 @@ export const Subline: any = styled.div`
   width: 100%;
   justify-content: flex-start;
   align-items: center;
-  font-size: ${(props: Props) => props.theme.fontSize.small};
+  font-size: 0.9rem;
   ${(props: Props) => props.sectionTitle && 'justify-content: center'};
   margin: 0 auto;
 

@@ -1,25 +1,54 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import theme from '../../config/Theme'
+import { createGlobalStyle } from 'styled-components'
+
+const Fonts = createGlobalStyle`
+  /* lato-300 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''), url('../fonts/lato-v17-latin-300.woff2') format('woff2'),
+      url('../fonts/lato-v17-latin-300.woff') format('woff');
+  }
+  /* lato-regular - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('../fonts/lato-v17-latin-regular.woff2') format('woff2'),
+      url('../fonts/lato-v17-latin-regular.woff') format('woff'); 
+  }
+  /* playfair-display-regular - latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('../fonts/playfair-display-v22-latin-regular.woff2') format('woff2'),
+      url('../fonts/playfair-display-v22-latin-regular.woff') format('woff'); 
+  }
+  /* playfair-display-500 - latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''), url('../fonts/playfair-display-v22-latin-500.woff2') format('woff2'),
+      url('../fonts/playfair-display-v22-latin-500.woff') format('woff'); 
+  }
+  /* playfair-display-600 - latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''), url('../fonts/playfair-display-v22-latin-600.woff2') format('woff2'),
+      url('../fonts/playfair-display-v22-latin-600.woff') format('woff'); 
+  }
+`
 
 const Typography: React.FunctionComponent = () => {
-  if (!theme) return null
-
-  const fontString = theme.typography.googleFonts
-    .map((font) => {
-      let string = `family=${font.name.replace(' ', '+')}:wght@`
-      font.styles.forEach((style) => {
-        string = `${string}${style};`
-      })
-      return string.replace(/.$/, '')
-    })
-    .join('&')
-
   return (
-    <Helmet>
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href={`https://fonts.googleapis.com/css2?${fontString}&display=swap`} rel="stylesheet"></link>
-    </Helmet>
+    <>
+      <Fonts />
+    </>
   )
 }
 

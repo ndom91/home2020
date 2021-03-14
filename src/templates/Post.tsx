@@ -5,7 +5,8 @@ import kebabCase from 'lodash/kebabCase'
 import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link, graphql } from 'gatsby'
-import { media, titleCase } from '../utils/media'
+import { media } from '../utils/media'
+import { titleCase } from '../utils/helpers'
 import { Layout, Header, Subline, SEO, PrevNext, ProgressBar } from '../components'
 import '../utils/prismjs-theme.css'
 
@@ -32,6 +33,7 @@ const Wrapper: any = styled.div`
 const PostContent = styled.div`
   max-width: 55vw;
   margin: 4rem auto 0 auto;
+  font-size: 1.1rem;
   @media ${media.large} {
     max-width: 65vw;
   }
@@ -72,7 +74,7 @@ const Tag = styled.div`
   transition-duration: 250ms;
   transition-timing-function: ease-in;
   padding: 8px 15px;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-weight: 600;
 
@@ -90,7 +92,7 @@ const Initiale = styled.span`
   opacity: 0.08;
   user-select: none;
   z-index: -1;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   transition: transform 250ms ease-in-out;
   font-weight: 700;
   @media ${media.small} {
@@ -101,7 +103,8 @@ const Initiale = styled.span`
 
 const Title = styled.h1`
   font-weight: 600;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
+  color: var(--grey-default);
   font-size: calc(48px + 1vw);
   line-height: 3rem;
 `

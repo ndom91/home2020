@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import FocusLock from 'react-focus-lock'
-import theme from '../../config/Theme'
 import { media } from '../utils/media'
 import { OverlayMenu } from './OverlayMenu'
 
@@ -29,8 +28,8 @@ const ButtonHamburger = styled.button`
   position: absolute;
   border-radius: 3px;
   z-index: 99;
-  top: ${theme.space.medium};
-  right: ${theme.space.medium};
+  top: 1.5rem;
+  right: 1.5rem;
   @media ${media.medium} {
     display: inline-block;
   }

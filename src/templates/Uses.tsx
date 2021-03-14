@@ -5,14 +5,12 @@ import styled from 'styled-components'
 import { Layout, Wrapper, Header, SectionTitle } from '../components'
 // import { motion } from 'framer-motion'
 import { media } from '../utils/media'
-// @ts-ignore
-import config from '../../config/SiteConfig'
 import '../utils/prismjs-theme.css'
 import { DefaultPageProps } from '../models'
 
 const UsingHeader = styled.h1`
   text-align: center;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-size: 3rem;
   font-weight: 500;
@@ -34,7 +32,7 @@ const SubHeader = styled.div`
 
 // const SubHeaderText = styled.div`
 //   font-size: 1.4rem;
-//   font-family: ${config.sanSerifFontFamily};
+//   font-family: var(--font-sansSerif);
 //   font-display: swap;
 //   font-weight: 300;
 //   padding: 0 2em;
@@ -90,7 +88,7 @@ const UsesItems = styled.div`
 const UsesHeader = styled.h1`
   margin-top: 80px;
   text-align: center;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-size: 3.5rem;
   font-weight: 500;

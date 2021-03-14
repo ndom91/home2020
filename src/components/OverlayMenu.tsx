@@ -118,7 +118,7 @@ const NavigationLink = styled(Link)`
 
 const MenuNumber = styled.div`
   display: inline-block;
-  color: var(--grey-ultraLight);
+  color: var(--grey-lighter);
   font-family: 'Playfair Display', 'serif';
   font-display: swap;
   margin-right: 10px;

@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Footer from './Footer'
 import Helmet from 'react-helmet'
-import theme from '../../config/Theme'
 import { media } from '../utils/media'
 import Typography from './Typography'
 // @ts-ignore
@@ -26,9 +25,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   a {
-    color: var(--grey-dark);
+    color: var(--primary);
     text-decoration: none;
-    transition: all ${theme.transitions.normal};
+    transition: all 500ms;
   }
   a:hover {
     color: var(--primary);
@@ -69,8 +68,10 @@ const GlobalStyle = createGlobalStyle`
     --grey-dark: rgba(0, 0, 0, 0.9);
     --grey-default: rgba(0, 0, 0, 0.7);
     --grey-light: rgba(0, 0, 0, 0.5);
-    --grey-ultraLight: rgba(0, 0, 0, 0.25);
-    --grey-ultraUltraLight: rgba(0, 0, 0, 0.1);
+    --grey-lighter: rgba(0, 0, 0, 0.25);
+    --grey-lightest: rgba(0, 0, 0, 0.1);
+    --font-sansSerif: Lato, Ubuntu, Helvetica, "sans-serif";
+    --font-serif: Playfair Display, Merriweather, Impact, "serif";
   }
 `
 
@@ -90,7 +91,7 @@ export const Layout: React.FunctionComponent = (props) => {
   const image = config.siteBanner
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={{}}>
       <PrimaryWrapper>
         <Helmet>
           <html lang={config.siteLanguage} />
@@ -108,6 +109,13 @@ export const Layout: React.FunctionComponent = (props) => {
           <meta name="twitter:url" content={config.siteUrl} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
+          {/* <link rel="prefetch" href="https://fonts.googleapis.com" />
+          <link
+            rel="preload"
+            href={`https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&family=Playfair+Display:wght@400;500;600&display=swap`}
+            crossOrigin="crossorigin"
+            as="style"
+          /> */}
         </Helmet>
         <Typography />
         <GlobalStyle />

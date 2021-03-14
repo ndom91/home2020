@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from '../utils/media'
-// @ts-ignore
-import config from '../../config/SiteConfig'
 import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'
 import { motion } from 'framer-motion'
@@ -57,7 +55,7 @@ const ProjectTech = styled.img`
 const ProjectDetails = styled.div`
   padding: 10px 30px 30px 30px;
   border-radius: 0 0 10px 10px;
-  font-family: ${config.sanSerifFontFamily};
+  font-family: var(--font-sansSerif);
   font-weight: 400;
 
   transform: translateZ(10px);
@@ -92,7 +90,7 @@ const ProjectLabel = styled.h3`
   transition-property: color;
   transition-duration: 250ms;
   padding: 5px;
-  font-family: ${config.serifFontFamily};
+  font-family: var(--font-serif);
   font-display: swap;
   font-weight: 600;
   font-size: 1.3rem;
@@ -179,18 +177,15 @@ interface ProjectProps {
 
 export const Project: React.FunctionComponent<ProjectProps> = (props) => {
   const variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      x: [-50, 0],
-      opacity: [0, 1],
-      transition: {
-        x: { stiffness: 1000, velocity: -100 },
-        duration: 0.3,
-      },
+    x: [-50, 0],
+    opacity: [0, 1],
+    transition: {
+      x: { stiffness: 1000, velocity: -100 },
+      duration: 0.3,
     },
   }
   return (
-    <motion.div initial="hidden" variants={variants} whileHover={{ scale: 1.05 }}>
+    <motion.div variants={variants} whileHover={{ scale: 1.05 }}>
       <Tilt tiltReverse perspective={500} tiltMaxAngleX={3} tiltMaxAngleY={3} transitionSpeed={1900}>
         <ProjectCard>
           {props.image ? (
