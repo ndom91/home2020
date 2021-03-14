@@ -14,9 +14,11 @@ const Progress = styled.div<{ pos: number }>`
 `
 
 export const ProgressBar: React.FunctionComponent = () => {
+  if (typeof window === 'undefined') return <></>
+
   const { y } = useWindowScroll()
   const [scrollPos, setScrollPos] = useState(0)
-  const pageHeight = document && document.body.scrollHeight - window.innerHeight
+  const pageHeight = document.body.scrollHeight - window.innerHeight
 
   useEffect(() => {
     const percentScrolled = Math.abs(y) / pageHeight

@@ -5,7 +5,7 @@ import { Article, Header, Layout, SectionTitle, Subline, Wrapper } from '../comp
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import kebabCase from 'lodash/kebabCase'
+import { kebabCase } from '../utils/helpers'
 
 const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {
   const { posts, tagName } = pathContext

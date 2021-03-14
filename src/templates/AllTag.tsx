@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import kebabCase from 'lodash/kebabCase'
 // @ts-ignore
 import config from '../../config/SiteConfig'
+import { kebabCase } from '../utils/helpers'
 import { DefaultPageProps } from '../models'
 import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'

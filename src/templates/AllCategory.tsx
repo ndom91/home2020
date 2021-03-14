@@ -1,11 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import kebabCase from 'lodash/kebabCase'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
-import { titleCase } from '../utils/helpers'
+import { titleCase, kebabCase } from '../utils/helpers'
 import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'
 
 const AllCategoryTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {

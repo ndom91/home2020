@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { DefaultPageProps } from '../models'
 import { Link, graphql } from 'gatsby'
 import { media } from '../utils/media'
-import { titleCase } from '../utils/helpers'
+import { titleCase, kebabCase } from '../utils/helpers'
 import { Layout, Header, Subline, SEO, PrevNext, ProgressBar } from '../components'
 import '../utils/prismjs-theme.css'
 
@@ -125,7 +124,7 @@ const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data
       </Header>
       <SEO postNode={post} postSEO postPath={`/blog/${slug}`} />
       <Wrapper>
-        {typeof document !== 'undefined' && <ProgressBar />}
+        <ProgressBar />
         <ContentWrapper>
           <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
           <Title>{titleCase(post.frontmatter.title)}</Title>

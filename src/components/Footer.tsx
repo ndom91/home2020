@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import split from 'lodash/split'
 import { media } from '../utils/media'
 
 const FooterWrapper = styled.footer`
@@ -83,7 +82,7 @@ const Footer: React.FunctionComponent = () => {
         <FooterWrapper>
           <FooterContent>
             <FooterSection>
-              <div>&copy; {split(data.site.buildTime, '.')[2]}</div>
+              <div>&copy; {data.site.buildTime.split('.')[2]}</div>
               <Link to="/">Nico Domino</Link>
             </FooterSection>
             <FooterSection>

@@ -15,7 +15,6 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -28,7 +27,6 @@ module.exports = {
         icons: [
           {
             src: config.favicon,
-            // src: 'src/favicon.png',
             sizes: '128x128',
             type: 'image/png',
           },

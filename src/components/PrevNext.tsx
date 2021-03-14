@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
 import { Post } from '../models'
 import { media } from '../utils/media'
+import { kebabCase } from '../utils/helpers'
 
 const Wrapper = styled.div`
   display: flex;
