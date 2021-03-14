@@ -14,8 +14,8 @@ const ProjectCard = styled.div`
   transform-style: preserve-3d;
 
   border-radius: 20px;
-  background: #eee;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  background: var(--secondary-bg);
+  box-shadow: 20px 20px 60px var(--secondary-bg), -20px -20px 60px var(--bg);
 
   &:hover {
     box-shadow: 0 3px 40px rgba(0, 0, 0, 0.2);

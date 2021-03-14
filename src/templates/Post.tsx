@@ -127,7 +127,7 @@ const PostPage: React.FunctionComponent<DefaultPageProps> = ({ pathContext, data
         <ProgressBar />
         <ContentWrapper>
           <Initiale>{post.frontmatter.title.charAt(0)}</Initiale>
-          <Title>{titleCase(post.frontmatter.title)}</Title>
+          <Title className="js-darkmode-flicker">{titleCase(post.frontmatter.title)}</Title>
           <Subline>
             {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In
             <Link style={{ marginLeft: '5px' }} to={`/categories/${kebabCase(post.frontmatter.category)}`}>

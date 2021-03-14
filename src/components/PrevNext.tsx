@@ -30,11 +30,13 @@ const Prev = styled.div`
   flex-direction: column;
   align-items: flex-start;
   z-index: 3;
-  background-color: white;
+  background-color: var(--secondary-bg);
   border-radius: 15px;
   padding: 20px 30px;
   box-shadow: 0 2px 10px var(--grey-lightest);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  font-family: var(--font-serif);
+  font-weight: 600;
 
   @media ${media.medium} {
     width: 100%;
@@ -56,11 +58,13 @@ const Next = styled.div`
   flex-direction: column;
   align-items: flex-end;
   z-index: 3;
-  background-color: white;
+  background-color: var(--secondary-bg);
   border-radius: 15px;
   padding: 20px 30px;
   box-shadow: 0 2px 10px var(--grey-lightest);
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  font-family: var(--font-serif);
+  font-weight: 600;
 
   @media ${media.medium} {
     width: 100%;

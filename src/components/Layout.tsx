@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Footer from './Footer'
 import Helmet from 'react-helmet'
@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
     --primary: #fc6767;
     --bg: #fff;
     --white: #fff;
+    --secondary-bg: #eee;
     --grey-dark: rgba(0, 0, 0, 0.9);
     --grey-default: rgba(0, 0, 0, 0.7);
     --grey-light: rgba(0, 0, 0, 0.5);
@@ -75,13 +76,54 @@ const GlobalStyle = createGlobalStyle`
   }
   :root[data-theme='dark'] {
     --primary: #fc6767;
-    --bg: #181616;
-    --white: #4b4b4b;
+    --bg: #111010;
+    --white: #fff;
+    --secondary-bg: #282828;
     --grey-dark: rgba(255,255,255, 0.9);
     --grey-default: rgba(255,255,255, 0.7);
     --grey-light: rgba(255,255,255, 0.5);
     --grey-lighter: rgba(255,255,255, 0.25);
     --grey-lightest: rgba(255,255,255, 0.1);
+
+    h1, h2 {
+      color: #fff;
+      text-shadow: 
+        0 0 0.033em #fff, 
+        0 0 0.08em #fff,
+        0 0 0.1em var(--primary), 
+        0 0 0.2em var(--primary), 
+        0 0 0.3em var(--primary), 
+        0 0 1em var(--primary),
+        0 0 1.5em var(--primary);
+    }
+    .flicker {
+      animation: flicker 3s linear forwards alternate infinite;
+
+      &:nth-child(even) {
+        animation-delay: 0.3s;
+        animation-direction: alternate-reverse;
+      }
+    }
+  }
+  @keyframes flicker {
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    72%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    71.999% {
+      opacity: 0.33;
+    }
   }
 `
 
@@ -92,6 +134,47 @@ const PrimaryWrapper = styled.div`
   min-height: 100vh;
   overflow: hidden;
 `
+
+function setFlickerAnimation() {
+  // get all elements that should be animated
+  const animatedElements = Array.from(document.querySelectorAll('.js-darkmode-flicker'))
+
+  if (!animatedElements.length) {
+    return false
+  }
+
+  // helper function to wrap random letters in <span>
+  const wrapRandomChars = (str: string, iterations = 1) => {
+    const chars = str.split('')
+    const excludedChars = [' ', '-', ',', ';', ':', '(', ')']
+    const excludedIndexes: number[] = []
+    let i = 0
+
+    // run for the number of letters we want to wrap
+    while (i < iterations) {
+      const randIndex = Math.floor(Math.random() * chars.length)
+      const c = chars[randIndex]
+
+      // make sure we don't wrap a space or punctuation char
+      // or hit the same letter twice
+      if (!excludedIndexes.includes(randIndex) && !excludedChars.includes(c)) {
+        chars[randIndex] = `<span class="flicker">${c}</span>`
+        excludedIndexes.push(randIndex)
+        i++
+      }
+    }
+
+    return chars.join('')
+  }
+
+  // replace the plain text content in each element
+  animatedElements.forEach((el) => {
+    if (!el) return
+    const text = el.textContent?.trim() || ''
+    const count = el.dataset.flickerChars ? parseInt(el.dataset.flickerChars) : undefined
+    el.innerHTML = wrapRandomChars(text, count)
+  })
+}
 
 const getInitialColorMode = (): string => {
   if (typeof window === 'undefined') return 'light'
@@ -121,6 +204,10 @@ export const Layout: React.FunctionComponent = ({ children }) => {
     // Persist it on update
     window.localStorage.setItem('color-mode', value)
   }
+
+  useEffect(() => {
+    setFlickerAnimation()
+  }, [])
 
   const title = config.siteTitle
   const description = config.siteDescription

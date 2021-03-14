@@ -85,7 +85,7 @@ const UsesItems = styled.div`
   }
 `
 
-const UsesHeader = styled.h1`
+const UsesHeader = styled.h3`
   margin-top: 80px;
   text-align: center;
   font-family: var(--font-serif);
@@ -113,7 +113,7 @@ const Uses: React.FunctionComponent<DefaultPageProps> = () => {
         <SectionTitle>Uses</SectionTitle>
       </Header>
       <Wrapper>
-        <UsingHeader>Here's what I'm using..</UsingHeader>
+        <UsingHeader className="js-darkmode-flicker">Using</UsingHeader>
         <SubHeader>
           {/* <SubHeaderText>
               Inspired by{' '}

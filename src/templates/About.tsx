@@ -208,7 +208,7 @@ const About: React.FunctionComponent = () => {
         <SectionTitle>About</SectionTitle>
       </Header>
       <Wrapper fullWidth>
-        <AboutHeader>Hey there.</AboutHeader>
+        <AboutHeader className="js-darkmode-flicker">Hey there.</AboutHeader>
         <SubHeader>
           <HeaderImage>
             <Img
@@ -225,7 +225,7 @@ const About: React.FunctionComponent = () => {
           </SubHeaderText>
         </SubHeader>
         <Projects>
-          <ProjectsHeader>Projects</ProjectsHeader>
+          <ProjectsHeader className="js-darkmode-flicker">Projects</ProjectsHeader>
           <motion.div initial animate="visible" variants={list}>
             <ProjectsWrapper>
               {projects.map((project: Project, index: number) => {

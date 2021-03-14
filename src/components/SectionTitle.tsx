@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SectionTitle: any = styled.div`
+export const SectionTitle: any = styled.h2`
   font-size: 2.9rem;
   text-transform: ${(props: any) => (props.uppercase ? 'uppercase' : 'normal')};
   font-family: var(--font-serif);

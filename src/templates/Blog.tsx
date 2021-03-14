@@ -37,7 +37,7 @@ const BlogPage: React.FunctionComponent<DefaultPageProps> = ({ pageContext, data
         <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
       </Header>
       <Wrapper>
-        <BlogHeader>Blog</BlogHeader>
+        <BlogHeader className="js-darkmode-flicker">Blog</BlogHeader>
         <motion.div animate="visible" variants={list}>
           {edges.map(
             (post) =>
