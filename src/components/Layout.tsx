@@ -65,6 +65,8 @@ const GlobalStyle = createGlobalStyle`
     --primary: #fc6767;
     --bg: #fff;
     --white: #fff;
+    --header-bg: rgba(14, 11, 17, 0.5);
+    --code-bg: rgba(32, 29, 34);
     --secondary-bg: #eee;
     --grey-dark: rgba(0, 0, 0, 0.9);
     --grey-default: rgba(0, 0, 0, 0.7);
@@ -76,9 +78,11 @@ const GlobalStyle = createGlobalStyle`
   }
   :root[data-theme='dark'] {
     --primary: #fc6767;
-    --bg: #111010;
+    --bg: #0e0b11;
     --white: #fff;
-    --secondary-bg: #282828;
+    --header-bg: rgba(14, 11, 17, 0.5);
+    --code-bg: #070508;
+    --secondary-bg: #232027;
     --grey-dark: rgba(255,255,255, 0.9);
     --grey-default: rgba(255,255,255, 0.7);
     --grey-light: rgba(255,255,255, 0.5);
@@ -232,13 +236,6 @@ export const Layout: React.FunctionComponent = ({ children }) => {
           <meta name="twitter:url" content={config.siteUrl} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
-          {/* <link rel="prefetch" href="https://fonts.googleapis.com" />
-          <link
-            rel="preload"
-            href={`https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&family=Playfair+Display:wght@400;500;600&display=swap`}
-            crossOrigin="crossorigin"
-            as="style"
-          /> */}
         </Helmet>
         <audio src="/assets/toggle-off.mp3" id="js-sound-off" preload="auto" hidden></audio>
         <audio src="/assets/toggle-on.mp3" id="js-sound-on" preload="auto" hidden></audio>

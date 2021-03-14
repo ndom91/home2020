@@ -13,7 +13,8 @@ interface Props {
 
 const HeaderWrapper: any = styled.header`
   position: relative;
-  background: linear-gradient(-185deg, #c13838, var(--grey-default)), url(${(props: any) => props.banner}) no-repeat;
+  background: linear-gradient(-185deg, #c13838, var(--header-bg)), url(${(props: any) => props.banner}) no-repeat;
+  /* background: linear-gradient(-185deg, #c13838, rgba(0, 0, 0, 0.8)), url(${(props: any) => props.banner}) no-repeat; */
   background-size: cover;
   background-position-y: 40%;
   padding: 2rem 2rem 4rem;

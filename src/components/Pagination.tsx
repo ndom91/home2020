@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '../utils/media'
 
-export const PaginationContainer = styled.div`
+const PaginationContainer = styled.div`
   text-align: center;
   margin: 2rem;
   margin: 2rem auto;
@@ -15,14 +15,15 @@ export const PaginationContainer = styled.div`
   }
   @media ${media.small} {
     max-width: 85vw;
+  }
 `
 
-export const PaginationContent = styled.div`
+const PaginationContent = styled.div`
   display: inline-flex;
   justify-content: space-between;
   padding: 0 2.5rem;
   border-radius: 3.5rem;
-  background-color: #eee;
+  background-color: var(--secondary-bg);
 
   @media ${media.medium} {
     padding: 0 1rem;
