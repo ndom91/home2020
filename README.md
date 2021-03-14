@@ -1,15 +1,14 @@
 <img src="https://ndo.dev/assets/images/logo.png" align="right"></img>
 
-## ndom91 2020
+## ndom91 homepage
 
-![Netlify](https://img.shields.io/netlify/1d9c322e-4f72-4721-aa0a-79a3df0782f4?style=flat-square)
-![GitHub](https://img.shields.io/github/license/ndom91/home2020?style=flat-square)
-![Twitter Follow](https://img.shields.io/twitter/follow/ndom91?style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ndom91/home2020?style=flat-square)
+![GitHub](https://img.shields.io/github/license/ndom91/home2020?style=flat-square)
+![Netlify](https://img.shields.io/netlify/1d9c322e-4f72-4721-aa0a-79a3df0782f4?style=flat-square)
 
 ## 🏷️ Description
 
-This my 2020 homepage built with Gatsby, TypeScript, styled-components and framer-motion 🎉
+This my 2020-2021 homepage built with Gatsby, TypeScript, styled-components and framer-motion!
 
 ## 🚀 Getting Started
 
