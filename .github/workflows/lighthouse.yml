@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
       # - name: Use Node.js 14.x
       #   uses: actions/setup-node@v2
       #   with:
@@ -23,4 +21,7 @@ jobs:
           urls: |
             https://ndo.dev/
           # configPath: '.github/workflows/lighthouserc.json'
+          # budgetPath: '.github/workflows/budget.json'
           uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          ref: ${{ github.event.pull_request.head.sha }}
