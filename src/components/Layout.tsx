@@ -61,6 +61,12 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0s !important;
+      transition-duration: 0s !important;
+    }
+  }
   :root {
     --primary: #fc6767;
     --bg: #fff;
