@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
-import { kebabCase } from '../utils/helpers'
+import { slugify } from '../utils/helpers'
 import { DefaultPageProps } from '../models'
 import { Link } from 'gatsby'
 import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'
@@ -18,7 +18,7 @@ const AllTagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext
           <SectionTitle>Tags</SectionTitle>
           {tags.map((tag, index: number) => (
             <Title key={index}>
-              <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
+              <Link to={`/tags/${slugify(tag)}`}>{tag}</Link>
             </Title>
           ))}
         </Wrapper>

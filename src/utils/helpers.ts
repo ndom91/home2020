@@ -13,19 +13,15 @@ const titleCase = (str: string): string => {
   return newStr
 }
 
-const kebabCase = (s: string): string => {
-  let result = ''
-  const len = s.length
-
-  for (let i = 0; i < len; i++) {
-    if (s[i] === s[i].toUpperCase()) {
-      result += '-' + s[i].toLowerCase()
-    } else {
-      result += s[i].toLowerCase()
-    }
-  }
-
-  return result[0] !== '-' ? result.replace(/ /g, '') : result.substr(1).replace(/ /g, '')
+const slugify = (text: string): string => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
 }
 
-export { titleCase, kebabCase }
+export { titleCase, slugify }

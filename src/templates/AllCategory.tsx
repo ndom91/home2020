@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
-import { titleCase, kebabCase } from '../utils/helpers'
+import { titleCase, slugify } from '../utils/helpers'
 import { Layout, Wrapper, Header, SectionTitle, Title } from '../components'
 
 const AllCategoryTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {
@@ -18,7 +18,7 @@ const AllCategoryTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathCo
           <SectionTitle>Categories</SectionTitle>
           {categories.map((category, index: number) => (
             <Title key={index}>
-              <Link to={`/categories/${kebabCase(category)}`}>{titleCase(category)}</Link>
+              <Link to={`/categories/${slugify(category)}`}>{titleCase(category)}</Link>
             </Title>
           ))}
         </Wrapper>

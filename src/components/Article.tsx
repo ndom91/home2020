@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
 import { media } from '../utils/media'
-import { titleCase, kebabCase } from '../utils/helpers'
+import { titleCase, slugify } from '../utils/helpers'
 
 interface Props {
   title: string
@@ -108,7 +108,7 @@ export const Article: React.FunctionComponent<Props> = (props) => {
           {category && (
             <>
               <span> &mdash; In</span>
-              <Link style={{ color: 'var(--primary)', marginLeft: '5px' }} to={`/categories/${kebabCase(category)}`}>
+              <Link style={{ color: 'var(--primary)', marginLeft: '5px' }} to={`/categories/${slugify(category)}`}>
                 {titleCase(category)}
               </Link>
             </>

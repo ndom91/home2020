@@ -1,10 +1,21 @@
 const path = require('path')
 const _ = require('lodash')
 
+const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
+}
+
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'MarkdownRemark' && _.has(node, 'frontmatter') && _.has(node.frontmatter, 'title')) {
-    const slug = `${_.kebabCase(node.frontmatter.title)}`
+    const slug = `${slugify(node.frontmatter.title)}`
     createNodeField({ node, name: 'slug', value: slug })
   }
 }
@@ -59,7 +70,7 @@ const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }
     const names = Object.keys(classification.postsByClassificationNames)
 
     createPage({
-      path: _.kebabCase(`/${classification.pluralName}`),
+      path: slugify(`/${classification.pluralName}`),
       component: classification.template.all,
       context: {
         [`${classification.pluralName}`]: names.sort(),
@@ -69,7 +80,7 @@ const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }
     names.forEach((name) => {
       const postsByName = classification.postsByClassificationNames[name]
       createPage({
-        path: `/${classification.pluralName}/${_.kebabCase(name)}`,
+        path: `/${classification.pluralName}/${slugify(name)}`,
         component: classification.template.part,
         context: {
           posts: postsByName,
@@ -154,10 +165,10 @@ exports.createPages = ({ actions, graphql }) => {
       const prev = index === posts.length - 1 ? null : posts[index + 1].node
 
       createPage({
-        path: `/blog/${_.kebabCase(node.frontmatter.title)}`,
+        path: `/blog/${slugify(node.frontmatter.title)}`,
         component: postTemplate,
         context: {
-          slug: _.kebabCase(node.frontmatter.title),
+          slug: slugify(node.frontmatter.title),
           prev,
           next,
         },

@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 // @ts-ignore
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
-import { kebabCase } from '../utils/helpers'
+import { slugify } from '../utils/helpers'
 import { DefaultPageProps } from '../models'
 import { Article, Header, Layout, SectionTitle, Subline, Wrapper } from '../components'
 
@@ -31,7 +31,7 @@ const TagTemplate: React.FunctionComponent<DefaultPageProps> = ({ pathContext })
                 title={post.frontmatter.title}
                 date={post.frontmatter.date}
                 excerpt={post.excerpt}
-                slug={kebabCase(post.frontmatter.title)}
+                slug={slugify(post.frontmatter.title)}
                 timeToRead={post.timeToRead}
                 category={post.frontmatter.category}
                 key={index}

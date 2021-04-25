@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import { Link } from 'gatsby'
 import { DefaultPageProps } from '../models'
-import { titleCase, kebabCase } from '../utils/helpers'
+import { titleCase, slugify } from '../utils/helpers'
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
 
 const Category: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) => {
@@ -31,7 +31,7 @@ const Category: React.FunctionComponent<DefaultPageProps> = ({ pathContext }) =>
                 title={post.frontmatter.title}
                 date={post.frontmatter.date}
                 excerpt={post.excerpt}
-                slug={kebabCase(post.frontmatter.title)}
+                slug={slugify(post.frontmatter.title)}
                 timeToRead={post.timeToRead}
                 category={post.frontmatter.category}
                 key={index}

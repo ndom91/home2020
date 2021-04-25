@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Post } from '../models'
 import { media } from '../utils/media'
-import { kebabCase } from '../utils/helpers'
+import { slugify } from '../utils/helpers'
 
 const Wrapper = styled.div`
   display: flex;
@@ -116,7 +116,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
     <Wrapper>
       {prev && (
         <>
-          <Link to={`/blog/${kebabCase(prev.frontmatter.title)}`} style={{ padding: '0 2em' }}>
+          <Link to={`/blog/${slugify(prev.frontmatter.title)}`} style={{ padding: '0 2em' }}>
             <Prev>
               <span>Previous</span>
               {prev.frontmatter.title}
@@ -134,7 +134,7 @@ export const PrevNext: React.FunctionComponent<Props> = (props) => {
       )}
       {next && (
         <>
-          <Link to={`/blog/${kebabCase(next.frontmatter.title)}`} style={{ padding: '0 2em' }}>
+          <Link to={`/blog/${slugify(next.frontmatter.title)}`} style={{ padding: '0 2em' }}>
             <Next>
               <span>Next</span>
               {next.frontmatter.title}
